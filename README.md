@@ -18,6 +18,7 @@ Carefree 是一个帮助您高效造数据的 C++ 库。它具有如下优点：
 ```cpp
 #include "carefree.hpp"
 using namespace std;
+using namespace carefree
 
 signed main(){
     gen_data(5, 5, [&](int i, int j){
