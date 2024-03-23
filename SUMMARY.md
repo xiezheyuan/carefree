@@ -1,6 +1,7 @@
 # Table of contents
 
 * [介绍 / Introduction](README.md)
+* [更新日志 / Changelog](geng-xin-ri-zhi-changelog.md)
 * [安装 / Install](an-zhuang-install.md)
 * [类型转换 / Type Converter](lei-xing-zhuan-huan-type-converter.md)
 * [随机相关 / Random](sui-ji-xiang-guan-random.md)

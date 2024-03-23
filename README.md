@@ -20,6 +20,7 @@ Carefree 是一个帮助您高效造数据的 C++ 库。它具有如下优点：
 ```cpp
 #include "carefree.hpp"
 using namespace std;
+using namespace carefree;
 
 signed main(){
     gen_data(5, 5, [&](int i, int j){
@@ -38,7 +39,6 @@ signed main(){
 
 ## 近景目标
 
-* 将整个代码用 `namespace` 包裹。
 * 添加更多的 OJ 测试点配置写入器支持，如 LibreOJ(syzoj)、hydro、uoj 等。
 * 添加让 SPFA 算法（基于队列优化的 Bellman-Ford 算法）运行至复杂度上界的数据。
 
