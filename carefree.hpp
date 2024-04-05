@@ -14,8 +14,8 @@
 #endif
 
 #define CAREFREE_VERSION_MAJOR 0
-#define CAREFREE_VERSION_MINOR 1
-#define CAREFREE_VERSION "0.1"
+#define CAREFREE_VERSION_MINOR 2
+#define CAREFREE_VERSION "0.2"
 
 #include <unistd.h>
 
@@ -41,6 +41,171 @@ namespace carefree_internal {
 
     using std::string;
 
+    struct carefree_exception_name {
+        string cls_name;
+        carefree_exception_name() { cls_name = "carefree_exception"; }
+    };
+
+    template <class cpp_err_type, class err_name = carefree_exception_name>
+    class carefree_exception {
+    protected:
+        string msg;
+        string cls_name;
+
+    public:
+        using err_type = cpp_err_type;
+        carefree_exception() { cls_name = err_name().cls_name; }
+        carefree_exception(string msg) : msg(msg) { cls_name = err_name().cls_name; }
+        carefree_exception(const char* msg) {
+            this->msg = msg;
+            cls_name = err_name().cls_name;
+        }
+        string what() { return cls_name + " : " + get_msg(); }
+        cpp_err_type get_err() { return err_type(what()); };
+        string get_msg() { return msg; }
+    };
+
+    struct carefree_invalid_argument_name {
+        string cls_name;
+        carefree_invalid_argument_name() { cls_name = "carefree_invalid_argument"; }
+    };
+
+    struct carefree_range_exception_name {
+        string cls_name;
+        carefree_range_exception_name() { cls_name = "carefree_range_exception"; }
+    };
+
+    struct carefree_unsupported_operation_name {
+        string cls_name;
+        carefree_unsupported_operation_name() { cls_name = "carefree_unsupported_operation"; }
+    };
+
+    struct carefree_file_exception_name {
+        string cls_name;
+        carefree_file_exception_name() { cls_name = "carefree_file_exception"; }
+    };
+
+    struct carefree_runtime_exception_name {
+        string cls_name;
+        carefree_runtime_exception_name() { cls_name = "carefree_runtime_exception"; }
+    };
+
+    using carefree_invalid_argument = carefree_exception<std::invalid_argument, carefree_invalid_argument_name>;
+    using carefree_range_exception = carefree_exception<std::out_of_range, carefree_range_exception_name>;
+    using carefree_unsupported_operation = carefree_exception<std::logic_error, carefree_unsupported_operation_name>;
+    using carefree_file_exception = carefree_exception<std::runtime_error, carefree_file_exception_name>;
+    using carefree_runtime_exception = carefree_exception<std::runtime_error, carefree_runtime_exception_name>;
+
+    enum exception_policy {
+        Throw,
+        Ignore,
+        Friendly,
+        Simulate,
+    };
+
+    exception_policy exception_policy_val = exception_policy::Throw;
+
+    exception_policy get_exception_policy() noexcept {
+        return exception_policy_val;
+    }
+
+    template <class T1, class T2>
+    void raise(carefree_exception<T1, T2> err) {
+        switch (get_exception_policy()) {
+            case Throw:
+                throw err.get_err();
+                break;
+            case Ignore:
+                std::fprintf(stderr, "CareFree Library : An Error Occured.\n%s\n", err.what().c_str());
+                break;
+            case Friendly:
+                std::fprintf(stderr, "CareFree Library : An Error Occured.\n%s\n", err.what().c_str());
+                exit(0);
+                break;
+            case Simulate:
+                std::fprintf(stderr, "CareFree Library : An Error Occured.\n%s\n", err.what().c_str());
+                std::terminate();
+                break;
+            default:
+                __builtin_unreachable();
+                std::abort();
+                break;
+        }
+    }
+
+    template <class T>
+    void err_range_checker(T l, T r, string func_name) {
+        string errmsg = func_name + " : " + "l(" + std::to_string(l) + ") > r(" + std::to_string(r) + ").";
+        if (l > r) raise(carefree_range_exception(errmsg));
+    }
+
+    template <class T>
+    void err_unempty_checker(T x, string func_name, string var_name) {
+        string errmsg = func_name + " : " + var_name + " is empty.";
+        if (x.empty()) raise(carefree_invalid_argument(errmsg));
+    }
+
+    template <class T>
+    void err_positive_checker(T x, string func_name, string var_name) {
+        string errmsg = func_name + " : " + var_name + "(" + std::to_string(x) + ") is not positive.";
+        if (x <= 0) raise(carefree_invalid_argument(errmsg));
+    }
+
+    template <class T>
+    void err_natural_checker(T x, string func_name, string var_name) {
+        string errmsg = func_name + " : " + var_name + "(" + std::to_string(x) + ") is not natural.";
+        if (x < 0) raise(carefree_invalid_argument(errmsg));
+    }
+
+    template <class T>
+    void err_inrange_checker(T x, T l, T r, string func_name, string var_name) {
+        string errmsg = func_name + " : " + var_name + "(" + std::to_string(x) + ") is not in range [" + std::to_string(l) + ", " + std::to_string(r) + "].";
+        if (x < l || x > r) raise(carefree_range_exception(errmsg));
+    }
+
+    template <class T>
+    void err_less_checker(T x, T l, string func_name, string var_name) {
+        string errmsg = func_name + " : " + var_name + "(" + std::to_string(x) + ") is not less than " + std::to_string(l) + ".";
+        if (x >= l) raise(carefree_range_exception(errmsg));
+    }
+
+    template <class T>
+    void err_greater_checker(T x, T l, string func_name, string var_name) {
+        string errmsg = func_name + " : " + var_name + "(" + std::to_string(x) + ") is not greater than " + std::to_string(l) + ".";
+        if (x <= l) raise(carefree_range_exception(errmsg));
+    }
+
+    template <class T>
+    void err_leq_checker(T x, T l, string func_name, string var_name) {
+        string errmsg = func_name + " : " + var_name + "(" + std::to_string(x) + ") is not less than or equal to " + std::to_string(l) + ".";
+        if (x > l) raise(carefree_range_exception(errmsg));
+    }
+
+    template <class T>
+    void err_geq_checker(T x, T l, string func_name, string var_name) {
+        string errmsg = func_name + " : " + var_name + "(" + std::to_string(x) + ") is not greater than or equal to " + std::to_string(l) + ".";
+        if (x < l) raise(carefree_range_exception(errmsg));
+    }
+
+    template <class T>
+    void err_equal_checker(T x, T l, string func_name, string var_name) {
+        string errmsg = func_name + " :" + var_name + "(" + std::to_string(x) + ") is not equal to " + std::to_string(l) + ".";
+        if (x != l) raise(carefree_range_exception(errmsg));
+    }
+
+    template <class T>
+    void err_unequal_checker(T x, T l, string func_name, string var_name) {
+        string errmsg = func_name + " : " + var_name + "(" + std::to_string(x) + ") is not unequal to " + std::to_string(l) + ".";
+        if (x == l) raise(carefree_range_exception(errmsg));
+    }
+
+    void set_exception_policy(exception_policy policy) {
+        if (policy != Throw && policy != Ignore && policy != Friendly && policy != Simulate) {
+            raise(carefree_invalid_argument("set_exception_policy : unsupport policy."));
+        }
+        exception_policy_val = policy;
+    }
+
     // type convert
 
     template <class T1, class T2>
@@ -59,7 +224,7 @@ namespace carefree_internal {
             sprintf(buffer, "%%.%dlf", precision);
         else {
             const std::type_info& x = typeid(T);
-            throw std::invalid_argument(join_str("__fts : unsupport type ", x.name()).c_str());
+            raise(carefree_invalid_argument(join_str("__fts : unsupport type ", x.name()).c_str()));
         }
         sprintf(buffer2, buffer, val);
         string str(buffer2);
@@ -98,17 +263,13 @@ namespace carefree_internal {
 
     template <class T>
     T randint(T l, T r) {
-        if (l > r) {
-            throw std::invalid_argument("randint : l > r");
-        }
+        err_range_checker(l, r, __func__);
         return std::uniform_int_distribution<T>(l, r)(public_random_engine);
     }
 
     template <class T>
     T uniform(T l, T r) {
-        if (l > r) {
-            throw std::invalid_argument("uniform : l > r");
-        }
+        err_range_checker(l, r, __func__);
         return std::uniform_real_distribution<T>(l, r)(public_random_engine);
     }
 
@@ -118,7 +279,7 @@ namespace carefree_internal {
 
     template <class T>
     typename T::value_type choice(T val) {
-        if (val.size() == 0) throw std::invalid_argument("choice : val is empty");
+        err_unempty_checker(val, __func__, "val");
         return val[randint(0ull, val.size() - 1)];
     }
 
@@ -132,7 +293,7 @@ namespace carefree_internal {
     template <class T, class Value>
     std::vector<Value> sequence(int n, T function) {
         std::vector<Value> data;
-        if (n <= 0) throw std::invalid_argument("sequence : n must be positive");
+        err_positive_checker(n, __func__, "n");
         for (int i = 1; i <= n; i++) {
             data.push_back(function(i));
         }
@@ -163,7 +324,7 @@ namespace carefree_internal {
 
     template <class T>
     std::vector<T> real_cutting(int length, T total) {
-        if (length <= 0) throw std::invalid_argument("real_cutting : n must be positive");
+        err_positive_checker(length, __func__, "length");
         std::vector<T> data;
         for (int i = length; i >= 2; i--) {
             int tmp = uniform(0.0, total / i * 2);
@@ -177,7 +338,7 @@ namespace carefree_internal {
 
     template <class T>
     std::vector<T> int_cutting(int length, T total) {
-        if (length <= 0) throw std::invalid_argument("int_cutting : n must be positive");
+        err_positive_checker(length, __func__, "length");
         std::vector<double> data = real_cutting(length, (double)total);
         std::vector<T> data2;
         for (int i = 0; i < data.size(); i++) data2.push_back((T)data[i]);
@@ -206,8 +367,8 @@ namespace carefree_internal {
     }  // namespace strsets
 
     string randstr(int length, const string sset = strsets::lower) {
-        if (length <= 0) throw std::invalid_argument("randstr : length must be positive");
-        if (sset.size() == 0) throw std::invalid_argument("randstr : sset must not be empty");
+        err_natural_checker(length, __func__, "length");
+        err_unempty_checker(sset, __func__, "sset");
         string str;
         for (int i = 0; i < length; i++) str += choice(sset);
         return str;
@@ -229,8 +390,8 @@ namespace carefree_internal {
 
     template <class T>
     void gen_data(int subtask_count, int task_per_subtask, T function) {
-        if (subtask_count <= 0) throw std::invalid_argument("gen_data : subtask_count must be positive");
-        if (task_per_subtask <= 0) throw std::invalid_argument("gen_data : task_per_subtask must be positive");
+        err_positive_checker(subtask_count, __func__, "subtask_count");
+        err_positive_checker(task_per_subtask, __func__, "task_per_subtask");
         int total_tasks = subtask_count * task_per_subtask;
         int current_task = 0;
         double average = 0;
@@ -271,7 +432,7 @@ namespace carefree_internal {
 
     template <class T>
     void gen_data(int task_count, T function) {
-        if (task_count <= 0) throw std::invalid_argument("gen_data : task_count must be positive");
+        err_positive_checker(task_count, __func__, "task_count");
         int total_tasks = task_count;
         int current_task = 0;
         double average = 0;
@@ -316,10 +477,10 @@ namespace carefree_internal {
 
     template <class T, class Compare = std::less<T> >
     class BalancedTree {
-       private:
+    private:
         __gnu_pbds::tree<T, __gnu_pbds::null_type, Compare, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update> tree;
 
-       public:
+    public:
         void insert(T x) { tree.insert(x); }
         bool erase(T x) { return tree.erase(x); }
         int rnk(T x) { return tree.order_of_key(x) + 1; }
@@ -333,7 +494,7 @@ namespace carefree_internal {
     using _Weight = long long;
 
     class graph {
-       public:
+    public:
         struct edge {
             int from, to;
             _Weight weight;
@@ -352,7 +513,7 @@ namespace carefree_internal {
             }
         };
 
-       protected:
+    protected:
         struct chain_node {
             int nxt, to;
             _Weight w;
@@ -364,13 +525,13 @@ namespace carefree_internal {
         std::vector<std::map<int, bool> > edge_map;
         std::vector<edge> edge_vct;
 
-       public:
+    public:
         int N;
         bool directed;
         bool enable_edge_map;
 
         graph(int N, bool directed = false, bool enable_edge_map = true) {
-            if (N <= 0) throw std::invalid_argument("graph::graph : N must be positive");
+            err_positive_checker(N, __func__, "N");
             this->N = N;
             this->directed = directed;
             this->enable_edge_map = enable_edge_map;
@@ -379,8 +540,8 @@ namespace carefree_internal {
         }
 
         void add(edge edg, bool __add_vector = true) {
-            if (edg.from > N || edg.to > N) throw std::out_of_range("graph::add : edge out of range");
-            if (edg.from < 0 || edg.to < 0) throw std::out_of_range("graph::add : edge out of range");
+            err_inrange_checker(edg.from, 0, N, __func__, "edg.from");
+            err_inrange_checker(edg.to, 0, N, __func__, "edg.to");
             chain.push_back(chain_node(head[edg.from], edg.to, edg.weight));
             head[edg.from] = chain.size() - 1;
             if (!directed && __add_vector) add(edge(edg.to, edg.from, edg.weight), false);
@@ -393,7 +554,7 @@ namespace carefree_internal {
         }
 
         bool has_edge(edge edg) {
-            if (!enable_edge_map) throw std::logic_error("graph::has_edge : edge map is not enabled");
+            if (!enable_edge_map) raise(carefree_unsupported_operation("has_edge : edge map is not enabled"));
             return edge_map[edg.from][edg.to];
         }
 
@@ -406,8 +567,7 @@ namespace carefree_internal {
         }
 
         std::vector<edge> get_edges(int from) {
-            if (from > N) throw std::out_of_range("graph::get_edges : edge out of range");
-            if (from < 0) throw std::out_of_range("graph::get_edges : edge out of range");
+            err_inrange_checker(from, 0, N, __func__, "from");
             std::vector<edge> edges;
             for (int i = head[from]; ~i; i = chain[i].nxt) edges.push_back(edge(from, chain[i].to, chain[i].w));
             return edges;
@@ -463,9 +623,9 @@ namespace carefree_internal {
         std::vector<int> deg(n + 1, 1);
         prufer.insert(prufer.begin(), 0);
         graph g(n, false);
-        if (prufer.size() != (unsigned)(n - 1)) throw std::invalid_argument("prufer_decode : prufer size must be n-1");
+        if (prufer.size() != (unsigned)(n - 1)) raise(carefree_invalid_argument("prufer_decode : prufer size must be n-1"));
         for (int i = 1; i <= (n - 2); i++) {
-            if (prufer[i] < 1 || prufer[i] > n) throw std::out_of_range("prufer_decode : prufer out of range");
+            err_inrange_checker(prufer[i], 1, n, __func__, "prufer[" + std::to_string(i) + "]");
         }
         for (int i = 1; i <= (n - 2); i++) deg[prufer[i]]++;
         int ptr = 1, leaf = 0;
@@ -645,7 +805,7 @@ namespace carefree_internal {
         graph tree = random_tree(n, weightL, weightR);
         auto depth = get_depth(tree);
         graph ret = externalize(tree);
-        if (m < n) throw std::runtime_error("dag : m should be greater than n");
+        err_geq_checker(m, n, __func__, "m");
         for (int i = n; i <= m; i++) {
             while (true) {
                 int u = randint(1, n);
@@ -663,7 +823,7 @@ namespace carefree_internal {
     graph connected_undirected_graph(int n, int m, bool repeat_edges = false, bool self_loop = false, _Weight weightL = 0, _Weight weightR = 0) {
         graph tree = random_tree(n, weightL, weightR);
         graph ret = tree;
-        if (m < n) throw std::runtime_error("dag : m should be greater than n");
+        err_geq_checker(m, n, __func__, "m");
         for (int i = n; i <= m; i++) {
             while (true) {
                 int u = randint(1, n);
@@ -680,7 +840,7 @@ namespace carefree_internal {
     graph connected_directed_graph(int n, int m, bool repeat_edges = false, bool self_loop = false, _Weight weightL = 0, _Weight weightR = 0) {
         graph tree = random_tree(n, weightL, weightR);
         graph ret = externalize(tree);
-        if (m < n) throw std::runtime_error("dag : m should be greater than n");
+        err_geq_checker(m, n, __func__, "m");
         for (int i = n; i <= m; i++) {
             while (true) {
                 int u = randint(1, n);
@@ -711,23 +871,23 @@ namespace carefree_internal {
 
     // Input & Output
 
-    class testcase_io {
-       protected:
+    class testcase_writer {
+    protected:
         class file_writer {
-           protected:
+        protected:
             std::FILE* fp;
             void _ein() {
-                if (fp == nullptr) throw std::runtime_error("testcase_io::file_writer::_ein : file is not opened.");
+                if (fp == nullptr) raise(carefree_file_exception("testcase_io::file_writer::_ein : file is not opened."));
             }
 
-           public:
+        public:
             string _filename;
             file_writer() {}
             file_writer(const char* filename) {
                 _filename = filename;
                 if (std::strlen(filename)) {
                     fp = std::fopen(filename, "w");
-                    if (fp == NULL) throw std::runtime_error("testcase_io::file_writer::file_writer : cannot open file " + _filename);
+                    if (fp == NULL) raise(carefree_file_exception("testcase_io::file_writer::file_writer : cannot open file " + _filename));
                 } else
                     fp = nullptr;
             }
@@ -773,18 +933,18 @@ namespace carefree_internal {
         bool locked;
 
         void _eil() {
-            if (locked) throw std::runtime_error("testcase_io::_eil : input/output file has already locked.");
+            if (locked) raise(carefree_unsupported_operation("testcase_io::_eil : input/output file has already locked."));
         }
         void lock() { locked = true; }
 
-       public:
-        testcase_io(string input_file, string output_file = "") {
+    public:
+        testcase_writer(string input_file, string output_file = "") {
             fin = new file_writer(input_file.c_str());
             fout = new file_writer(output_file.c_str());
             locked = false;
         }
 
-        testcase_io(string file_prefix, unsigned data_id, string input_suffix = ".in", string output_suffix = ".out", bool disable_output = false) {
+        testcase_writer(string file_prefix, unsigned data_id, string input_suffix = ".in", string output_suffix = ".out", bool disable_output = false) {
             fin = new file_writer((file_prefix + std::to_string(data_id) + input_suffix).c_str());
             if (!disable_output)
                 fout = new file_writer((file_prefix + std::to_string(data_id) + output_suffix).c_str());
@@ -793,7 +953,7 @@ namespace carefree_internal {
             locked = false;
         }
 
-        testcase_io(string file_prefix, unsigned subtask_id, unsigned task_id, string input_suffix = ".in", string output_suffix = ".out", bool disable_output = false) {
+        testcase_writer(string file_prefix, unsigned subtask_id, unsigned task_id, string input_suffix = ".in", string output_suffix = ".out", bool disable_output = false) {
             fin = new file_writer((file_prefix + std::to_string(subtask_id) + "-" + std::to_string(task_id) + input_suffix).c_str());
             if (!disable_output)
                 fout = new file_writer((file_prefix + std::to_string(subtask_id) + "-" + std::to_string(task_id) + output_suffix).c_str());
@@ -982,7 +1142,7 @@ namespace carefree_internal {
         template <class T, typename... Args>
         void input_writeln(T val, Args... args) {
             _eil();
-            input_writeln(val);
+            input_write(val);
             input_write(' ');
             input_writeln(args...);
         }
@@ -990,7 +1150,7 @@ namespace carefree_internal {
         template <class T, typename... Args>
         void output_writeln(T val, Args... args) {
             _eil();
-            output_writeln(val);
+            output_write(val);
             output_write(' ');
             output_writeln(args...);
         }
@@ -1010,7 +1170,7 @@ namespace carefree_internal {
             int stdout_ = dup(fileno(stdout));
             freopen(fout->_filename.c_str(), "w", stdout);
             int returnid = std::system(program.c_str());
-            if (returnid != 0) throw std::runtime_error("testcase_io::output_gen :  program exited with non-zero return code");
+            if (returnid != 0) raise(carefree_runtime_exception("testcase_io::output_gen :  program exited with non-zero return code"));
             dup2(stdin_, fileno(stdin));
             dup2(stdout_, fileno(stdout));
         }
@@ -1023,17 +1183,17 @@ namespace carefree_internal {
             return fout->_filename;
         }
 
-        ~testcase_io() {
+        ~testcase_writer() {
             delete fin;
             delete fout;
         }
     };
 
     class luogu_testcase_config_writer {
-       protected:
+    protected:
         string content;
 
-       public:
+    public:
         luogu_testcase_config_writer() {
             content = "";
         }
@@ -1052,9 +1212,9 @@ namespace carefree_internal {
 
         void save(string filename = "config.yml") {
             FILE* fobj = fopen(filename.c_str(), "w");
-            if (fobj == NULL) throw std::runtime_error("luogu_testcase_config_writer::save : failed to open file " + filename);
+            if (fobj == NULL) raise(carefree_file_exception("luogu_testcase_config_writer::save : failed to open file " + filename));
             fputs(content.c_str(), fobj);
-            if (fclose(fobj) != 0) throw std::runtime_error("luogu_testcase_config_writer::save : failed to close file " + filename);
+            if (fclose(fobj) != 0) raise(carefree_file_exception("luogu_testcase_config_writer::save : failed to close file " + filename));
         }
 
         string to_string() {
@@ -1064,14 +1224,24 @@ namespace carefree_internal {
 }  // namespace carefree_internal
 
 namespace carefree {
+    using carefree_internal::carefree_exception;
+    using carefree_internal::carefree_file_exception;
+    using carefree_internal::carefree_invalid_argument;
+    using carefree_internal::carefree_range_exception;
+    using carefree_internal::carefree_runtime_exception;
+    using carefree_internal::carefree_unsupported_operation;
     using carefree_internal::choice;
+    using carefree_internal::exception_policy;
     using carefree_internal::fts;
+    using carefree_internal::get_exception_policy;
     using carefree_internal::int_cutting;
     using carefree_internal::ltv;
+    using carefree_internal::raise;
     using carefree_internal::randint;
     using carefree_internal::random;
     using carefree_internal::real_cutting;
     using carefree_internal::sequence;
+    using carefree_internal::set_exception_policy;
     using carefree_internal::shuffle;
     using carefree_internal::uniform;
     namespace strsets = carefree_internal::strsets;
@@ -1104,11 +1274,12 @@ namespace carefree {
     using carefree_internal::silkworm;
     using carefree_internal::star;
     using carefree_internal::tail;
-    using carefree_internal::testcase_io;
+    using carefree_internal::testcase_writer;
+    using testcase_io = carefree_internal::testcase_writer;
     using carefree_internal::timer;
     using carefree_internal::unweighted_output;
     using carefree_internal::weighted_output;
 }  // namespace carefree
 
 // notes: if you want to update this code, don't forget to format in the configure under this sentence:
-// {BasedOnStyle: Google,IndentWidth: 4,TabWidth: 4,UseTab: Never,BreakBeforeBraces: Attach,ColumnLimit: 0,NamespaceIndentation: All}
+// {BasedOnStyle: Google,IndentWidth: 4,TabWidth: 4,UseTab: Never,BreakBeforeBraces: Attach,ColumnLimit: 0,NamespaceIndentation: All,AccessModifierOffset : -4}
