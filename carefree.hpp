@@ -14,8 +14,8 @@
 #endif
 
 #define CAREFREE_VERSION_MAJOR 0
-#define CAREFREE_VERSION_MINOR 2
-#define CAREFREE_VERSION "0.2"
+#define CAREFREE_VERSION_MINOR 3
+#define CAREFREE_VERSION "0.3"
 
 #include <unistd.h>
 
