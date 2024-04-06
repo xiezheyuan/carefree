@@ -12,11 +12,24 @@
 #ifndef __GNUC__
 #error "carefree library need GCC compiler or similar"
 #endif
+#ifndef _WIN32
+#ifndef __linux__
+#error "carefree library need Linux or Windows system."
+#else
+#error "carefree library don't support Linux system now.Please wait."
+#endif
+#else
+#include <windows.h>
+#ifdef PSAPI_LINKED
+#include <psapi.h>
+#endif
+#endif
 
 #define CAREFREE_VERSION_MAJOR 0
-#define CAREFREE_VERSION_MINOR 3
-#define CAREFREE_VERSION "0.3"
+#define CAREFREE_VERSION_MINOR 4
+#define CAREFREE_VERSION "0.4"
 
+#include <sys/stat.h>
 #include <unistd.h>
 
 #include <algorithm>
@@ -27,8 +40,10 @@
 #include <ctime>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
+#include <fstream>
 #include <initializer_list>
 #include <iostream>
+#include <numeric>
 #include <queue>
 #include <random>
 #include <stdexcept>
@@ -36,6 +51,25 @@
 #include <type_traits>
 #include <typeinfo>
 #include <vector>
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wliteral-suffix"
+
+#ifdef __cplusplus >= 201703L
+#define maybe_unused [[maybe_unused]]
+#else
+#define maybe_unused __attribute__((unused))
+#endif
+
+constexpr unsigned long long operator"" B(unsigned long long x) { return x; }
+constexpr unsigned long long operator"" KiB(unsigned long long x) { return x * 1024; }
+constexpr unsigned long long operator"" MiB(unsigned long long x) { return x * 1024 * 1024; }
+constexpr unsigned long long operator"" GiB(unsigned long long x) { return x * 1024 * 1024 * 1024; }
+constexpr unsigned long long operator"" TiB(unsigned long long x) { return x * 1024 * 1024 * 1024 * 1024; }
+constexpr unsigned long long operator"" NS(unsigned long long x) { return x; }
+constexpr unsigned long long operator"" MS(unsigned long long x) { return x * 1000 * 1000; }
+constexpr unsigned long long operator"" S(unsigned long long x) { return x * 1000 * 1000 * 1000; }
+constexpr unsigned long long operator"" MIN(unsigned long long x) { return x * 1000 * 1000 * 1000 * 60; }
 
 namespace carefree_internal {
 
@@ -90,11 +124,17 @@ namespace carefree_internal {
         carefree_runtime_exception_name() { cls_name = "carefree_runtime_exception"; }
     };
 
+    struct carefree_system_exception_name {
+        string cls_name;
+        carefree_system_exception_name() { cls_name = "carefree_system_exception"; }
+    };
+
     using carefree_invalid_argument = carefree_exception<std::invalid_argument, carefree_invalid_argument_name>;
     using carefree_range_exception = carefree_exception<std::out_of_range, carefree_range_exception_name>;
     using carefree_unsupported_operation = carefree_exception<std::logic_error, carefree_unsupported_operation_name>;
     using carefree_file_exception = carefree_exception<std::runtime_error, carefree_file_exception_name>;
     using carefree_runtime_exception = carefree_exception<std::runtime_error, carefree_runtime_exception_name>;
+    using carefree_system_exception = carefree_exception<std::runtime_error, carefree_system_exception_name>;
 
     enum exception_policy {
         Throw,
@@ -280,7 +320,7 @@ namespace carefree_internal {
     template <class T>
     typename T::value_type choice(T val) {
         err_unempty_checker(val, __func__, "val");
-        return val[randint(0ull, val.size() - 1)];
+        return val[randint(0ull, val.size() - 1ull)];
     }
 
     template <class T>
@@ -805,7 +845,7 @@ namespace carefree_internal {
         graph tree = random_tree(n, weightL, weightR);
         auto depth = get_depth(tree);
         graph ret = externalize(tree);
-        err_geq_checker(m, n, __func__, "m");
+        err_geq_checker(m, n - 1, __func__, "m");
         for (int i = n; i <= m; i++) {
             while (true) {
                 int u = randint(1, n);
@@ -823,7 +863,7 @@ namespace carefree_internal {
     graph connected_undirected_graph(int n, int m, bool repeat_edges = false, bool self_loop = false, _Weight weightL = 0, _Weight weightR = 0) {
         graph tree = random_tree(n, weightL, weightR);
         graph ret = tree;
-        err_geq_checker(m, n, __func__, "m");
+        err_geq_checker(m, n - 1, __func__, "m");
         for (int i = n; i <= m; i++) {
             while (true) {
                 int u = randint(1, n);
@@ -840,7 +880,7 @@ namespace carefree_internal {
     graph connected_directed_graph(int n, int m, bool repeat_edges = false, bool self_loop = false, _Weight weightL = 0, _Weight weightR = 0) {
         graph tree = random_tree(n, weightL, weightR);
         graph ret = externalize(tree);
-        err_geq_checker(m, n, __func__, "m");
+        err_geq_checker(m, n - 1, __func__, "m");
         for (int i = n; i <= m; i++) {
             while (true) {
                 int u = randint(1, n);
@@ -877,7 +917,7 @@ namespace carefree_internal {
         protected:
             std::FILE* fp;
             void _ein() {
-                if (fp == nullptr) raise(carefree_file_exception("testcase_io::file_writer::_ein : file is not opened."));
+                if (fp == nullptr) raise(carefree_file_exception("testcase_writer::file_writer::_ein : file is not opened."));
             }
 
         public:
@@ -887,7 +927,7 @@ namespace carefree_internal {
                 _filename = filename;
                 if (std::strlen(filename)) {
                     fp = std::fopen(filename, "w");
-                    if (fp == NULL) raise(carefree_file_exception("testcase_io::file_writer::file_writer : cannot open file " + _filename));
+                    if (fp == NULL) raise(carefree_file_exception("testcase_writer::file_writer::file_writer : cannot open file " + _filename));
                 } else
                     fp = nullptr;
             }
@@ -933,7 +973,7 @@ namespace carefree_internal {
         bool locked;
 
         void _eil() {
-            if (locked) raise(carefree_unsupported_operation("testcase_io::_eil : input/output file has already locked."));
+            if (locked) raise(carefree_unsupported_operation("testcase_writer::_eil : input/output file has already locked."));
         }
         void lock() { locked = true; }
 
@@ -1170,7 +1210,7 @@ namespace carefree_internal {
             int stdout_ = dup(fileno(stdout));
             freopen(fout->_filename.c_str(), "w", stdout);
             int returnid = std::system(program.c_str());
-            if (returnid != 0) raise(carefree_runtime_exception("testcase_io::output_gen :  program exited with non-zero return code"));
+            if (returnid != 0) raise(carefree_runtime_exception("testcase_writer::output_gen :  program exited with non-zero return code"));
             dup2(stdin_, fileno(stdin));
             dup2(stdout_, fileno(stdout));
         }
@@ -1188,6 +1228,8 @@ namespace carefree_internal {
             delete fout;
         }
     };
+
+    using testcase_io [[deprecated("use testcase_writer instead.")]] = testcase_writer;
 
     class luogu_testcase_config_writer {
     protected:
@@ -1221,65 +1263,497 @@ namespace carefree_internal {
             return content;
         }
     };
+
+    class process_base {
+    public:
+        virtual void close() = 0;
+        virtual void kill() = 0;
+        virtual bool is_running() const = 0;
+        virtual int return_code() const = 0;
+        virtual int pid() const = 0;
+        virtual size_t memory() const = 0;
+    };
+
+#ifdef _WIN32
+    class process_win : public process_base {
+    private:
+        string command_, input_file_, output_file_;
+        HANDLE process_handle_ = nullptr, hOutputFile = nullptr, hInputFile = nullptr;
+
+    public:
+        process_win(const std::string& cmd, const std::string& input = "", const std::string& output = "")
+            : command_(cmd), input_file_(input), output_file_(output) {
+            _STARTUPINFOA si;
+            PROCESS_INFORMATION pi;
+            ZeroMemory(&si, sizeof(si));
+            si.cb = sizeof(si);
+            ZeroMemory(&pi, sizeof(pi));
+            if (!input_file_.empty()) {
+                SECURITY_ATTRIBUTES saAttr;
+                saAttr.nLength = sizeof(SECURITY_ATTRIBUTES);
+                saAttr.bInheritHandle = TRUE;
+                saAttr.lpSecurityDescriptor = NULL;
+                hInputFile = CreateFileA(input_file_.c_str(), GENERIC_READ, 0, &saAttr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+                if (hInputFile == INVALID_HANDLE_VALUE) {
+                    raise(carefree_file_exception("ProcessWin : failed to open input file " + input_file_));
+                }
+                si.hStdInput = hInputFile;
+            }
+            if (!output_file_.empty()) {
+                SECURITY_ATTRIBUTES saAttr;
+                saAttr.nLength = sizeof(SECURITY_ATTRIBUTES);
+                saAttr.bInheritHandle = TRUE;
+                saAttr.lpSecurityDescriptor = NULL;
+                hOutputFile = CreateFileA(output_file_.c_str(), GENERIC_WRITE, 0, &saAttr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+                if (hOutputFile == INVALID_HANDLE_VALUE) {
+                    raise(carefree_file_exception("ProcessWin : failed to open output file " + output_file_));
+                }
+                si.hStdOutput = hOutputFile;
+                si.hStdError = NULL;
+                si.dwFlags |= STARTF_USESTDHANDLES;
+            }
+            if (!CreateProcessA(NULL, (char*)(command_.c_str()), NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi)) {
+                raise(carefree_system_exception("ProcessWin : failed to create process " + command_));
+            }
+            CloseHandle(pi.hThread);
+            process_handle_ = pi.hProcess;
+        }
+
+        void close() {
+            if (process_handle_ != nullptr) {
+                CloseHandle(process_handle_);
+            }
+            if (hInputFile != nullptr) CloseHandle(hInputFile);
+            if (hOutputFile != nullptr) {
+                FlushFileBuffers(hOutputFile);
+                CloseHandle(hOutputFile);
+            }
+        }
+
+        ~process_win() {
+            close();
+        }
+
+        void kill() {
+            if (is_running())
+                TerminateProcess(process_handle_, 1);
+        }
+
+        bool is_running() const {
+            DWORD exit_code;
+            if (GetExitCodeProcess(process_handle_, &exit_code) && exit_code == STILL_ACTIVE) {
+                return true;
+            }
+            return false;
+        }
+
+        int return_code() const {
+            DWORD exit_code;
+            if (!GetExitCodeProcess(process_handle_, &exit_code) || exit_code == STILL_ACTIVE) {
+                raise(carefree_system_exception("return_code : process has not yet terminated."));
+            }
+            return static_cast<int>(exit_code);
+        }
+
+        int pid() const {
+            return (int)GetProcessId(process_handle_);
+        }
+
+        size_t memory() const {
+#ifdef PSAPI_LINKED
+            PROCESS_MEMORY_COUNTERS_EX pmc;
+            ZeroMemory(&pmc, sizeof(pmc));
+            pmc.cb = sizeof(pmc);
+            if (!GetProcessMemoryInfo(process_handle_, (PROCESS_MEMORY_COUNTERS*)&pmc, sizeof(pmc))) {
+                throw std::runtime_error("Failed to retrieve process memory information.");
+            }
+            return (size_t)pmc.PrivateUsage;
+#else
+            return 0ull;
+#endif
+        }
+    };
+    using process = process_win;
+#endif
+
+    enum judge_result_type {
+        Accepted,
+        WrongAnswer,
+        TimeLimitExceeded,
+        MemoryLimitExceeded,
+        RuntimeError,
+        CompileError,
+        PresentationError,
+        OutputLimitExceeded,
+        UnknownError,
+        JudgeFailed,
+        PartiallyCorrect,
+        Skipped,
+    };
+
+    string jrt2s(judge_result_type type) {
+        switch (type) {
+            case Accepted:
+                return "Accepted";
+            case WrongAnswer:
+                return "Wrong Answer";
+            case TimeLimitExceeded:
+                return "Time Limit Exceeded";
+            case MemoryLimitExceeded:
+                return "Memory Limit Exceeded";
+            case RuntimeError:
+                return "Runtime Error";
+            case CompileError:
+                return "Compile Error";
+            case PresentationError:
+                return "Presentation Error";
+            case OutputLimitExceeded:
+                return "Output Limit Exceeded";
+            case UnknownError:
+                return "Unknown Error";
+            case JudgeFailed:
+                return "Judge Failed";
+            case PartiallyCorrect:
+                return "Partially Correct";
+            case Skipped:
+                return "Skipped";
+            default:
+                return "Unknown Error";
+        }
+        return "Unknown Error";
+    }
+
+    string jrt2sf(judge_result_type type) {
+        switch (type) {
+            case Accepted:
+                return "AC";
+            case WrongAnswer:
+                return "WA";
+            case TimeLimitExceeded:
+                return "TLE";
+            case MemoryLimitExceeded:
+                return "MLE";
+            case RuntimeError:
+                return "RE";
+            case CompileError:
+                return "CE";
+            case PresentationError:
+                return "PE";
+            case OutputLimitExceeded:
+                return "OLE";
+            case UnknownError:
+                return "UKE";
+            case JudgeFailed:
+                return "JF";
+            case PartiallyCorrect:
+                return "PC";
+            case Skipped:
+                return "SK";
+            default:
+                return "UKE";
+        }
+        return "UKE";
+    }
+
+    using ull = unsigned long long;
+
+    struct judge_result {
+        judge_result_type type;
+        string message;
+        double ratio;
+        ull time;
+        ull memory;
+
+        string to_str() const {
+            string ret = jrt2s(type) + "\t" + message + "\t";
+            ret += std::to_string(time / 1000.0 / 1000.0) + "ms\t";
+            ret += std::to_string(memory / 1024.0 / 1024.0) + "MB\t";
+            ret += std::to_string(ratio * 100) + "%";
+            return ret;
+        }
+    };
+
+    std::vector<string> __split(const string& str, string delims) {
+        std::vector<string> tokens;
+        string tmp;
+        for (auto it = str.begin(); it != str.end(); ++it) {
+            if (delims.find(*it) != string::npos) {
+                tokens.push_back(tmp);
+                tmp.clear();
+                continue;
+            }
+            tmp += *it;
+        }
+        tokens.push_back(tmp);
+        return tokens;
+    }
+
+    class comparator {
+    public:
+        class readable {
+        public:
+            virtual string read() = 0;
+        };
+
+        class file : public readable {
+        private:
+            string filename_;
+
+        public:
+            file(const string& filename) : filename_(filename) {}
+            string read() {
+                std::ifstream file(filename_, std::ios::in);
+                if (!file.is_open()) {
+                    raise(carefree_file_exception("read : failed to open file " + filename_));
+                }
+                string content;
+                while (file.good()) {
+                    string line;
+                    std::getline(file, line);
+                    content += line + '\n';
+                }
+                file.close();
+                return content;
+            }
+        };
+
+        class text : public readable {
+        private:
+            string content_;
+
+        public:
+            text(const string& content) : content_(content) {}
+            string read() { return content_; }
+        };
+
+        virtual judge_result from_text(const string& text1, const string& text2) = 0;
+
+        virtual judge_result from_file(const string& filename1, const string& filename2) {
+            return from_text(file(filename1).read(), file(filename2).read());
+        }
+
+        template <class T1, class T2>
+        judge_result operator()(T1 a, T2 b) {
+            return from_text(a.read(), b.read());
+        }
+
+        virtual judge_result test(const string& input_path maybe_unused, const string& output_path, const string& answer_path) {
+            return from_file(answer_path, output_path);
+        }
+    };
+
+    using creadable = comparator::readable;
+    using ctext = comparator::text;
+    using cfile = comparator::file;
+
+    class strict_comparator_naive : public comparator {
+    public:
+        judge_result from_text(const string& text1, const string& text2) {
+            if (text1 == text2) {
+                return {Accepted, "correct", 1.0, 0ull, 0ull};
+            }
+            return {WrongAnswer, "not correct", 0.0, 0ull, 0ull};
+        }
+    };
+
+    class strict_comparator : public comparator {
+    public:
+        judge_result from_text(const string& text1, const string& text2) {
+            auto lines1 = __split(text1, "\n");
+            auto lines2 = __split(text2, "\n");
+            if (lines1.size() != lines2.size()) {
+                string errmsg = "expected " + std::to_string(lines1.size()) + " line(s), but got " + std::to_string(lines2.size()) + " line(s).";
+                return {WrongAnswer, errmsg, 0.0, 0ull, 0ull};
+            }
+            for (ull i = 0; i < lines1.size(); ++i) {
+                if (lines1[i] != lines2[i]) {
+                    string errmsg = "at line " + std::to_string(i + 1);
+                    errmsg += ", expected \"" + lines1[i] + "\"";
+                    errmsg += ", but got \"" + lines2[i] + "\".";
+                    return {WrongAnswer, errmsg, 0.0, 0ull, 0ull};
+                }
+            }
+            return {Accepted, "correct", 1.0, 0ull, 0ull};
+        }
+    };
+
+    class token_comparator : public comparator {
+    public:
+        judge_result from_text(const string& text1, const string& text2) {
+            auto tokens1_ = __split(text1, " \t\r\n");
+            auto tokens2_ = __split(text2, " \t\r\n");
+            std::vector<string> tokens1, tokens2;
+            std::copy_if(tokens1_.begin(), tokens1_.end(), std::back_inserter(tokens1), [](const string& s) { return s != ""; });
+            std::copy_if(tokens2_.begin(), tokens2_.end(), std::back_inserter(tokens2), [](const string& s) { return s != ""; });
+            if (tokens1.size() != tokens2.size()) {
+                string errmsg = "expected " + std::to_string(tokens1.size()) + " token(s), but got " + std::to_string(tokens2.size()) + " token(s).";
+                return {WrongAnswer, errmsg, 0.0, 0, 0};
+            }
+            for (ull i = 0; i < tokens1.size(); ++i) {
+                if (tokens1[i] != tokens2[i]) {
+                    string errmsg = "at token " + std::to_string(i + 1);
+                    errmsg += ", expected \"" + tokens1[i] + "\"";
+                    errmsg += ", but got \"" + tokens2[i] + "\".";
+                    return {WrongAnswer, errmsg, 0.0, 0ull, 0ull};
+                }
+            }
+            return {Accepted, "correct", 1.0, 0ull, 0ull};
+        }
+    };
+
+    struct limprog {
+        string program;
+        ull time;
+        ull memory;
+
+        limprog(string program, ull time, ull memory) : program(program), time(time), memory(memory) {}
+    };
+
+    judge_result limited_run(limprog prog, const string& input_file, const string& output_file) {
+        auto start = std::chrono::system_clock::now();
+        ull memory = 0, tim = 0;
+        process proc(prog.program, input_file, output_file);
+        while (proc.is_running()) {
+            auto now = std::chrono::system_clock::now();
+            tim = std::chrono::duration_cast<std::chrono::nanoseconds>(now - start).count();
+            if (tim > prog.time) {
+                proc.kill();
+                return {TimeLimitExceeded, "time limit exceeded.", 0.0, tim, memory};
+            }
+            memory = std::max(memory, proc.memory());
+            if (memory > prog.memory) {
+                proc.kill();
+                return {MemoryLimitExceeded, "memory limit exceeded.", 0.0, tim, memory};
+            }
+        }
+        if (proc.return_code() != 0) {
+            return {RuntimeError, "program finished with exit non-zero code " + std::to_string(proc.return_code()) + ".", 0.0, tim, memory};
+        }
+        return {Accepted, "program finished successfully.", 1.0, tim, memory};
+    }
+
+    ull nextid() {
+        static ull id;
+        return ++id;
+    }
+
+    template <class T>
+    judge_result judge(limprog prog, const string& input_file, const string& answer_file, T cmp, bool ole_check = true) {
+        string output_file;
+        auto is_file_creatable = [&](string filename) {
+            if (access(filename.c_str(), F_OK) != -1) return false;
+            std::ofstream f(filename, std::ios::out);
+            if (f.is_open()) {
+                f.close();
+                std::remove(filename.c_str());
+                return true;
+            }
+            return false;
+        };
+        do {
+            output_file = "carefree_output_" + std::to_string(nextid()) + ".out";
+        } while (!is_file_creatable(output_file));
+        judge_result ans = limited_run(prog, input_file, output_file);
+        if (ans.type != Accepted) {
+            std::remove(output_file.c_str());
+            return ans;
+        }
+        if (ole_check) {
+            struct stat output_stat {};
+            stat(output_file.c_str(), &output_stat);
+            struct stat answer_stat {};
+            stat(answer_file.c_str(), &answer_stat);
+            if (output_stat.st_size > answer_stat.st_size * 10) {
+                std::remove(output_file.c_str());
+                return {OutputLimitExceeded, "output limit exceeded.", 0.0, ans.time, ans.memory};
+            }
+        }
+        judge_result ans2 = cmp.test(input_file, output_file, answer_file);
+        std::remove(output_file.c_str());
+        return {ans2.type, ans2.message, ans2.ratio, ans.time, ans.memory};
+    }
+
 }  // namespace carefree_internal
 
 namespace carefree {
+    using carefree_internal::__split;
+    using carefree_internal::binary_tree;
     using carefree_internal::carefree_exception;
     using carefree_internal::carefree_file_exception;
     using carefree_internal::carefree_invalid_argument;
     using carefree_internal::carefree_range_exception;
     using carefree_internal::carefree_runtime_exception;
+    using carefree_internal::carefree_system_exception;
     using carefree_internal::carefree_unsupported_operation;
-    using carefree_internal::choice;
-    using carefree_internal::exception_policy;
-    using carefree_internal::fts;
-    using carefree_internal::get_exception_policy;
-    using carefree_internal::int_cutting;
-    using carefree_internal::ltv;
-    using carefree_internal::raise;
-    using carefree_internal::randint;
-    using carefree_internal::random;
-    using carefree_internal::real_cutting;
-    using carefree_internal::sequence;
-    using carefree_internal::set_exception_policy;
-    using carefree_internal::shuffle;
-    using carefree_internal::uniform;
-    namespace strsets = carefree_internal::strsets;
-    using carefree_internal::binary_tree;
+    using carefree_internal::cfile;
     using carefree_internal::chain;
     using carefree_internal::chain_star;
+    using carefree_internal::choice;
+    using carefree_internal::comparator;
     using carefree_internal::complete;
     using carefree_internal::complete_binary;
     using carefree_internal::connected_directed_graph;
     using carefree_internal::connected_undirected_graph;
+    using carefree_internal::creadable;
+    using carefree_internal::ctext;
     using carefree_internal::dag;
     using carefree_internal::edge;
+    using carefree_internal::exception_policy;
     using carefree_internal::externalize;
     using carefree_internal::firecrackers;
     using carefree_internal::flower;
+    using carefree_internal::fts;
     using carefree_internal::gen_data;
     using carefree_internal::get_depth;
+    using carefree_internal::get_exception_policy;
     using carefree_internal::graph;
+    using carefree_internal::int_cutting;
     using carefree_internal::introvert;
     using carefree_internal::is_tree;
+    using carefree_internal::jrt2s;
+    using carefree_internal::jrt2sf;
+    using carefree_internal::judge;
+    using carefree_internal::judge_result;
+    using carefree_internal::judge_result_type;
+    using carefree_internal::limited_run;
+    using carefree_internal::limprog;
     using carefree_internal::lowhigh;
+    using carefree_internal::ltv;
     using carefree_internal::luogu_testcase_config_writer;
     using carefree_internal::max_degree;
     using carefree_internal::naive_tree;
+    using carefree_internal::nextid;
+    using carefree_internal::process;
+    using carefree_internal::process_base;
     using carefree_internal::prufer_decode;
+    using carefree_internal::raise;
+    using carefree_internal::randint;
+    using carefree_internal::random;
     using carefree_internal::random_graph;
     using carefree_internal::random_tree;
     using carefree_internal::randstr;
+    using carefree_internal::real_cutting;
     using carefree_internal::relabel;
+    using carefree_internal::sequence;
+    using carefree_internal::set_exception_policy;
+    using carefree_internal::shuffle;
     using carefree_internal::silkworm;
     using carefree_internal::star;
+    using carefree_internal::strict_comparator;
+    using carefree_internal::strict_comparator_naive;
     using carefree_internal::tail;
+    using carefree_internal::testcase_io;
     using carefree_internal::testcase_writer;
-    using testcase_io = carefree_internal::testcase_writer;
     using carefree_internal::timer;
+    using carefree_internal::token_comparator;
+    using carefree_internal::uniform;
     using carefree_internal::unweighted_output;
     using carefree_internal::weighted_output;
+
+    namespace strsets = carefree_internal::strsets;
 }  // namespace carefree
+
+#pragma GCC diagnostic pop
 
 // notes: if you want to update this code, don't forget to format in the configure under this sentence:
 // {BasedOnStyle: Google,IndentWidth: 4,TabWidth: 4,UseTab: Never,BreakBeforeBraces: Attach,ColumnLimit: 0,NamespaceIndentation: All,AccessModifierOffset : -4}
