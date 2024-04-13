@@ -1,0 +1,871 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Carefree: carefree.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Carefree<span id="projectnumber">&#160;0.5</span>
+   </div>
+   <div id="projectbrief">CareFree Library - A Light Data Generator for OI &amp; ACM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">carefree.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;io.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;ext/pb_ds/assoc_container.hpp&gt;</code><br />
+<code>#include &lt;ext/pb_ds/tree_policy.hpp&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;initializer_list&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;numeric&gt;</code><br />
+<code>#include &lt;queue&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;typeinfo&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+carefree.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="carefree_8hpp__incl.png" border="0" usemap="#acarefree_8hpp" alt=""/></div>
+<map name="acarefree_8hpp" id="acarefree_8hpp">
+<area shape="rect" title=" " alt="" coords="1287,5,1379,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,48,107"/>
+<area shape="poly" title=" " alt="" coords="1287,23,1050,26,702,35,340,53,185,66,64,83,63,78,184,61,340,48,702,30,1050,21,1287,18"/>
+<area shape="rect" title=" " alt="" coords="72,80,152,107"/>
+<area shape="poly" title=" " alt="" coords="1287,22,1108,23,834,29,507,47,336,63,167,83,167,77,335,57,506,42,834,24,1108,17,1287,17"/>
+<area shape="rect" title=" " alt="" coords="176,80,243,107"/>
+<area shape="poly" title=" " alt="" coords="1287,22,1120,22,868,28,568,46,412,62,258,83,258,77,412,57,568,41,868,23,1120,17,1287,17"/>
+<area shape="rect" title=" " alt="" coords="267,80,341,107"/>
+<area shape="poly" title=" " alt="" coords="1286,23,1134,25,906,33,636,51,496,65,357,83,356,77,495,59,636,45,906,27,1133,19,1286,17"/>
+<area shape="rect" title=" " alt="" coords="366,80,426,107"/>
+<area shape="poly" title=" " alt="" coords="1287,22,1146,24,939,32,694,50,567,64,441,83,441,77,566,59,694,45,938,26,1146,19,1287,17"/>
+<area shape="rect" title=" " alt="" coords="450,80,507,107"/>
+<area shape="poly" title=" " alt="" coords="1287,23,1157,25,970,33,750,51,636,65,523,82,522,77,635,59,749,45,969,27,1157,19,1287,17"/>
+<area shape="rect" title=" " alt="" coords="530,80,590,107"/>
+<area shape="poly" title=" " alt="" coords="1287,23,1169,27,1002,36,807,54,605,82,604,77,806,48,1001,31,1169,21,1286,18"/>
+<area shape="rect" title=" " alt="" coords="614,80,674,107"/>
+<area shape="poly" title=" " alt="" coords="1287,24,1035,39,866,56,690,83,689,77,865,51,1035,34,1286,19"/>
+<area shape="rect" title=" " alt="" coords="699,80,752,107"/>
+<area shape="poly" title=" " alt="" coords="1287,24,1066,40,920,57,768,82,767,77,919,52,1066,35,1286,19"/>
+<area shape="rect" title=" " alt="" coords="776,80,978,107"/>
+<area shape="poly" title=" " alt="" coords="1287,30,973,80,972,74,1286,25"/>
+<area shape="rect" title=" " alt="" coords="1003,80,1173,107"/>
+<area shape="poly" title=" " alt="" coords="1291,35,1146,78,1145,73,1290,30"/>
+<area shape="rect" title=" " alt="" coords="1197,80,1261,107"/>
+<area shape="poly" title=" " alt="" coords="1317,35,1261,73,1258,69,1314,30"/>
+<area shape="rect" title=" " alt="" coords="1285,80,1381,107"/>
+<area shape="poly" title=" " alt="" coords="1336,33,1336,64,1331,64,1331,33"/>
+<area shape="rect" title=" " alt="" coords="1405,80,1472,107"/>
+<area shape="poly" title=" " alt="" coords="1353,30,1409,69,1406,73,1350,35"/>
+<area shape="rect" title=" " alt="" coords="1496,80,1568,107"/>
+<area shape="poly" title=" " alt="" coords="1369,30,1484,72,1482,77,1367,35"/>
+<area shape="rect" title=" " alt="" coords="1591,80,1638,107"/>
+<area shape="poly" title=" " alt="" coords="1380,27,1468,48,1577,77,1576,82,1467,53,1379,33"/>
+<area shape="rect" title=" " alt="" coords="1662,80,1730,107"/>
+<area shape="poly" title=" " alt="" coords="1380,25,1498,46,1648,77,1647,82,1497,52,1379,31"/>
+<area shape="rect" title=" " alt="" coords="1753,80,1809,107"/>
+<area shape="poly" title=" " alt="" coords="1380,22,1535,41,1635,57,1738,77,1737,82,1634,62,1534,46,1379,27"/>
+<area shape="rect" title=" " alt="" coords="1833,80,1897,107"/>
+<area shape="poly" title=" " alt="" coords="1380,21,1568,39,1691,56,1818,77,1818,82,1690,61,1567,45,1380,26"/>
+<area shape="rect" title=" " alt="" coords="1922,80,1990,107"/>
+<area shape="poly" title=" " alt="" coords="1380,20,1603,37,1752,54,1907,77,1906,83,1752,59,1603,43,1380,25"/>
+<area shape="rect" title=" " alt="" coords="2014,80,2092,107"/>
+<area shape="poly" title=" " alt="" coords="1380,19,1640,36,1816,53,1999,77,1998,82,1815,58,1639,41,1380,25"/>
+<area shape="rect" title=" " alt="" coords="2116,80,2169,107"/>
+<area shape="poly" title=" " alt="" coords="1380,17,1503,20,1680,28,1887,46,1994,60,2101,77,2100,83,1994,65,1886,51,1680,33,1503,25,1380,23"/>
+<area shape="rect" title=" " alt="" coords="2193,80,2276,107"/>
+<area shape="poly" title=" " alt="" coords="1380,18,1514,22,1710,32,1940,49,2178,77,2178,82,1939,55,1709,37,1514,28,1380,24"/>
+<area shape="rect" title=" " alt="" coords="2300,80,2366,107"/>
+<area shape="poly" title=" " alt="" coords="1380,17,1529,18,1751,26,2014,44,2150,59,2285,77,2285,83,2150,64,2013,50,1751,31,1529,24,1380,22"/>
+<area shape="rect" title=" " alt="" coords="2391,80,2446,107"/>
+<area shape="poly" title=" " alt="" coords="1380,19,1859,36,2151,54,2277,65,2376,78,2375,83,2276,70,2151,59,1859,42,1379,24"/>
+</map>
+</div>
+</div>
+<p><a href="carefree_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1carefree__exception__name.html">carefree_internal::carefree_exception_name</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_internal::carefree_exception&lt; cpp_err_type, err_name &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1carefree__invalid__argument__name.html">carefree_internal::carefree_invalid_argument_name</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1carefree__range__exception__name.html">carefree_internal::carefree_range_exception_name</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1carefree__unsupported__operation__name.html">carefree_internal::carefree_unsupported_operation_name</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1carefree__file__exception__name.html">carefree_internal::carefree_file_exception_name</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1carefree__runtime__exception__name.html">carefree_internal::carefree_runtime_exception_name</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1carefree__system__exception__name.html">carefree_internal::carefree_system_exception_name</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1_balanced_tree.html">carefree_internal::BalancedTree&lt; T, Compare &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1graph.html">carefree_internal::graph</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">carefree_internal::graph::edge</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1graph_1_1weighted__output.html">carefree_internal::graph::weighted_output</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1graph_1_1unweighted__output.html">carefree_internal::graph::unweighted_output</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1graph_1_1chain__node.html">carefree_internal::graph::chain_node</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1testcase__writer.html">carefree_internal::testcase_writer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1testcase__writer_1_1file__writer.html">carefree_internal::testcase_writer::file_writer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1luogu__testcase__config__writer.html">carefree_internal::luogu_testcase_config_writer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1process__base.html">carefree_internal::process_base</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1judge__result.html">carefree_internal::judge_result</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1comparator.html">carefree_internal::comparator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1comparator_1_1readable.html">carefree_internal::comparator::readable</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1comparator_1_1file.html">carefree_internal::comparator::file</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1comparator_1_1text.html">carefree_internal::comparator::text</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1strict__comparator__naive.html">carefree_internal::strict_comparator_naive</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1strict__comparator.html">carefree_internal::strict_comparator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1token__comparator.html">carefree_internal::token_comparator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1testlib__comparator.html">carefree_internal::testlib_comparator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1limprog.html">carefree_internal::limprog</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1____enum__shortcut.html">carefree_internal::__enum_shortcut</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespacecarefree__internal" id="r_namespacecarefree__internal"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html">carefree_internal</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecarefree__internal_1_1strsets" id="r_namespacecarefree__internal_1_1strsets"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html">carefree_internal::strsets</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecarefree__internal_1_1cpp__warnings" id="r_namespacecarefree__internal_1_1cpp__warnings"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1cpp__warnings.html">carefree_internal::cpp_warnings</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecarefree" id="r_namespacecarefree"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree.html">carefree</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a098933aaf71bca8d9237bd60b41d0d74" id="r_a098933aaf71bca8d9237bd60b41d0d74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a098933aaf71bca8d9237bd60b41d0d74">CAREFREE_VERSION_MAJOR</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a098933aaf71bca8d9237bd60b41d0d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b8ab4978bff68142785fe5ec877db2" id="r_af6b8ab4978bff68142785fe5ec877db2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6b8ab4978bff68142785fe5ec877db2">CAREFREE_VERSION_MINOR</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:af6b8ab4978bff68142785fe5ec877db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a503ef93024815ab9a34c100776a063d3" id="r_a503ef93024815ab9a34c100776a063d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a503ef93024815ab9a34c100776a063d3">CAREFREE_VERSION</a>&#160;&#160;&#160;&quot;0.5&quot;</td></tr>
+<tr class="separator:a503ef93024815ab9a34c100776a063d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a209f2e04922e102ff5e0cb60206201dc" id="r_a209f2e04922e102ff5e0cb60206201dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a209f2e04922e102ff5e0cb60206201dc">maybe_unused</a>&#160;&#160;&#160;__attribute__((unused))</td></tr>
+<tr class="separator:a209f2e04922e102ff5e0cb60206201dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ae15a5dd03f1af6cd415bd0aeed56f53b" id="r_ae15a5dd03f1af6cd415bd0aeed56f53b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ae15a5dd03f1af6cd415bd0aeed56f53b">carefree_internal::carefree_invalid_argument</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::invalid_argument, <a class="el" href="structcarefree__internal_1_1carefree__invalid__argument__name.html">carefree_invalid_argument_name</a>&gt;</td></tr>
+<tr class="separator:ae15a5dd03f1af6cd415bd0aeed56f53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb0431ddb90f4616d9da37ff1e7d1f7c" id="r_acb0431ddb90f4616d9da37ff1e7d1f7c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#acb0431ddb90f4616d9da37ff1e7d1f7c">carefree_internal::carefree_range_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::out_of_range, <a class="el" href="structcarefree__internal_1_1carefree__range__exception__name.html">carefree_range_exception_name</a>&gt;</td></tr>
+<tr class="separator:acb0431ddb90f4616d9da37ff1e7d1f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8de6c1be2a5894c71b080934eeca2d3c" id="r_a8de6c1be2a5894c71b080934eeca2d3c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a8de6c1be2a5894c71b080934eeca2d3c">carefree_internal::carefree_unsupported_operation</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::logic_error, <a class="el" href="structcarefree__internal_1_1carefree__unsupported__operation__name.html">carefree_unsupported_operation_name</a>&gt;</td></tr>
+<tr class="separator:a8de6c1be2a5894c71b080934eeca2d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb26e4bf613c6532621e76ca8a5b0da0" id="r_abb26e4bf613c6532621e76ca8a5b0da0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#abb26e4bf613c6532621e76ca8a5b0da0">carefree_internal::carefree_file_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::runtime_error, <a class="el" href="structcarefree__internal_1_1carefree__file__exception__name.html">carefree_file_exception_name</a>&gt;</td></tr>
+<tr class="separator:abb26e4bf613c6532621e76ca8a5b0da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9772461652e22fd7cc7d2dde6567fe71" id="r_a9772461652e22fd7cc7d2dde6567fe71"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a9772461652e22fd7cc7d2dde6567fe71">carefree_internal::carefree_runtime_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::runtime_error, <a class="el" href="structcarefree__internal_1_1carefree__runtime__exception__name.html">carefree_runtime_exception_name</a>&gt;</td></tr>
+<tr class="separator:a9772461652e22fd7cc7d2dde6567fe71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0133331915cd22eea8dc12fd6aeffff3" id="r_a0133331915cd22eea8dc12fd6aeffff3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a0133331915cd22eea8dc12fd6aeffff3">carefree_internal::carefree_system_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::runtime_error, <a class="el" href="structcarefree__internal_1_1carefree__system__exception__name.html">carefree_system_exception_name</a>&gt;</td></tr>
+<tr class="separator:a0133331915cd22eea8dc12fd6aeffff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a434979683f9751403c990badc11d3641" id="r_a434979683f9751403c990badc11d3641"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">carefree_internal::_Weight</a> = long long</td></tr>
+<tr class="separator:a434979683f9751403c990badc11d3641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a871ac0f15c60f96bbfc8b1815ff92d22" id="r_a871ac0f15c60f96bbfc8b1815ff92d22"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a871ac0f15c60f96bbfc8b1815ff92d22">carefree_internal::edge</a> = <a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">graph::edge</a></td></tr>
+<tr class="separator:a871ac0f15c60f96bbfc8b1815ff92d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a160226d478e6907cb18e1cfcba9d25ae" id="r_a160226d478e6907cb18e1cfcba9d25ae"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a160226d478e6907cb18e1cfcba9d25ae">carefree_internal::weighted_output</a> = <a class="el" href="structcarefree__internal_1_1graph_1_1weighted__output.html">graph::weighted_output</a></td></tr>
+<tr class="separator:a160226d478e6907cb18e1cfcba9d25ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5887c76eeb6eba89478de6310bc6cca4" id="r_a5887c76eeb6eba89478de6310bc6cca4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a5887c76eeb6eba89478de6310bc6cca4">carefree_internal::unweighted_output</a> = <a class="el" href="structcarefree__internal_1_1graph_1_1unweighted__output.html">graph::unweighted_output</a></td></tr>
+<tr class="separator:a5887c76eeb6eba89478de6310bc6cca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe929ed78dbe39f784a5cf22e7c3d3bc" id="r_abe929ed78dbe39f784a5cf22e7c3d3bc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#abe929ed78dbe39f784a5cf22e7c3d3bc">carefree_internal::ull</a> = unsigned long long</td></tr>
+<tr class="separator:abe929ed78dbe39f784a5cf22e7c3d3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa449eb54b98a749f3c7f6a97f44bfe02" id="r_aa449eb54b98a749f3c7f6a97f44bfe02"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#aa449eb54b98a749f3c7f6a97f44bfe02">carefree_internal::creadable</a> = <a class="el" href="classcarefree__internal_1_1comparator_1_1readable.html">comparator::readable</a></td></tr>
+<tr class="separator:aa449eb54b98a749f3c7f6a97f44bfe02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40b3d704aebd3ffd8a71caf8bc8043da" id="r_a40b3d704aebd3ffd8a71caf8bc8043da"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a40b3d704aebd3ffd8a71caf8bc8043da">carefree_internal::ctext</a> = <a class="el" href="classcarefree__internal_1_1comparator_1_1text.html">comparator::text</a></td></tr>
+<tr class="separator:a40b3d704aebd3ffd8a71caf8bc8043da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e37f56bb15b4d45bbf001da18d25110" id="r_a3e37f56bb15b4d45bbf001da18d25110"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a3e37f56bb15b4d45bbf001da18d25110">carefree_internal::cfile</a> = <a class="el" href="classcarefree__internal_1_1comparator_1_1file.html">comparator::file</a></td></tr>
+<tr class="separator:a3e37f56bb15b4d45bbf001da18d25110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:acce6a1e8163d2a4b54ba135945ad976c" id="r_acce6a1e8163d2a4b54ba135945ad976c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#acce6a1e8163d2a4b54ba135945ad976c">carefree_internal::exception_policy</a> { <a class="el" href="namespacecarefree__internal.html#acce6a1e8163d2a4b54ba135945ad976ca3c80e272d5db736503d4bf564992dac8">carefree_internal::Throw</a>
+, <a class="el" href="namespacecarefree__internal.html#acce6a1e8163d2a4b54ba135945ad976ca5e80bc658fc87b8b240b8b6e48489e01">carefree_internal::Ignore</a>
+, <a class="el" href="namespacecarefree__internal.html#acce6a1e8163d2a4b54ba135945ad976ca90c670bd510d5c8e32ccf6c7e3ba7273">carefree_internal::Friendly</a>
+, <a class="el" href="namespacecarefree__internal.html#acce6a1e8163d2a4b54ba135945ad976ca0bc819557d52acc337f1e1b591322761">carefree_internal::Simulate</a>
+ }</td></tr>
+<tr class="separator:acce6a1e8163d2a4b54ba135945ad976c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37e3f31011bf29cb5216c612ce7650ac" id="r_a37e3f31011bf29cb5216c612ce7650ac"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650ac">carefree_internal::judge_result_type</a> { <br />
+&#160;&#160;<a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650aca4f538dde89741d10397c10f21a6b19cd">carefree_internal::Accepted</a>
+, <a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650aca98043a2324d666291d565e4487d68cca">carefree_internal::WrongAnswer</a>
+, <a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650acaafdc37d22751600c06a427d2c2c16a5a">carefree_internal::TimeLimitExceeded</a>
+, <a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650aca7dd08efcfbaa70ac4456efa8d7a5950c">carefree_internal::MemoryLimitExceeded</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650acaae6566a92286a549d562116e17fa3f0d">carefree_internal::RuntimeError</a>
+, <a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650acaaffc65413ef3e17a24460abb28f1e56a">carefree_internal::CompileError</a>
+, <a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650acae13e8f134318f9bb3f98d334c3bce4fe">carefree_internal::PresentationError</a>
+, <a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650acac13d425e73b1180fc8f2ef249bb090db">carefree_internal::OutputLimitExceeded</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650aca4d6ca73184575a645e64065cdb482463">carefree_internal::UnknownError</a>
+, <a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650aca95214e7fce08cc8abd6c2ad515e1501c">carefree_internal::JudgeFailed</a>
+, <a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650aca9ac440bd60a75d8e3245d5e6261bf5d5">carefree_internal::PartiallyCorrect</a>
+, <a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650acaca61359e93eecd32ff166877466a7ad6">carefree_internal::Skipped</a>
+<br />
+ }</td></tr>
+<tr class="separator:a37e3f31011bf29cb5216c612ce7650ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316854e1e6b605936f6defa46a96abc1" id="r_a316854e1e6b605936f6defa46a96abc1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1">carefree_internal::optimization_type</a> { <br />
+&#160;&#160;<a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1a151a2af51094fa21a993d5d7a2e7d3e9">carefree_internal::O0</a>
+, <a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1a5e4d6e1a23aba3531e498301008f3b0c">carefree_internal::O1</a>
+, <a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1ac826b0faeef29d79d3d58aac628d2fed">carefree_internal::O2</a>
+, <a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1a6a0287082ac04a22d81d4e45cd74e27b">carefree_internal::O3</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1ab892440ec854d8f41d86128b2b7352c5">carefree_internal::Ofast</a>
+<br />
+ }</td></tr>
+<tr class="separator:a316854e1e6b605936f6defa46a96abc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2809d5a4fb998172f847741a58cf304" id="r_af2809d5a4fb998172f847741a58cf304"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304">carefree_internal::cpp_version</a> { <br />
+&#160;&#160;<a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304a7c8a66f4c9f7284c6556eb8d1d9f15c3">carefree_internal::Cpp98</a>
+, <a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304ad6f65bb2df2ce206d04cf59defd5185c">carefree_internal::Cpp03</a>
+, <a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304a1dfc86b86ec6077e2f050c1c40293edb">carefree_internal::Cpp11</a>
+, <a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304ad2645e97039a2fc779d3b15fc046ecfc">carefree_internal::Cpp14</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304a7090bb5d443b4e8f7c479a8db0c221fa">carefree_internal::Cpp17</a>
+, <a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304ae88c740c78c4b062c02eb5d155cb2d4a">carefree_internal::Cpp20</a>
+<br />
+ }</td></tr>
+<tr class="separator:af2809d5a4fb998172f847741a58cf304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:af4f48be7d8dda611e97b9ba0b8e08d5b" id="r_af4f48be7d8dda611e97b9ba0b8e08d5b"><td class="memItemLeft" align="right" valign="top">constexpr unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4f48be7d8dda611e97b9ba0b8e08d5b">operator&quot;&quot;B</a> (unsigned long long x)</td></tr>
+<tr class="separator:af4f48be7d8dda611e97b9ba0b8e08d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44e9b1b549371b07dce13decf3e1febc" id="r_a44e9b1b549371b07dce13decf3e1febc"><td class="memItemLeft" align="right" valign="top">constexpr unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44e9b1b549371b07dce13decf3e1febc">operator&quot;&quot;KiB</a> (unsigned long long x)</td></tr>
+<tr class="separator:a44e9b1b549371b07dce13decf3e1febc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74ec65e811e22a9f6d0efec10a83519a" id="r_a74ec65e811e22a9f6d0efec10a83519a"><td class="memItemLeft" align="right" valign="top">constexpr unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74ec65e811e22a9f6d0efec10a83519a">operator&quot;&quot;MiB</a> (unsigned long long x)</td></tr>
+<tr class="separator:a74ec65e811e22a9f6d0efec10a83519a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa102eb5e27f15fafd64e766b286a7a39" id="r_aa102eb5e27f15fafd64e766b286a7a39"><td class="memItemLeft" align="right" valign="top">constexpr unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa102eb5e27f15fafd64e766b286a7a39">operator&quot;&quot;GiB</a> (unsigned long long x)</td></tr>
+<tr class="separator:aa102eb5e27f15fafd64e766b286a7a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526df8d664280e062d5e9489619e2240" id="r_a526df8d664280e062d5e9489619e2240"><td class="memItemLeft" align="right" valign="top">constexpr unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a526df8d664280e062d5e9489619e2240">operator&quot;&quot;TiB</a> (unsigned long long x)</td></tr>
+<tr class="separator:a526df8d664280e062d5e9489619e2240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51a22a843ba1e0707c2c372e6853e72" id="r_af51a22a843ba1e0707c2c372e6853e72"><td class="memItemLeft" align="right" valign="top">constexpr unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af51a22a843ba1e0707c2c372e6853e72">operator&quot;&quot;NS</a> (unsigned long long x)</td></tr>
+<tr class="separator:af51a22a843ba1e0707c2c372e6853e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef3803a86bca7ed2953836e3bf18e56" id="r_a6ef3803a86bca7ed2953836e3bf18e56"><td class="memItemLeft" align="right" valign="top">constexpr unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ef3803a86bca7ed2953836e3bf18e56">operator&quot;&quot;MS</a> (unsigned long long x)</td></tr>
+<tr class="separator:a6ef3803a86bca7ed2953836e3bf18e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a924d894a38cffbc4b040220ae5ced8f6" id="r_a924d894a38cffbc4b040220ae5ced8f6"><td class="memItemLeft" align="right" valign="top">constexpr unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a924d894a38cffbc4b040220ae5ced8f6">operator&quot;&quot;S</a> (unsigned long long x)</td></tr>
+<tr class="separator:a924d894a38cffbc4b040220ae5ced8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66a639f4b2aa640b646c147126518ac0" id="r_a66a639f4b2aa640b646c147126518ac0"><td class="memItemLeft" align="right" valign="top">constexpr unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66a639f4b2aa640b646c147126518ac0">operator&quot;&quot;MIN</a> (unsigned long long x)</td></tr>
+<tr class="separator:a66a639f4b2aa640b646c147126518ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa840398f5d5a721a2064e7673224a891" id="r_aa840398f5d5a721a2064e7673224a891"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecarefree__internal.html#acce6a1e8163d2a4b54ba135945ad976c">exception_policy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891">carefree_internal::get_exception_policy</a> () noexcept</td></tr>
+<tr class="separator:aa840398f5d5a721a2064e7673224a891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7cf10e69ae95657808b0308441f1c53" id="r_ad7cf10e69ae95657808b0308441f1c53"><td class="memTemplParams" colspan="2">template&lt;class T1 , class T2 &gt; </td></tr>
+<tr class="memitem:ad7cf10e69ae95657808b0308441f1c53"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53">carefree_internal::raise</a> (<a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt; T1, T2 &gt; err)</td></tr>
+<tr class="separator:ad7cf10e69ae95657808b0308441f1c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2462cbf3b9ed45075dac0a1a34d9e855" id="r_a2462cbf3b9ed45075dac0a1a34d9e855"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a2462cbf3b9ed45075dac0a1a34d9e855"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a2462cbf3b9ed45075dac0a1a34d9e855">carefree_internal::err_range_checker</a> (T l, T r, string func_name)</td></tr>
+<tr class="separator:a2462cbf3b9ed45075dac0a1a34d9e855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3caf56c1bad1f2fc2428e06dad2dfd15" id="r_a3caf56c1bad1f2fc2428e06dad2dfd15"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a3caf56c1bad1f2fc2428e06dad2dfd15"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a3caf56c1bad1f2fc2428e06dad2dfd15">carefree_internal::err_unempty_checker</a> (T x, string func_name, string var_name)</td></tr>
+<tr class="separator:a3caf56c1bad1f2fc2428e06dad2dfd15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48b2d6d5959aa283a1010c993015a815" id="r_a48b2d6d5959aa283a1010c993015a815"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a48b2d6d5959aa283a1010c993015a815"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a48b2d6d5959aa283a1010c993015a815">carefree_internal::err_positive_checker</a> (T x, string func_name, string var_name)</td></tr>
+<tr class="separator:a48b2d6d5959aa283a1010c993015a815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e3a4fde0cee8a58e4ac8be866060aa" id="r_a31e3a4fde0cee8a58e4ac8be866060aa"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a31e3a4fde0cee8a58e4ac8be866060aa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a31e3a4fde0cee8a58e4ac8be866060aa">carefree_internal::err_natural_checker</a> (T x, string func_name, string var_name)</td></tr>
+<tr class="separator:a31e3a4fde0cee8a58e4ac8be866060aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a9ffdfe180933b02d7f6d0b5c7366e" id="r_ac0a9ffdfe180933b02d7f6d0b5c7366e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ac0a9ffdfe180933b02d7f6d0b5c7366e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ac0a9ffdfe180933b02d7f6d0b5c7366e">carefree_internal::err_inrange_checker</a> (T x, T l, T r, string func_name, string var_name)</td></tr>
+<tr class="separator:ac0a9ffdfe180933b02d7f6d0b5c7366e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b745bf1ea977f99adef504fcec559c5" id="r_a7b745bf1ea977f99adef504fcec559c5"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a7b745bf1ea977f99adef504fcec559c5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a7b745bf1ea977f99adef504fcec559c5">carefree_internal::err_less_checker</a> (T x, T l, string func_name, string var_name)</td></tr>
+<tr class="separator:a7b745bf1ea977f99adef504fcec559c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0fa69c9401ca4d1e82f4134e4d29f27" id="r_aa0fa69c9401ca4d1e82f4134e4d29f27"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aa0fa69c9401ca4d1e82f4134e4d29f27"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#aa0fa69c9401ca4d1e82f4134e4d29f27">carefree_internal::err_greater_checker</a> (T x, T l, string func_name, string var_name)</td></tr>
+<tr class="separator:aa0fa69c9401ca4d1e82f4134e4d29f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c811dd3b89cbb72ead06f133fbedef4" id="r_a3c811dd3b89cbb72ead06f133fbedef4"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a3c811dd3b89cbb72ead06f133fbedef4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a3c811dd3b89cbb72ead06f133fbedef4">carefree_internal::err_leq_checker</a> (T x, T l, string func_name, string var_name)</td></tr>
+<tr class="separator:a3c811dd3b89cbb72ead06f133fbedef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af770893a3e721ba8bc3182d92203e546" id="r_af770893a3e721ba8bc3182d92203e546"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:af770893a3e721ba8bc3182d92203e546"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#af770893a3e721ba8bc3182d92203e546">carefree_internal::err_geq_checker</a> (T x, T l, string func_name, string var_name)</td></tr>
+<tr class="separator:af770893a3e721ba8bc3182d92203e546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e7ba8e90a4d16a236c1cf2c5fea5d5" id="r_a22e7ba8e90a4d16a236c1cf2c5fea5d5"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a22e7ba8e90a4d16a236c1cf2c5fea5d5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a22e7ba8e90a4d16a236c1cf2c5fea5d5">carefree_internal::err_equal_checker</a> (T x, T l, string func_name, string var_name)</td></tr>
+<tr class="separator:a22e7ba8e90a4d16a236c1cf2c5fea5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad45381cae1707d3af8a4a74ee3347f74" id="r_ad45381cae1707d3af8a4a74ee3347f74"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad45381cae1707d3af8a4a74ee3347f74"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ad45381cae1707d3af8a4a74ee3347f74">carefree_internal::err_unequal_checker</a> (T x, T l, string func_name, string var_name)</td></tr>
+<tr class="separator:ad45381cae1707d3af8a4a74ee3347f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1237a0dc4af4a0c60fa3428dc7559faf" id="r_a1237a0dc4af4a0c60fa3428dc7559faf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a1237a0dc4af4a0c60fa3428dc7559faf">carefree_internal::set_exception_policy</a> (<a class="el" href="namespacecarefree__internal.html#acce6a1e8163d2a4b54ba135945ad976c">exception_policy</a> policy)</td></tr>
+<tr class="separator:a1237a0dc4af4a0c60fa3428dc7559faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5acc27602c3a6220945a753df341aa94" id="r_a5acc27602c3a6220945a753df341aa94"><td class="memTemplParams" colspan="2">template&lt;class T1 , class T2 &gt; </td></tr>
+<tr class="memitem:a5acc27602c3a6220945a753df341aa94"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a5acc27602c3a6220945a753df341aa94">carefree_internal::join_str</a> (T1 a, T2 b)</td></tr>
+<tr class="separator:a5acc27602c3a6220945a753df341aa94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab59dd2f420df39f7a35fcf683435f21f" id="r_ab59dd2f420df39f7a35fcf683435f21f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ab59dd2f420df39f7a35fcf683435f21f"><td class="memTemplItemLeft" align="right" valign="top">string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ab59dd2f420df39f7a35fcf683435f21f">carefree_internal::__fts</a> (T val, unsigned precision=10)</td></tr>
+<tr class="separator:ab59dd2f420df39f7a35fcf683435f21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d74708fcc1b12fe463b4c2fb080c57" id="r_ac4d74708fcc1b12fe463b4c2fb080c57"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ac4d74708fcc1b12fe463b4c2fb080c57">carefree_internal::fts</a> (float val, unsigned precision=10)</td></tr>
+<tr class="separator:ac4d74708fcc1b12fe463b4c2fb080c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaacd4e5afa65d492f009f1670a8abd9" id="r_afaacd4e5afa65d492f009f1670a8abd9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#afaacd4e5afa65d492f009f1670a8abd9">carefree_internal::fts</a> (double val, unsigned precision=10)</td></tr>
+<tr class="separator:afaacd4e5afa65d492f009f1670a8abd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc6b41a837098d6c66f02ab40ec522ed" id="r_abc6b41a837098d6c66f02ab40ec522ed"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#abc6b41a837098d6c66f02ab40ec522ed">carefree_internal::fts</a> (long double val, unsigned precision=10)</td></tr>
+<tr class="separator:abc6b41a837098d6c66f02ab40ec522ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bc602a8aa1d5bb8c6d444744b1c3690" id="r_a0bc602a8aa1d5bb8c6d444744b1c3690"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a0bc602a8aa1d5bb8c6d444744b1c3690"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a0bc602a8aa1d5bb8c6d444744b1c3690">carefree_internal::fts</a> (std::vector&lt; T &gt; val, unsigned precision=10)</td></tr>
+<tr class="separator:a0bc602a8aa1d5bb8c6d444744b1c3690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad12913d4044320df67a911a182146ab8" id="r_ad12913d4044320df67a911a182146ab8"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad12913d4044320df67a911a182146ab8"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ad12913d4044320df67a911a182146ab8">carefree_internal::ltv</a> (std::initializer_list&lt; T &gt; val)</td></tr>
+<tr class="separator:ad12913d4044320df67a911a182146ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd76e6e2b0005838173a512f6065ffe" id="r_a6fd76e6e2b0005838173a512f6065ffe"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a6fd76e6e2b0005838173a512f6065ffe"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a6fd76e6e2b0005838173a512f6065ffe">carefree_internal::randint</a> (T l, T r)</td></tr>
+<tr class="separator:a6fd76e6e2b0005838173a512f6065ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09887492eaf2360f5894c3590a9b4787" id="r_a09887492eaf2360f5894c3590a9b4787"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a09887492eaf2360f5894c3590a9b4787"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a09887492eaf2360f5894c3590a9b4787">carefree_internal::uniform</a> (T l, T r)</td></tr>
+<tr class="separator:a09887492eaf2360f5894c3590a9b4787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c5f61d65de57fbb7aee3efd7a470141" id="r_a3c5f61d65de57fbb7aee3efd7a470141"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a3c5f61d65de57fbb7aee3efd7a470141">carefree_internal::random</a> ()</td></tr>
+<tr class="separator:a3c5f61d65de57fbb7aee3efd7a470141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d47653d8749e7941b9720057b0aadf0" id="r_a5d47653d8749e7941b9720057b0aadf0"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a5d47653d8749e7941b9720057b0aadf0"><td class="memTemplItemLeft" align="right" valign="top">T::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a5d47653d8749e7941b9720057b0aadf0">carefree_internal::choice</a> (T val)</td></tr>
+<tr class="separator:a5d47653d8749e7941b9720057b0aadf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5c92e6032276c5d9ea32c2e5d7f800" id="r_a1b5c92e6032276c5d9ea32c2e5d7f800"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a1b5c92e6032276c5d9ea32c2e5d7f800"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a1b5c92e6032276c5d9ea32c2e5d7f800">carefree_internal::shuffle</a> (T val)</td></tr>
+<tr class="separator:a1b5c92e6032276c5d9ea32c2e5d7f800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a634f5d95230eb05236d5c13ccb89b4a7" id="r_a634f5d95230eb05236d5c13ccb89b4a7"><td class="memTemplParams" colspan="2">template&lt;class T , class Value &gt; </td></tr>
+<tr class="memitem:a634f5d95230eb05236d5c13ccb89b4a7"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; Value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a634f5d95230eb05236d5c13ccb89b4a7">carefree_internal::sequence</a> (int n, T function)</td></tr>
+<tr class="separator:a634f5d95230eb05236d5c13ccb89b4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a6a3986dad6b93b3f5e1349d9699d0" id="r_a00a6a3986dad6b93b3f5e1349d9699d0"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a00a6a3986dad6b93b3f5e1349d9699d0"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a00a6a3986dad6b93b3f5e1349d9699d0">carefree_internal::sequence</a> (int n, T l, T r)</td></tr>
+<tr class="separator:a00a6a3986dad6b93b3f5e1349d9699d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5378211b08ad8b5dc07802647aea1d" id="r_a0c5378211b08ad8b5dc07802647aea1d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a0c5378211b08ad8b5dc07802647aea1d"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a0c5378211b08ad8b5dc07802647aea1d">carefree_internal::sequence</a> (int lengthL, int lengthR, T l, T r)</td></tr>
+<tr class="separator:a0c5378211b08ad8b5dc07802647aea1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cb543eb52061c05520bc89fb4201243" id="r_a3cb543eb52061c05520bc89fb4201243"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a3cb543eb52061c05520bc89fb4201243"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a3cb543eb52061c05520bc89fb4201243">carefree_internal::real_cutting</a> (int length, T total)</td></tr>
+<tr class="separator:a3cb543eb52061c05520bc89fb4201243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712398045d7754abf007d27efbe0bcae" id="r_a712398045d7754abf007d27efbe0bcae"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a712398045d7754abf007d27efbe0bcae"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a712398045d7754abf007d27efbe0bcae">carefree_internal::int_cutting</a> (int length, T total)</td></tr>
+<tr class="separator:a712398045d7754abf007d27efbe0bcae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ef7cdd0bebd841afceaf4cc4dfb1fe" id="r_ae7ef7cdd0bebd841afceaf4cc4dfb1fe"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ae7ef7cdd0bebd841afceaf4cc4dfb1fe">carefree_internal::randstr</a> (int length, const string sset=<a class="el" href="namespacecarefree__internal_1_1strsets.html#a626db64132a86fdc31fec20f5dcac31f">strsets::lower</a>)</td></tr>
+<tr class="separator:ae7ef7cdd0bebd841afceaf4cc4dfb1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc3bd71802747976e3ac8d6e22b0194d" id="r_adc3bd71802747976e3ac8d6e22b0194d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#adc3bd71802747976e3ac8d6e22b0194d">carefree_internal::randstr</a> (int lengthL, int lengthR, const string sset=<a class="el" href="namespacecarefree__internal_1_1strsets.html#a626db64132a86fdc31fec20f5dcac31f">strsets::lower</a>)</td></tr>
+<tr class="separator:adc3bd71802747976e3ac8d6e22b0194d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68b49f91c87c50980e2e784cb982795e" id="r_a68b49f91c87c50980e2e784cb982795e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a68b49f91c87c50980e2e784cb982795e"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a68b49f91c87c50980e2e784cb982795e">carefree_internal::timer</a> (T function)</td></tr>
+<tr class="separator:a68b49f91c87c50980e2e784cb982795e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e6ff2585fa6da34d701b5f07f32c09" id="r_a86e6ff2585fa6da34d701b5f07f32c09"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a86e6ff2585fa6da34d701b5f07f32c09"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a86e6ff2585fa6da34d701b5f07f32c09">carefree_internal::gen_data</a> (int subtask_count, int task_per_subtask, T function)</td></tr>
+<tr class="separator:a86e6ff2585fa6da34d701b5f07f32c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f5cf4ea05219e2c98a82ec198f2230c" id="r_a6f5cf4ea05219e2c98a82ec198f2230c"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a6f5cf4ea05219e2c98a82ec198f2230c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a6f5cf4ea05219e2c98a82ec198f2230c">carefree_internal::gen_data</a> (int task_count, T function)</td></tr>
+<tr class="separator:a6f5cf4ea05219e2c98a82ec198f2230c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde649464e90e04b640d8c6aad8c29a5" id="r_afde649464e90e04b640d8c6aad8c29a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#afde649464e90e04b640d8c6aad8c29a5">carefree_internal::__attribute__</a> ((constructor)) static void init_rnd_seed()</td></tr>
+<tr class="separator:afde649464e90e04b640d8c6aad8c29a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b4b3dc6d3d760807ac733f1aeb5e3a0" id="r_a1b4b3dc6d3d760807ac733f1aeb5e3a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a1b4b3dc6d3d760807ac733f1aeb5e3a0">carefree_internal::is_tree</a> (<a class="el" href="classcarefree__internal_1_1graph.html">graph</a> g)</td></tr>
+<tr class="separator:a1b4b3dc6d3d760807ac733f1aeb5e3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d94a77704f75ed18e98f79eccd2a5e3" id="r_a5d94a77704f75ed18e98f79eccd2a5e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a5d94a77704f75ed18e98f79eccd2a5e3">carefree_internal::relabel</a> (<a class="el" href="classcarefree__internal_1_1graph.html">graph</a> g)</td></tr>
+<tr class="separator:a5d94a77704f75ed18e98f79eccd2a5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af64a6a3d99b90dd3c9c702ca85ddd664" id="r_af64a6a3d99b90dd3c9c702ca85ddd664"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#af64a6a3d99b90dd3c9c702ca85ddd664">carefree_internal::prufer_decode</a> (int n, std::vector&lt; int &gt; prufer, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:af64a6a3d99b90dd3c9c702ca85ddd664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae8ab172aacc881bf0e08bea71d9859" id="r_a1ae8ab172aacc881bf0e08bea71d9859"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a1ae8ab172aacc881bf0e08bea71d9859">carefree_internal::get_depth</a> (<a class="el" href="classcarefree__internal_1_1graph.html">graph</a> g)</td></tr>
+<tr class="separator:a1ae8ab172aacc881bf0e08bea71d9859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08468ea069a9cca1f2e41fbb4b61c760" id="r_a08468ea069a9cca1f2e41fbb4b61c760"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a08468ea069a9cca1f2e41fbb4b61c760">carefree_internal::introvert</a> (<a class="el" href="classcarefree__internal_1_1graph.html">graph</a> tree)</td></tr>
+<tr class="separator:a08468ea069a9cca1f2e41fbb4b61c760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a9c430c576d91175580b3b06298abc" id="r_a61a9c430c576d91175580b3b06298abc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a61a9c430c576d91175580b3b06298abc">carefree_internal::externalize</a> (<a class="el" href="classcarefree__internal_1_1graph.html">graph</a> tree)</td></tr>
+<tr class="separator:a61a9c430c576d91175580b3b06298abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a515d38ea0328bd28511c5ae891e700f9" id="r_a515d38ea0328bd28511c5ae891e700f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a515d38ea0328bd28511c5ae891e700f9">carefree_internal::lowhigh</a> (int n, double low, double high, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:a515d38ea0328bd28511c5ae891e700f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6568ca7a4573592fe32797708ffd5660" id="r_a6568ca7a4573592fe32797708ffd5660"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a6568ca7a4573592fe32797708ffd5660">carefree_internal::naive_tree</a> (int n, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:a6568ca7a4573592fe32797708ffd5660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa850b4d070fcaa5594815fce2fa597" id="r_acaa850b4d070fcaa5594815fce2fa597"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#acaa850b4d070fcaa5594815fce2fa597">carefree_internal::tail</a> (int n, int k, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:acaa850b4d070fcaa5594815fce2fa597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5edaf797754ac7e4771ad7111b8624" id="r_aec5edaf797754ac7e4771ad7111b8624"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#aec5edaf797754ac7e4771ad7111b8624">carefree_internal::chain</a> (int n, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:aec5edaf797754ac7e4771ad7111b8624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4db2cc924563f6be3d91bf8c08fa32b" id="r_ad4db2cc924563f6be3d91bf8c08fa32b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ad4db2cc924563f6be3d91bf8c08fa32b">carefree_internal::star</a> (int n, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:ad4db2cc924563f6be3d91bf8c08fa32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e4f536843cba9540e93e682a58bb239" id="r_a2e4f536843cba9540e93e682a58bb239"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a2e4f536843cba9540e93e682a58bb239">carefree_internal::flower</a> (int n, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:a2e4f536843cba9540e93e682a58bb239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d429d13c51db08341e8224a4f22bf0" id="r_aa1d429d13c51db08341e8224a4f22bf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#aa1d429d13c51db08341e8224a4f22bf0">carefree_internal::max_degree</a> (int n, int k, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:aa1d429d13c51db08341e8224a4f22bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523bf25347d3557fc588632697760acc" id="r_a523bf25347d3557fc588632697760acc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a523bf25347d3557fc588632697760acc">carefree_internal::binary_tree</a> (int n, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:a523bf25347d3557fc588632697760acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7dbc1a16b16dd475afde24d7adf0d1" id="r_aad7dbc1a16b16dd475afde24d7adf0d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#aad7dbc1a16b16dd475afde24d7adf0d1">carefree_internal::chain_star</a> (int n, int k, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:aad7dbc1a16b16dd475afde24d7adf0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e0ef6a072c88600d285a0f09516ad1" id="r_aa1e0ef6a072c88600d285a0f09516ad1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#aa1e0ef6a072c88600d285a0f09516ad1">carefree_internal::silkworm</a> (int n, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:aa1e0ef6a072c88600d285a0f09516ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9435ff722beb77c4643b43781ffcf64b" id="r_a9435ff722beb77c4643b43781ffcf64b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a9435ff722beb77c4643b43781ffcf64b">carefree_internal::firecrackers</a> (int n, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:a9435ff722beb77c4643b43781ffcf64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3a206037445f3e3ec7f383b06e672e7" id="r_ad3a206037445f3e3ec7f383b06e672e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ad3a206037445f3e3ec7f383b06e672e7">carefree_internal::complete</a> (int n, int k, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:ad3a206037445f3e3ec7f383b06e672e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ad83ca88f9ccb6fb56881d86ef38776" id="r_a7ad83ca88f9ccb6fb56881d86ef38776"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a7ad83ca88f9ccb6fb56881d86ef38776">carefree_internal::complete_binary</a> (int n, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:a7ad83ca88f9ccb6fb56881d86ef38776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a322995ed523155f90011208944ae01e0" id="r_a322995ed523155f90011208944ae01e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a322995ed523155f90011208944ae01e0">carefree_internal::random_tree</a> (int n, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:a322995ed523155f90011208944ae01e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28dda1f852ebd11512dd66590a94b96f" id="r_a28dda1f852ebd11512dd66590a94b96f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a28dda1f852ebd11512dd66590a94b96f">carefree_internal::dag</a> (int n, int m, bool repeat_edges=false, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:a28dda1f852ebd11512dd66590a94b96f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b727fafdf70d1ca51cbc3e3d459758b" id="r_a1b727fafdf70d1ca51cbc3e3d459758b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a1b727fafdf70d1ca51cbc3e3d459758b">carefree_internal::connected_undirected_graph</a> (int n, int m, bool repeat_edges=false, bool self_loop=false, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:a1b727fafdf70d1ca51cbc3e3d459758b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724484c7eb7b8b55dd4c794862746903" id="r_a724484c7eb7b8b55dd4c794862746903"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a724484c7eb7b8b55dd4c794862746903">carefree_internal::connected_directed_graph</a> (int n, int m, bool repeat_edges=false, bool self_loop=false, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:a724484c7eb7b8b55dd4c794862746903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f856624a89fda1542731f5e93ca469" id="r_a19f856624a89fda1542731f5e93ca469"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a19f856624a89fda1542731f5e93ca469">carefree_internal::random_graph</a> (int n, int m, bool directed=true, bool repeat_edges=false, bool self_loop=false, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightL=0, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weightR=0)</td></tr>
+<tr class="separator:a19f856624a89fda1542731f5e93ca469"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e0b7d44609ac7b3bb019c158f801326" id="r_a9e0b7d44609ac7b3bb019c158f801326"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a9e0b7d44609ac7b3bb019c158f801326">carefree_internal::jrt2s</a> (<a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650ac">judge_result_type</a> type)</td></tr>
+<tr class="separator:a9e0b7d44609ac7b3bb019c158f801326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ffbe78111ca9676e88b6bd1f5d2d7c6" id="r_a8ffbe78111ca9676e88b6bd1f5d2d7c6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a8ffbe78111ca9676e88b6bd1f5d2d7c6">carefree_internal::jrt2sf</a> (<a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650ac">judge_result_type</a> type)</td></tr>
+<tr class="separator:a8ffbe78111ca9676e88b6bd1f5d2d7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18b20e073e8be5d9cf8359afefb18229" id="r_a18b20e073e8be5d9cf8359afefb18229"><td class="memItemLeft" align="right" valign="top">std::vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a18b20e073e8be5d9cf8359afefb18229">carefree_internal::__split</a> (const string &amp;str, string delims)</td></tr>
+<tr class="separator:a18b20e073e8be5d9cf8359afefb18229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8b45b17bc177784290badeb74b9849" id="r_a1d8b45b17bc177784290badeb74b9849"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecarefree__internal.html#abe929ed78dbe39f784a5cf22e7c3d3bc">ull</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a1d8b45b17bc177784290badeb74b9849">carefree_internal::nextid</a> ()</td></tr>
+<tr class="separator:a1d8b45b17bc177784290badeb74b9849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9d60ad18cc4794375c6038247ec3a5" id="r_a7e9d60ad18cc4794375c6038247ec3a5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a7e9d60ad18cc4794375c6038247ec3a5">carefree_internal::quote</a> (string s)</td></tr>
+<tr class="separator:a7e9d60ad18cc4794375c6038247ec3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcbd0ede3652a0ff10242315e0f913bc" id="r_afcbd0ede3652a0ff10242315e0f913bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcarefree__internal_1_1judge__result.html">judge_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#afcbd0ede3652a0ff10242315e0f913bc">carefree_internal::limited_run</a> (<a class="el" href="structcarefree__internal_1_1limprog.html">limprog</a> prog, const string &amp;input_file, const string &amp;output_file)</td></tr>
+<tr class="separator:afcbd0ede3652a0ff10242315e0f913bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a312c38bc7c04c4e15cc4c9537df362cd" id="r_a312c38bc7c04c4e15cc4c9537df362cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a312c38bc7c04c4e15cc4c9537df362cd">carefree_internal::is_file_creatable</a> (string filename)</td></tr>
+<tr class="separator:a312c38bc7c04c4e15cc4c9537df362cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0feed49559d89500270e80d81f21585e" id="r_a0feed49559d89500270e80d81f21585e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a0feed49559d89500270e80d81f21585e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structcarefree__internal_1_1judge__result.html">judge_result</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a0feed49559d89500270e80d81f21585e">carefree_internal::judge</a> (<a class="el" href="structcarefree__internal_1_1limprog.html">limprog</a> prog, const string &amp;input_file, const string &amp;answer_file, T cmp, bool ole_check=true)</td></tr>
+<tr class="separator:a0feed49559d89500270e80d81f21585e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6134b6a7d0bedb5af81f8b2a9b778d" id="r_a3c6134b6a7d0bedb5af81f8b2a9b778d"><td class="memTemplParams" colspan="2">template&lt;class T1 , class T2 &gt; </td></tr>
+<tr class="memitem:a3c6134b6a7d0bedb5af81f8b2a9b778d"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a3c6134b6a7d0bedb5af81f8b2a9b778d">carefree_internal::combat</a> (<a class="el" href="structcarefree__internal_1_1limprog.html">limprog</a> champion, <a class="el" href="structcarefree__internal_1_1limprog.html">limprog</a> challenger, T1 input_generator, T2 cmp, int times=-1, bool ole_check=true)</td></tr>
+<tr class="separator:a3c6134b6a7d0bedb5af81f8b2a9b778d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a265f8171096f0dd2a6091d7ec25226ab" id="r_a265f8171096f0dd2a6091d7ec25226ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a265f8171096f0dd2a6091d7ec25226ab">carefree_internal::listdir</a> (string path, std::vector&lt; string &gt; &amp;files)</td></tr>
+<tr class="separator:a265f8171096f0dd2a6091d7ec25226ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d2639200483141ca4bdcf281f4212b4" id="r_a3d2639200483141ca4bdcf281f4212b4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a3d2639200483141ca4bdcf281f4212b4">carefree_internal::working_directory</a> ()</td></tr>
+<tr class="separator:a3d2639200483141ca4bdcf281f4212b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bcfc33eab0287f8238f77ca8f967bed" id="r_a2bcfc33eab0287f8238f77ca8f967bed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a2bcfc33eab0287f8238f77ca8f967bed">carefree_internal::autoclear_tmpfiles</a> ()</td></tr>
+<tr class="separator:a2bcfc33eab0287f8238f77ca8f967bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:ad22dd44174629af579e6413a13101438" id="r_ad22dd44174629af579e6413a13101438"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecarefree__internal.html#acce6a1e8163d2a4b54ba135945ad976c">exception_policy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ad22dd44174629af579e6413a13101438">carefree_internal::exception_policy_val</a> = <a class="el" href="namespacecarefree__internal.html#acce6a1e8163d2a4b54ba135945ad976ca3c80e272d5db736503d4bf564992dac8">exception_policy::Throw</a></td></tr>
+<tr class="separator:ad22dd44174629af579e6413a13101438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0631585f99aed23315921157005b025" id="r_ad0631585f99aed23315921157005b025"><td class="memItemLeft" align="right" valign="top">std::mt19937_64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ad0631585f99aed23315921157005b025">carefree_internal::public_random_engine</a></td></tr>
+<tr class="separator:ad0631585f99aed23315921157005b025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626db64132a86fdc31fec20f5dcac31f" id="r_a626db64132a86fdc31fec20f5dcac31f"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#a626db64132a86fdc31fec20f5dcac31f">carefree_internal::strsets::lower</a> = &quot;abcdefghijklmnopqrstuvwxyz&quot;</td></tr>
+<tr class="separator:a626db64132a86fdc31fec20f5dcac31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc290b6501f4059bbb79e53d7ac7b9d7" id="r_abc290b6501f4059bbb79e53d7ac7b9d7"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#abc290b6501f4059bbb79e53d7ac7b9d7">carefree_internal::strsets::upper</a> = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</td></tr>
+<tr class="separator:abc290b6501f4059bbb79e53d7ac7b9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5156cf22a016f7ac3bcfb810cb9949a0" id="r_a5156cf22a016f7ac3bcfb810cb9949a0"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#a5156cf22a016f7ac3bcfb810cb9949a0">carefree_internal::strsets::digit</a> = &quot;0123456789&quot;</td></tr>
+<tr class="separator:a5156cf22a016f7ac3bcfb810cb9949a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad52cae6a557f7415abe913cd6d990adf" id="r_ad52cae6a557f7415abe913cd6d990adf"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#ad52cae6a557f7415abe913cd6d990adf">carefree_internal::strsets::alphanum</a> = <a class="el" href="namespacecarefree__internal_1_1strsets.html#a626db64132a86fdc31fec20f5dcac31f">lower</a> + <a class="el" href="namespacecarefree__internal_1_1strsets.html#abc290b6501f4059bbb79e53d7ac7b9d7">upper</a> + <a class="el" href="namespacecarefree__internal_1_1strsets.html#a5156cf22a016f7ac3bcfb810cb9949a0">digit</a></td></tr>
+<tr class="separator:ad52cae6a557f7415abe913cd6d990adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69ac38ead8c3280ab4e26c8c4f06ff67" id="r_a69ac38ead8c3280ab4e26c8c4f06ff67"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#a69ac38ead8c3280ab4e26c8c4f06ff67">carefree_internal::strsets::alphabet</a> = <a class="el" href="namespacecarefree__internal_1_1strsets.html#a626db64132a86fdc31fec20f5dcac31f">lower</a> + <a class="el" href="namespacecarefree__internal_1_1strsets.html#abc290b6501f4059bbb79e53d7ac7b9d7">upper</a></td></tr>
+<tr class="separator:a69ac38ead8c3280ab4e26c8c4f06ff67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85e2f86947b630e65019a4b46e0154d3" id="r_a85e2f86947b630e65019a4b46e0154d3"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#a85e2f86947b630e65019a4b46e0154d3">carefree_internal::strsets::slug</a> = <a class="el" href="namespacecarefree__internal_1_1strsets.html#a626db64132a86fdc31fec20f5dcac31f">lower</a> + <a class="el" href="namespacecarefree__internal_1_1strsets.html#a5156cf22a016f7ac3bcfb810cb9949a0">digit</a> + &quot;-&quot;</td></tr>
+<tr class="separator:a85e2f86947b630e65019a4b46e0154d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadcd23c83bfb863e3843bad11b61efec" id="r_aadcd23c83bfb863e3843bad11b61efec"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#aadcd23c83bfb863e3843bad11b61efec">carefree_internal::strsets::var_name</a> = <a class="el" href="namespacecarefree__internal_1_1strsets.html#a626db64132a86fdc31fec20f5dcac31f">lower</a> + <a class="el" href="namespacecarefree__internal_1_1strsets.html#abc290b6501f4059bbb79e53d7ac7b9d7">upper</a> + <a class="el" href="namespacecarefree__internal_1_1strsets.html#a5156cf22a016f7ac3bcfb810cb9949a0">digit</a> + &quot;_&quot;</td></tr>
+<tr class="separator:aadcd23c83bfb863e3843bad11b61efec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3290b8157efadcb24aed12d83e381a87" id="r_a3290b8157efadcb24aed12d83e381a87"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#a3290b8157efadcb24aed12d83e381a87">carefree_internal::strsets::bracket_general</a> = &quot;()[]{}&lt;&gt;&quot;</td></tr>
+<tr class="separator:a3290b8157efadcb24aed12d83e381a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad084d09db3a65d642b49e917a27474d5" id="r_ad084d09db3a65d642b49e917a27474d5"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#ad084d09db3a65d642b49e917a27474d5">carefree_internal::strsets::bracket</a> = &quot;()[]{}&quot;</td></tr>
+<tr class="separator:ad084d09db3a65d642b49e917a27474d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a801130a06ac88e5dfb5350e4e1f38bb7" id="r_a801130a06ac88e5dfb5350e4e1f38bb7"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#a801130a06ac88e5dfb5350e4e1f38bb7">carefree_internal::strsets::quotes</a> = &quot;\&quot;'&quot;</td></tr>
+<tr class="separator:a801130a06ac88e5dfb5350e4e1f38bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6aacb3a914ab15e4ebfec01fc76823" id="r_a5e6aacb3a914ab15e4ebfec01fc76823"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#a5e6aacb3a914ab15e4ebfec01fc76823">carefree_internal::strsets::math_symbols_naive</a> = &quot;+-*&quot;</td></tr>
+<tr class="separator:a5e6aacb3a914ab15e4ebfec01fc76823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66bba15e1fa6bc55818ac3e35f4542d5" id="r_a66bba15e1fa6bc55818ac3e35f4542d5"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#a66bba15e1fa6bc55818ac3e35f4542d5">carefree_internal::strsets::math_symbols_simple</a> = &quot;+-*/%&quot;</td></tr>
+<tr class="separator:a66bba15e1fa6bc55818ac3e35f4542d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b32284bb19cf5427c467840e1f50cf" id="r_a10b32284bb19cf5427c467840e1f50cf"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#a10b32284bb19cf5427c467840e1f50cf">carefree_internal::strsets::math_symbols</a> = <a class="el" href="namespacecarefree__internal_1_1strsets.html#a66bba15e1fa6bc55818ac3e35f4542d5">math_symbols_simple</a> + &quot;^&quot;</td></tr>
+<tr class="separator:a10b32284bb19cf5427c467840e1f50cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87de29a89c36956d1d7e6a7cfac7bb35" id="r_a87de29a89c36956d1d7e6a7cfac7bb35"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#a87de29a89c36956d1d7e6a7cfac7bb35">carefree_internal::strsets::bool_symbols</a> = &quot;|&amp;!&quot;</td></tr>
+<tr class="separator:a87de29a89c36956d1d7e6a7cfac7bb35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0e37a04ec9a499d13d9b660441becb1" id="r_ad0e37a04ec9a499d13d9b660441becb1"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1strsets.html#ad0e37a04ec9a499d13d9b660441becb1">carefree_internal::strsets::bitwise_symbols</a> = <a class="el" href="namespacecarefree__internal_1_1strsets.html#a87de29a89c36956d1d7e6a7cfac7bb35">bool_symbols</a> + &quot;~^&quot;</td></tr>
+<tr class="separator:ad0e37a04ec9a499d13d9b660441becb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4a2104661aeaf3704ab904c54fee986" id="r_ad4a2104661aeaf3704ab904c54fee986"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1cpp__warnings.html#ad4a2104661aeaf3704ab904c54fee986">carefree_internal::cpp_warnings::Wnone</a> = 0</td></tr>
+<tr class="separator:ad4a2104661aeaf3704ab904c54fee986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8203d6bc87ba2cd7ec7bc625d98f90ac" id="r_a8203d6bc87ba2cd7ec7bc625d98f90ac"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1cpp__warnings.html#a8203d6bc87ba2cd7ec7bc625d98f90ac">carefree_internal::cpp_warnings::Wall</a> = 1</td></tr>
+<tr class="separator:a8203d6bc87ba2cd7ec7bc625d98f90ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26eeb98a98d13d098609d5f86c536d60" id="r_a26eeb98a98d13d098609d5f86c536d60"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1cpp__warnings.html#a26eeb98a98d13d098609d5f86c536d60">carefree_internal::cpp_warnings::Wextra</a> = 2</td></tr>
+<tr class="separator:a26eeb98a98d13d098609d5f86c536d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e18bf84b08990a5c427a5dd0e307b9" id="r_a40e18bf84b08990a5c427a5dd0e307b9"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1cpp__warnings.html#a40e18bf84b08990a5c427a5dd0e307b9">carefree_internal::cpp_warnings::Wpedantic</a> = 4</td></tr>
+<tr class="separator:a40e18bf84b08990a5c427a5dd0e307b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ba537b6c941d9b7196a827434dc1744" id="r_a4ba537b6c941d9b7196a827434dc1744"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1cpp__warnings.html#a4ba537b6c941d9b7196a827434dc1744">carefree_internal::cpp_warnings::Werror</a> = 8</td></tr>
+<tr class="separator:a4ba537b6c941d9b7196a827434dc1744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ab37bd4351f9e405a93f52248800e2f" id="r_a6ab37bd4351f9e405a93f52248800e2f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structcarefree__internal_1_1____enum__shortcut.html">carefree_internal::__enum_shortcut</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a6ab37bd4351f9e405a93f52248800e2f">carefree_internal::ES</a></td></tr>
+<tr class="separator:a6ab37bd4351f9e405a93f52248800e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a503ef93024815ab9a34c100776a063d3" name="a503ef93024815ab9a34c100776a063d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a503ef93024815ab9a34c100776a063d3">&#9670;&#160;</a></span>CAREFREE_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAREFREE_VERSION&#160;&#160;&#160;&quot;0.5&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a098933aaf71bca8d9237bd60b41d0d74" name="a098933aaf71bca8d9237bd60b41d0d74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a098933aaf71bca8d9237bd60b41d0d74">&#9670;&#160;</a></span>CAREFREE_VERSION_MAJOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAREFREE_VERSION_MAJOR&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af6b8ab4978bff68142785fe5ec877db2" name="af6b8ab4978bff68142785fe5ec877db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6b8ab4978bff68142785fe5ec877db2">&#9670;&#160;</a></span>CAREFREE_VERSION_MINOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAREFREE_VERSION_MINOR&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a209f2e04922e102ff5e0cb60206201dc" name="a209f2e04922e102ff5e0cb60206201dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a209f2e04922e102ff5e0cb60206201dc">&#9670;&#160;</a></span>maybe_unused</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define maybe_unused&#160;&#160;&#160;__attribute__((unused))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="af4f48be7d8dda611e97b9ba0b8e08d5b" name="af4f48be7d8dda611e97b9ba0b8e08d5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4f48be7d8dda611e97b9ba0b8e08d5b">&#9670;&#160;</a></span>operator&quot;&quot;B()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned long long operator&quot;&quot;B </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa102eb5e27f15fafd64e766b286a7a39" name="aa102eb5e27f15fafd64e766b286a7a39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa102eb5e27f15fafd64e766b286a7a39">&#9670;&#160;</a></span>operator&quot;&quot;GiB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned long long operator&quot;&quot;GiB </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a44e9b1b549371b07dce13decf3e1febc" name="a44e9b1b549371b07dce13decf3e1febc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44e9b1b549371b07dce13decf3e1febc">&#9670;&#160;</a></span>operator&quot;&quot;KiB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned long long operator&quot;&quot;KiB </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74ec65e811e22a9f6d0efec10a83519a" name="a74ec65e811e22a9f6d0efec10a83519a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74ec65e811e22a9f6d0efec10a83519a">&#9670;&#160;</a></span>operator&quot;&quot;MiB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned long long operator&quot;&quot;MiB </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66a639f4b2aa640b646c147126518ac0" name="a66a639f4b2aa640b646c147126518ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66a639f4b2aa640b646c147126518ac0">&#9670;&#160;</a></span>operator&quot;&quot;MIN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned long long operator&quot;&quot;MIN </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ef3803a86bca7ed2953836e3bf18e56" name="a6ef3803a86bca7ed2953836e3bf18e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef3803a86bca7ed2953836e3bf18e56">&#9670;&#160;</a></span>operator&quot;&quot;MS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned long long operator&quot;&quot;MS </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af51a22a843ba1e0707c2c372e6853e72" name="af51a22a843ba1e0707c2c372e6853e72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af51a22a843ba1e0707c2c372e6853e72">&#9670;&#160;</a></span>operator&quot;&quot;NS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned long long operator&quot;&quot;NS </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a924d894a38cffbc4b040220ae5ced8f6" name="a924d894a38cffbc4b040220ae5ced8f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a924d894a38cffbc4b040220ae5ced8f6">&#9670;&#160;</a></span>operator&quot;&quot;S()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned long long operator&quot;&quot;S </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a526df8d664280e062d5e9489619e2240" name="a526df8d664280e062d5e9489619e2240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a526df8d664280e062d5e9489619e2240">&#9670;&#160;</a></span>operator&quot;&quot;TiB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned long long operator&quot;&quot;TiB </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Carefree: carefree_internal::BalancedTree&lt; T, Compare &gt; 模板类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Carefree<span id="projectnumber">&#160;0.5</span>
+   </div>
+   <div id="projectbrief">CareFree Library - A Light Data Generator for OI &amp; ACM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacecarefree__internal.html">carefree_internal</a></li><li class="navelem"><a class="el" href="classcarefree__internal_1_1_balanced_tree.html">BalancedTree</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classcarefree__internal_1_1_balanced_tree-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">carefree_internal::BalancedTree&lt; T, Compare &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="carefree_8hpp_source.html">carefree.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a6ba56475abd5798828d24492c2bb2d5c" id="r_a6ba56475abd5798828d24492c2bb2d5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ba56475abd5798828d24492c2bb2d5c">insert</a> (<a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">x</a>)</td></tr>
+<tr class="separator:a6ba56475abd5798828d24492c2bb2d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23410de1d01606367f714b723217706c" id="r_a23410de1d01606367f714b723217706c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23410de1d01606367f714b723217706c">erase</a> (<a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">x</a>)</td></tr>
+<tr class="separator:a23410de1d01606367f714b723217706c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a618a6a6837f95c79d4e8127186454c22" id="r_a618a6a6837f95c79d4e8127186454c22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a618a6a6837f95c79d4e8127186454c22">rnk</a> (<a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">x</a>)</td></tr>
+<tr class="separator:a618a6a6837f95c79d4e8127186454c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceb4c34e6f2bef6dd0c2945e6379b0db" id="r_aceb4c34e6f2bef6dd0c2945e6379b0db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aceb4c34e6f2bef6dd0c2945e6379b0db">kth</a> (<a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">int</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">x</a>)</td></tr>
+<tr class="separator:aceb4c34e6f2bef6dd0c2945e6379b0db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcfe61df7e0b21a62de147698b7d56e2" id="r_afcfe61df7e0b21a62de147698b7d56e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcfe61df7e0b21a62de147698b7d56e2">size</a> ()</td></tr>
+<tr class="separator:afcfe61df7e0b21a62de147698b7d56e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3312f7c9e8fe0c4154dfe867917d4964" id="r_a3312f7c9e8fe0c4154dfe867917d4964"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3312f7c9e8fe0c4154dfe867917d4964">empty</a> ()</td></tr>
+<tr class="separator:a3312f7c9e8fe0c4154dfe867917d4964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a8bd43bd5e8553686a5395273fea9cdcf" id="r_a8bd43bd5e8553686a5395273fea9cdcf"><td class="memItemLeft" align="right" valign="top">__gnu_pbds::tree&lt; T, __gnu_pbds::null_type, Compare, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">tree</a></td></tr>
+<tr class="separator:a8bd43bd5e8553686a5395273fea9cdcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a3312f7c9e8fe0c4154dfe867917d4964" name="a3312f7c9e8fe0c4154dfe867917d4964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3312f7c9e8fe0c4154dfe867917d4964">&#9670;&#160;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a> , <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a>  = std::less&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">bool</a> <a class="el" href="classcarefree__internal_1_1_balanced_tree.html">carefree_internal::BalancedTree</a>&lt; <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a>, <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a> &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23410de1d01606367f714b723217706c" name="a23410de1d01606367f714b723217706c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23410de1d01606367f714b723217706c">&#9670;&#160;</a></span>erase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a> , <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a>  = std::less&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">bool</a> <a class="el" href="classcarefree__internal_1_1_balanced_tree.html">carefree_internal::BalancedTree</a>&lt; <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a>, <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a> &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1_balanced_tree_a23410de1d01606367f714b723217706c_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1_balanced_tree_a23410de1d01606367f714b723217706c_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1_balanced_tree_a23410de1d01606367f714b723217706c_icgraph" id="aclasscarefree__internal_1_1_balanced_tree_a23410de1d01606367f714b723217706c_icgraph">
+<area shape="rect" title=" " alt="" coords="350,5,490,48"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa1d429d13c51db08341e8224a4f22bf0" title=" " alt="" coords="178,5,302,48"/>
+<area shape="poly" title=" " alt="" coords="334,29,302,29,302,24,334,24"/>
+<area shape="rect" href="namespacecarefree__internal.html#a523bf25347d3557fc588632697760acc" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="162,29,130,29,130,24,162,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6ba56475abd5798828d24492c2bb2d5c" name="a6ba56475abd5798828d24492c2bb2d5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ba56475abd5798828d24492c2bb2d5c">&#9670;&#160;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a> , <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a>  = std::less&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">void</a> <a class="el" href="classcarefree__internal_1_1_balanced_tree.html">carefree_internal::BalancedTree</a>&lt; <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a>, <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a> &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1_balanced_tree_a6ba56475abd5798828d24492c2bb2d5c_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1_balanced_tree_a6ba56475abd5798828d24492c2bb2d5c_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1_balanced_tree_a6ba56475abd5798828d24492c2bb2d5c_icgraph" id="aclasscarefree__internal_1_1_balanced_tree_a6ba56475abd5798828d24492c2bb2d5c_icgraph">
+<area shape="rect" title=" " alt="" coords="350,5,490,48"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa1d429d13c51db08341e8224a4f22bf0" title=" " alt="" coords="178,5,302,48"/>
+<area shape="poly" title=" " alt="" coords="334,29,302,29,302,24,334,24"/>
+<area shape="rect" href="namespacecarefree__internal.html#a523bf25347d3557fc588632697760acc" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="162,29,130,29,130,24,162,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aceb4c34e6f2bef6dd0c2945e6379b0db" name="aceb4c34e6f2bef6dd0c2945e6379b0db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb4c34e6f2bef6dd0c2945e6379b0db">&#9670;&#160;</a></span>kth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a> , <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a>  = std::less&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a> <a class="el" href="classcarefree__internal_1_1_balanced_tree.html">carefree_internal::BalancedTree</a>&lt; <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a>, <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a> &gt;::kth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">int</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1_balanced_tree_aceb4c34e6f2bef6dd0c2945e6379b0db_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1_balanced_tree_aceb4c34e6f2bef6dd0c2945e6379b0db_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1_balanced_tree_aceb4c34e6f2bef6dd0c2945e6379b0db_icgraph" id="aclasscarefree__internal_1_1_balanced_tree_aceb4c34e6f2bef6dd0c2945e6379b0db_icgraph">
+<area shape="rect" title=" " alt="" coords="350,5,476,48"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa1d429d13c51db08341e8224a4f22bf0" title=" " alt="" coords="178,5,302,48"/>
+<area shape="poly" title=" " alt="" coords="335,29,302,29,302,24,335,24"/>
+<area shape="rect" href="namespacecarefree__internal.html#a523bf25347d3557fc588632697760acc" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="162,29,130,29,130,24,162,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a618a6a6837f95c79d4e8127186454c22" name="a618a6a6837f95c79d4e8127186454c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a618a6a6837f95c79d4e8127186454c22">&#9670;&#160;</a></span>rnk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a> , <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a>  = std::less&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">int</a> <a class="el" href="classcarefree__internal_1_1_balanced_tree.html">carefree_internal::BalancedTree</a>&lt; <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a>, <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a> &gt;::rnk </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afcfe61df7e0b21a62de147698b7d56e2" name="afcfe61df7e0b21a62de147698b7d56e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcfe61df7e0b21a62de147698b7d56e2">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a> , <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">class</a> <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a>  = std::less&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">int</a> <a class="el" href="classcarefree__internal_1_1_balanced_tree.html">carefree_internal::BalancedTree</a>&lt; <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">T</a>, <a class="el" href="#a8bd43bd5e8553686a5395273fea9cdcf">Compare</a> &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1_balanced_tree_afcfe61df7e0b21a62de147698b7d56e2_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1_balanced_tree_afcfe61df7e0b21a62de147698b7d56e2_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1_balanced_tree_afcfe61df7e0b21a62de147698b7d56e2_icgraph" id="aclasscarefree__internal_1_1_balanced_tree_afcfe61df7e0b21a62de147698b7d56e2_icgraph">
+<area shape="rect" title=" " alt="" coords="350,5,482,48"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa1d429d13c51db08341e8224a4f22bf0" title=" " alt="" coords="178,5,302,48"/>
+<area shape="poly" title=" " alt="" coords="334,29,302,29,302,24,334,24"/>
+<area shape="rect" href="namespacecarefree__internal.html#a523bf25347d3557fc588632697760acc" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="162,29,130,29,130,24,162,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a8bd43bd5e8553686a5395273fea9cdcf" name="a8bd43bd5e8553686a5395273fea9cdcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bd43bd5e8553686a5395273fea9cdcf">&#9670;&#160;</a></span>tree</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class Compare  = std::less&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__gnu_pbds::tree&lt;T, __gnu_pbds::null_type, Compare, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update&gt; <a class="el" href="classcarefree__internal_1_1_balanced_tree.html">carefree_internal::BalancedTree</a>&lt; T, Compare &gt;::tree</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="carefree_8hpp_source.html">carefree.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

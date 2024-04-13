@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Carefree: carefree_internal::comparator类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Carefree<span id="projectnumber">&#160;0.5</span>
+   </div>
+   <div id="projectbrief">CareFree Library - A Light Data Generator for OI &amp; ACM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacecarefree__internal.html">carefree_internal</a></li><li class="navelem"><a class="el" href="classcarefree__internal_1_1comparator.html">comparator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classcarefree__internal_1_1comparator-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">carefree_internal::comparator类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="carefree_8hpp_source.html">carefree.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 carefree_internal::comparator 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1comparator__inherit__graph.png" border="0" usemap="#acarefree__internal_1_1comparator_inherit__map" alt="Inheritance graph"/></div>
+<map name="acarefree__internal_1_1comparator_inherit__map" id="acarefree__internal_1_1comparator_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,105,130,148"/>
+<area shape="rect" href="classcarefree__internal_1_1strict__comparator.html" title=" " alt="" coords="195,5,319,48"/>
+<area shape="poly" title=" " alt="" coords="113,95,176,58,200,46,203,51,179,62,115,99"/>
+<area shape="rect" href="classcarefree__internal_1_1strict__comparator__naive.html" title=" " alt="" coords="178,72,336,115"/>
+<area shape="poly" title=" " alt="" coords="144,110,177,105,178,110,145,116"/>
+<area shape="rect" href="classcarefree__internal_1_1testlib__comparator.html" title=" " alt="" coords="193,139,321,181"/>
+<area shape="poly" title=" " alt="" coords="145,138,193,146,192,151,144,143"/>
+<area shape="rect" href="classcarefree__internal_1_1token__comparator.html" title=" " alt="" coords="194,205,320,248"/>
+<area shape="poly" title=" " alt="" coords="115,154,179,191,203,202,200,207,176,196,113,159"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1comparator_1_1file.html">file</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1comparator_1_1readable.html">readable</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1comparator_1_1text.html">text</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a79ad06bf7823e8ef2c7b4c49e95235b1" id="r_a79ad06bf7823e8ef2c7b4c49e95235b1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structcarefree__internal_1_1judge__result.html">judge_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79ad06bf7823e8ef2c7b4c49e95235b1">from_text</a> (const string &amp;text1, const string &amp;text2)=0</td></tr>
+<tr class="separator:a79ad06bf7823e8ef2c7b4c49e95235b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e1875654ac0b13dd63f9054589d4ac" id="r_ad8e1875654ac0b13dd63f9054589d4ac"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structcarefree__internal_1_1judge__result.html">judge_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8e1875654ac0b13dd63f9054589d4ac">from_file</a> (const string &amp;filename1, const string &amp;filename2)</td></tr>
+<tr class="separator:ad8e1875654ac0b13dd63f9054589d4ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac051658154e86b4dcddb12689ba14d08" id="r_ac051658154e86b4dcddb12689ba14d08"><td class="memTemplParams" colspan="2">template&lt;class T1 , class T2 &gt; </td></tr>
+<tr class="memitem:ac051658154e86b4dcddb12689ba14d08"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structcarefree__internal_1_1judge__result.html">judge_result</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac051658154e86b4dcddb12689ba14d08">operator()</a> (T1 a, T2 b)</td></tr>
+<tr class="separator:ac051658154e86b4dcddb12689ba14d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dd073269bb32d61f30531e74ac8bfaf" id="r_a5dd073269bb32d61f30531e74ac8bfaf"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structcarefree__internal_1_1judge__result.html">judge_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5dd073269bb32d61f30531e74ac8bfaf">test</a> (const string &amp;input_path <a class="el" href="carefree_8hpp.html#a209f2e04922e102ff5e0cb60206201dc">maybe_unused</a>, const string &amp;output_path, const string &amp;answer_path)</td></tr>
+<tr class="separator:a5dd073269bb32d61f30531e74ac8bfaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ad8e1875654ac0b13dd63f9054589d4ac" name="ad8e1875654ac0b13dd63f9054589d4ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8e1875654ac0b13dd63f9054589d4ac">&#9670;&#160;</a></span>from_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structcarefree__internal_1_1judge__result.html">judge_result</a> carefree_internal::comparator::from_file </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1comparator_ad8e1875654ac0b13dd63f9054589d4ac_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1comparator_ad8e1875654ac0b13dd63f9054589d4ac_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1comparator_ad8e1875654ac0b13dd63f9054589d4ac_cgraph" id="aclasscarefree__internal_1_1comparator_ad8e1875654ac0b13dd63f9054589d4ac_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,148,48"/>
+<area shape="rect" href="classcarefree__internal_1_1comparator.html#a79ad06bf7823e8ef2c7b4c49e95235b1" title=" " alt="" coords="196,5,344,48"/>
+<area shape="poly" title=" " alt="" coords="148,24,180,24,180,29,148,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1comparator_ad8e1875654ac0b13dd63f9054589d4ac_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1comparator_ad8e1875654ac0b13dd63f9054589d4ac_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1comparator_ad8e1875654ac0b13dd63f9054589d4ac_icgraph" id="aclasscarefree__internal_1_1comparator_ad8e1875654ac0b13dd63f9054589d4ac_icgraph">
+<area shape="rect" title=" " alt="" coords="178,5,320,48"/>
+<area shape="rect" href="classcarefree__internal_1_1comparator.html#a5dd073269bb32d61f30531e74ac8bfaf" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="162,29,130,29,130,24,162,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a79ad06bf7823e8ef2c7b4c49e95235b1" name="a79ad06bf7823e8ef2c7b4c49e95235b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79ad06bf7823e8ef2c7b4c49e95235b1">&#9670;&#160;</a></span>from_text()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structcarefree__internal_1_1judge__result.html">judge_result</a> carefree_internal::comparator::from_text </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>text1</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>text2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="classcarefree__internal_1_1strict__comparator__naive.html#a23c8a490ea1bc6e75383105f5bca9905">carefree_internal::strict_comparator_naive</a>, <a class="el" href="classcarefree__internal_1_1strict__comparator.html#a530dd88f4041e5f6c6f89082cec040a4">carefree_internal::strict_comparator</a> , 以及 <a class="el" href="classcarefree__internal_1_1token__comparator.html#a74a60563614d555792b0d5fef19b16d3">carefree_internal::token_comparator</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1comparator_a79ad06bf7823e8ef2c7b4c49e95235b1_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1comparator_a79ad06bf7823e8ef2c7b4c49e95235b1_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1comparator_a79ad06bf7823e8ef2c7b4c49e95235b1_icgraph" id="aclasscarefree__internal_1_1comparator_a79ad06bf7823e8ef2c7b4c49e95235b1_icgraph">
+<area shape="rect" title=" " alt="" coords="375,39,523,81"/>
+<area shape="rect" href="classcarefree__internal_1_1comparator.html#ad8e1875654ac0b13dd63f9054589d4ac" title=" " alt="" coords="181,5,324,48"/>
+<area shape="poly" title=" " alt="" coords="359,47,324,41,324,36,360,42"/>
+<area shape="rect" href="classcarefree__internal_1_1comparator.html#ac051658154e86b4dcddb12689ba14d08" title=" " alt="" coords="178,72,327,115"/>
+<area shape="poly" title=" " alt="" coords="360,78,328,83,327,78,359,73"/>
+<area shape="rect" href="classcarefree__internal_1_1comparator.html#a5dd073269bb32d61f30531e74ac8bfaf" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="166,29,130,29,130,24,166,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac051658154e86b4dcddb12689ba14d08" name="ac051658154e86b4dcddb12689ba14d08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac051658154e86b4dcddb12689ba14d08">&#9670;&#160;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T1 , class T2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcarefree__internal_1_1judge__result.html">judge_result</a> carefree_internal::comparator::operator() </td>
+          <td>(</td>
+          <td class="paramtype">T1</td>          <td class="paramname"><span class="paramname"><em>a</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T2</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1comparator_ac051658154e86b4dcddb12689ba14d08_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1comparator_ac051658154e86b4dcddb12689ba14d08_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1comparator_ac051658154e86b4dcddb12689ba14d08_cgraph" id="aclasscarefree__internal_1_1comparator_ac051658154e86b4dcddb12689ba14d08_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,155,48"/>
+<area shape="rect" href="classcarefree__internal_1_1comparator.html#a79ad06bf7823e8ef2c7b4c49e95235b1" title=" " alt="" coords="203,5,351,48"/>
+<area shape="poly" title=" " alt="" coords="155,24,187,24,187,29,155,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5dd073269bb32d61f30531e74ac8bfaf" name="a5dd073269bb32d61f30531e74ac8bfaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dd073269bb32d61f30531e74ac8bfaf">&#9670;&#160;</a></span>test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structcarefree__internal_1_1judge__result.html">judge_result</a> carefree_internal::comparator::test </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;input_path</td>          <td class="paramname"><span class="paramname"><em>maybe_unused</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>output_path</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>answer_path</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1comparator_a5dd073269bb32d61f30531e74ac8bfaf_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1comparator_a5dd073269bb32d61f30531e74ac8bfaf_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1comparator_a5dd073269bb32d61f30531e74ac8bfaf_cgraph" id="aclasscarefree__internal_1_1comparator_a5dd073269bb32d61f30531e74ac8bfaf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,130,48"/>
+<area shape="rect" href="classcarefree__internal_1_1comparator.html#ad8e1875654ac0b13dd63f9054589d4ac" title=" " alt="" coords="178,5,320,48"/>
+<area shape="poly" title=" " alt="" coords="130,24,162,24,162,29,130,29"/>
+<area shape="rect" href="classcarefree__internal_1_1comparator.html#a79ad06bf7823e8ef2c7b4c49e95235b1" title=" " alt="" coords="368,5,516,48"/>
+<area shape="poly" title=" " alt="" coords="321,24,352,24,352,29,321,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="carefree_8hpp_source.html">carefree.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

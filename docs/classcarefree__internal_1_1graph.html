@@ -1,0 +1,771 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Carefree: carefree_internal::graph类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Carefree<span id="projectnumber">&#160;0.5</span>
+   </div>
+   <div id="projectbrief">CareFree Library - A Light Data Generator for OI &amp; ACM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacecarefree__internal.html">carefree_internal</a></li><li class="navelem"><a class="el" href="classcarefree__internal_1_1graph.html">graph</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="classcarefree__internal_1_1graph-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">carefree_internal::graph类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="carefree_8hpp_source.html">carefree.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1graph_1_1chain__node.html">chain_node</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">edge</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1graph_1_1unweighted__output.html">unweighted_output</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1graph_1_1weighted__output.html">weighted_output</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:adbb8dffb6bae0f73b40724cbea68652d" id="r_adbb8dffb6bae0f73b40724cbea68652d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbb8dffb6bae0f73b40724cbea68652d">graph</a> (int <a class="el" href="#a100a2d6fae2d5e1891932cbeffd45bc4">N</a>, bool <a class="el" href="#a2626e9b32d3404bfc816696b2cb5f033">directed</a>=false, bool <a class="el" href="#aafca15b9d7471db09e74fce9f8a8b413">enable_edge_map</a>=true)</td></tr>
+<tr class="separator:adbb8dffb6bae0f73b40724cbea68652d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdbd3d847b3956dd1b41abd72e11b039" id="r_abdbd3d847b3956dd1b41abd72e11b039"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdbd3d847b3956dd1b41abd72e11b039">add</a> (<a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">edge</a> edg, bool __add_vector=true)</td></tr>
+<tr class="separator:abdbd3d847b3956dd1b41abd72e11b039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a1dbbcc765710a94732151679cb16d6" id="r_a7a1dbbcc765710a94732151679cb16d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a1dbbcc765710a94732151679cb16d6">add</a> (int from, int to, <a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a> weight=0)</td></tr>
+<tr class="separator:a7a1dbbcc765710a94732151679cb16d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14069d7f4ac48b856eb540db58002a8f" id="r_a14069d7f4ac48b856eb540db58002a8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14069d7f4ac48b856eb540db58002a8f">has_edge</a> (<a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">edge</a> edg)</td></tr>
+<tr class="separator:a14069d7f4ac48b856eb540db58002a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad362e60ac66fec811f2c04bba975f1a1" id="r_ad362e60ac66fec811f2c04bba975f1a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad362e60ac66fec811f2c04bba975f1a1">has_edge</a> (int from, int to)</td></tr>
+<tr class="separator:ad362e60ac66fec811f2c04bba975f1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad17dc89238f49bb541f7ca4d683b6275" id="r_ad17dc89238f49bb541f7ca4d683b6275"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad17dc89238f49bb541f7ca4d683b6275">get_edges</a> ()</td></tr>
+<tr class="separator:ad17dc89238f49bb541f7ca4d683b6275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b50dd8905209aa30918c3c9190bffef" id="r_a4b50dd8905209aa30918c3c9190bffef"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b50dd8905209aa30918c3c9190bffef">get_edges</a> (int from)</td></tr>
+<tr class="separator:a4b50dd8905209aa30918c3c9190bffef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8facb74885887c451a7597339cd4df50" id="r_a8facb74885887c451a7597339cd4df50"><td class="memTemplParams" colspan="2">template&lt;class T  = weighted_output&gt; </td></tr>
+<tr class="memitem:a8facb74885887c451a7597339cd4df50"><td class="memTemplItemLeft" align="right" valign="top">string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8facb74885887c451a7597339cd4df50">to_string</a> (bool <a class="el" href="namespacecarefree__internal.html#a1b5c92e6032276c5d9ea32c2e5d7f800">shuffle</a>=false)</td></tr>
+<tr class="separator:a8facb74885887c451a7597339cd4df50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a100a2d6fae2d5e1891932cbeffd45bc4" id="r_a100a2d6fae2d5e1891932cbeffd45bc4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a100a2d6fae2d5e1891932cbeffd45bc4">N</a></td></tr>
+<tr class="separator:a100a2d6fae2d5e1891932cbeffd45bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2626e9b32d3404bfc816696b2cb5f033" id="r_a2626e9b32d3404bfc816696b2cb5f033"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2626e9b32d3404bfc816696b2cb5f033">directed</a></td></tr>
+<tr class="separator:a2626e9b32d3404bfc816696b2cb5f033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafca15b9d7471db09e74fce9f8a8b413" id="r_aafca15b9d7471db09e74fce9f8a8b413"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafca15b9d7471db09e74fce9f8a8b413">enable_edge_map</a></td></tr>
+<tr class="separator:aafca15b9d7471db09e74fce9f8a8b413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:aace50b70dd82d69f13da8107056e2ca9" id="r_aace50b70dd82d69f13da8107056e2ca9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structcarefree__internal_1_1graph_1_1chain__node.html">chain_node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aace50b70dd82d69f13da8107056e2ca9">chain</a></td></tr>
+<tr class="separator:aace50b70dd82d69f13da8107056e2ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c5219e44e5a3e30c3e80ca44628f92f" id="r_a2c5219e44e5a3e30c3e80ca44628f92f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c5219e44e5a3e30c3e80ca44628f92f">head</a></td></tr>
+<tr class="separator:a2c5219e44e5a3e30c3e80ca44628f92f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b80d2f7399c3b04dc83249c6a1cde9" id="r_af0b80d2f7399c3b04dc83249c6a1cde9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::map&lt; int, bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0b80d2f7399c3b04dc83249c6a1cde9">edge_map</a></td></tr>
+<tr class="separator:af0b80d2f7399c3b04dc83249c6a1cde9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c0016badb0a7704f0a895bb552b2c8e" id="r_a5c0016badb0a7704f0a895bb552b2c8e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c0016badb0a7704f0a895bb552b2c8e">edge_vct</a></td></tr>
+<tr class="separator:a5c0016badb0a7704f0a895bb552b2c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="adbb8dffb6bae0f73b40724cbea68652d" name="adbb8dffb6bae0f73b40724cbea68652d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbb8dffb6bae0f73b40724cbea68652d">&#9670;&#160;</a></span>graph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">carefree_internal::graph::graph </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>N</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>directed</em><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enable_edge_map</em><span class="paramdefsep"> = </span><span class="paramdefval">true</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1graph_adbb8dffb6bae0f73b40724cbea68652d_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1graph_adbb8dffb6bae0f73b40724cbea68652d_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1graph_adbb8dffb6bae0f73b40724cbea68652d_cgraph" id="aclasscarefree__internal_1_1graph_adbb8dffb6bae0f73b40724cbea68652d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,130,123"/>
+<area shape="rect" href="namespacecarefree__internal.html#a48b2d6d5959aa283a1010c993015a815" title=" " alt="" coords="178,80,317,123"/>
+<area shape="poly" title=" " alt="" coords="130,99,162,99,162,104,130,104"/>
+<area shape="rect" href="namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title=" " alt="" coords="365,80,489,123"/>
+<area shape="poly" title=" " alt="" coords="317,99,349,99,349,104,317,104"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title=" " alt="" coords="540,5,678,64"/>
+<area shape="poly" title=" " alt="" coords="486,77,524,63,526,68,488,82"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title=" " alt="" coords="729,47,894,89"/>
+<area shape="poly" title=" " alt="" coords="490,93,713,74,713,79,490,99"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title=" " alt="" coords="537,139,681,181"/>
+<area shape="poly" title=" " alt="" coords="490,119,527,131,525,136,489,124"/>
+<area shape="poly" title=" " alt="" coords="679,43,714,49,713,54,678,49"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title=" " alt="" coords="942,39,1080,97"/>
+<area shape="poly" title=" " alt="" coords="895,65,926,65,926,71,895,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="abdbd3d847b3956dd1b41abd72e11b039" name="abdbd3d847b3956dd1b41abd72e11b039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdbd3d847b3956dd1b41abd72e11b039">&#9670;&#160;</a></span>add() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void carefree_internal::graph::add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">edge</a></td>          <td class="paramname"><span class="paramname"><em>edg</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>__add_vector</em><span class="paramdefsep"> = </span><span class="paramdefval">true</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1graph_abdbd3d847b3956dd1b41abd72e11b039_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1graph_abdbd3d847b3956dd1b41abd72e11b039_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1graph_abdbd3d847b3956dd1b41abd72e11b039_cgraph" id="aclasscarefree__internal_1_1graph_abdbd3d847b3956dd1b41abd72e11b039_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,130,123"/>
+<area shape="poly" title=" " alt="" coords="33,80,32,70,37,61,49,55,68,53,87,56,99,62,96,67,85,61,67,59,51,61,41,65,37,71,38,79"/>
+<area shape="rect" href="namespacecarefree__internal.html#ac0a9ffdfe180933b02d7f6d0b5c7366e" title=" " alt="" coords="178,80,316,123"/>
+<area shape="poly" title=" " alt="" coords="130,99,162,99,162,104,130,104"/>
+<area shape="rect" href="namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title=" " alt="" coords="364,80,488,123"/>
+<area shape="poly" title=" " alt="" coords="316,99,348,99,348,104,316,104"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title=" " alt="" coords="539,5,677,64"/>
+<area shape="poly" title=" " alt="" coords="485,77,523,63,525,68,487,82"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title=" " alt="" coords="728,47,893,89"/>
+<area shape="poly" title=" " alt="" coords="489,93,712,74,712,79,489,99"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title=" " alt="" coords="536,139,680,181"/>
+<area shape="poly" title=" " alt="" coords="489,119,526,131,524,136,488,124"/>
+<area shape="poly" title=" " alt="" coords="678,43,713,49,712,54,677,49"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title=" " alt="" coords="941,39,1079,97"/>
+<area shape="poly" title=" " alt="" coords="894,65,925,65,925,71,894,71"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1graph_abdbd3d847b3956dd1b41abd72e11b039_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1graph_abdbd3d847b3956dd1b41abd72e11b039_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1graph_abdbd3d847b3956dd1b41abd72e11b039_icgraph" id="aclasscarefree__internal_1_1graph_abdbd3d847b3956dd1b41abd72e11b039_icgraph">
+<area shape="rect" title=" " alt="" coords="607,491,732,533"/>
+<area shape="poly" title=" " alt="" coords="699,477,688,472,669,469,652,471,642,476,638,482,639,490,634,490,633,481,639,472,651,466,670,464,689,466,701,473"/>
+<area shape="rect" href="classcarefree__internal_1_1graph.html#a7a1dbbcc765710a94732151679cb16d6" title=" " alt="" coords="424,5,548,48"/>
+<area shape="poly" title=" " alt="" coords="661,476,647,379,624,256,594,139,576,94,557,62,545,50,549,47,561,58,581,91,599,138,629,255,652,378,666,475"/>
+<area shape="rect" href="namespacecarefree__internal.html#aad7dbc1a16b16dd475afde24d7adf0d1" title=" " alt="" coords="424,72,548,115"/>
+<area shape="poly" title=" " alt="" coords="665,475,659,404,643,312,629,264,611,215,587,170,557,128,545,117,548,113,561,125,591,167,615,213,634,262,648,311,664,403,670,475"/>
+<area shape="rect" href="namespacecarefree__internal.html#ad3a206037445f3e3ec7f383b06e672e7" title=" " alt="" coords="424,139,548,181"/>
+<area shape="poly" title=" " alt="" coords="661,476,651,418,632,346,601,270,581,234,557,202,536,184,540,180,561,198,586,232,606,268,637,344,656,417,667,475"/>
+<area shape="rect" href="namespacecarefree__internal.html#a724484c7eb7b8b55dd4c794862746903" title=" " alt="" coords="12,256,186,299"/>
+<area shape="poly" title=" " alt="" coords="660,476,649,428,630,373,600,319,580,295,558,274,511,247,460,231,407,223,352,222,298,227,248,235,162,258,160,253,246,230,298,222,352,217,407,217,462,225,514,242,561,270,584,291,604,316,635,371,654,427,665,475"/>
+<area shape="rect" href="namespacecarefree__internal.html#a1b727fafdf70d1ca51cbc3e3d459758b" title=" " alt="" coords="5,407,193,449"/>
+<area shape="poly" title=" " alt="" coords="592,489,559,481,462,464,364,451,193,436,193,430,364,446,463,459,560,476,593,484"/>
+<area shape="rect" href="namespacecarefree__internal.html#a28dda1f852ebd11512dd66590a94b96f" title=" " alt="" coords="26,331,172,357"/>
+<area shape="poly" title=" " alt="" coords="622,485,558,452,472,423,402,408,331,398,240,380,158,361,159,355,241,375,332,392,403,403,473,418,560,447,625,480"/>
+<area shape="rect" href="namespacecarefree__internal.html#a61a9c430c576d91175580b3b06298abc" title=" " alt="" coords="241,256,365,299"/>
+<area shape="poly" title=" " alt="" coords="657,477,644,437,624,392,595,348,578,329,558,313,512,290,461,277,411,273,365,273,365,268,411,267,462,272,514,285,561,308,581,325,599,345,628,390,649,435,662,475"/>
+<area shape="rect" href="namespacecarefree__internal.html#a9435ff722beb77c4643b43781ffcf64b" title=" " alt="" coords="424,491,548,533"/>
+<area shape="poly" title=" " alt="" coords="592,515,549,515,549,509,592,509"/>
+<area shape="rect" href="namespacecarefree__internal.html#a08468ea069a9cca1f2e41fbb4b61c760" title=" " alt="" coords="424,557,548,600"/>
+<area shape="poly" title=" " alt="" coords="596,542,548,559,546,554,594,537"/>
+<area shape="rect" href="namespacecarefree__internal.html#a515d38ea0328bd28511c5ae891e700f9" title=" " alt="" coords="424,624,548,667"/>
+<area shape="poly" title=" " alt="" coords="640,547,603,581,561,614,541,626,538,621,558,610,600,577,636,543"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa1d429d13c51db08341e8224a4f22bf0" title=" " alt="" coords="424,691,548,733"/>
+<area shape="poly" title=" " alt="" coords="655,549,617,614,591,649,561,681,545,692,542,688,558,677,587,646,613,611,650,546"/>
+<area shape="rect" href="namespacecarefree__internal.html#af64a6a3d99b90dd3c9c702ca85ddd664" title=" " alt="" coords="424,323,548,365"/>
+<area shape="poly" title=" " alt="" coords="643,480,605,433,558,386,531,368,534,364,561,382,609,429,647,477"/>
+<area shape="rect" href="namespacecarefree__internal.html#a19f856624a89fda1542731f5e93ca469" title=" " alt="" coords="424,757,548,800"/>
+<area shape="poly" title=" " alt="" coords="662,549,649,594,628,646,599,700,561,747,547,759,543,755,557,743,595,697,623,644,644,592,657,548"/>
+<area shape="rect" href="namespacecarefree__internal.html#a5d94a77704f75ed18e98f79eccd2a5e3" title=" " alt="" coords="424,824,548,867"/>
+<area shape="poly" title=" " alt="" coords="667,549,656,606,637,676,606,748,586,783,561,814,547,826,544,822,557,810,581,780,602,746,632,674,651,605,661,548"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa1e0ef6a072c88600d285a0f09516ad1" title=" " alt="" coords="424,891,548,933"/>
+<area shape="poly" title=" " alt="" coords="670,549,663,618,646,705,632,751,613,797,590,841,561,880,548,892,544,888,557,877,586,838,609,795,627,750,640,704,657,617,664,549"/>
+<area shape="rect" href="namespacecarefree__internal.html#ad4db2cc924563f6be3d91bf8c08fa32b" title=" " alt="" coords="413,957,559,984"/>
+<area shape="poly" title=" " alt="" coords="666,549,652,642,629,761,599,873,581,916,561,947,546,959,543,955,557,944,576,914,594,871,624,759,647,642,661,548"/>
+<area shape="rect" href="namespacecarefree__internal.html#acaa850b4d070fcaa5594815fce2fa597" title=" " alt="" coords="416,1012,557,1039"/>
+<area shape="poly" title=" " alt="" coords="667,549,654,652,632,785,601,912,582,962,561,998,541,1014,537,1009,557,994,578,960,596,911,627,784,649,651,662,549"/>
+<area shape="rect" href="namespacecarefree__internal.html#a7ad83ca88f9ccb6fb56881d86ef38776" title=" " alt="" coords="241,139,365,181"/>
+<area shape="poly" title=" " alt="" coords="408,163,365,163,365,157,408,157"/>
+<area shape="poly" title=" " alt="" coords="225,280,186,280,186,275,225,275"/>
+<area shape="poly" title=" " alt="" coords="226,305,143,333,141,328,225,300"/>
+<area shape="rect" href="namespacecarefree__internal.html#a6568ca7a4573592fe32797708ffd5660" title=" " alt="" coords="241,624,365,667"/>
+<area shape="poly" title=" " alt="" coords="408,648,365,648,365,643,408,643"/>
+<area shape="rect" href="namespacecarefree__internal.html#a523bf25347d3557fc588632697760acc" title=" " alt="" coords="241,691,365,733"/>
+<area shape="poly" title=" " alt="" coords="408,715,365,715,365,709,408,709"/>
+<area shape="rect" href="namespacecarefree__internal.html#a322995ed523155f90011208944ae01e0" title=" " alt="" coords="241,323,365,365"/>
+<area shape="poly" title=" " alt="" coords="408,347,365,347,365,341,408,341"/>
+<area shape="poly" title=" " alt="" coords="225,321,166,302,167,297,226,316"/>
+<area shape="poly" title=" " alt="" coords="236,374,154,409,152,404,234,369"/>
+<area shape="poly" title=" " alt="" coords="225,347,172,347,172,341,225,341"/>
+<area shape="rect" href="namespacecarefree__internal.html#a2e4f536843cba9540e93e682a58bb239" title=" " alt="" coords="241,945,365,988"/>
+<area shape="poly" title=" " alt="" coords="397,971,366,971,366,965,397,966"/>
+<area shape="rect" href="namespacecarefree__internal.html#aec5edaf797754ac7e4771ad7111b8624" title=" " alt="" coords="241,1012,365,1055"/>
+<area shape="poly" title=" " alt="" coords="400,1032,366,1033,365,1028,400,1026"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7a1dbbcc765710a94732151679cb16d6" name="a7a1dbbcc765710a94732151679cb16d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a1dbbcc765710a94732151679cb16d6">&#9670;&#160;</a></span>add() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void carefree_internal::graph::add </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>from</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>to</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">_Weight</a></td>          <td class="paramname"><span class="paramname"><em>weight</em><span class="paramdefsep"> = </span><span class="paramdefval">0</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1graph_a7a1dbbcc765710a94732151679cb16d6_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1graph_a7a1dbbcc765710a94732151679cb16d6_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1graph_a7a1dbbcc765710a94732151679cb16d6_cgraph" id="aclasscarefree__internal_1_1graph_a7a1dbbcc765710a94732151679cb16d6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,130,123"/>
+<area shape="rect" href="classcarefree__internal_1_1graph.html#abdbd3d847b3956dd1b41abd72e11b039" title=" " alt="" coords="178,80,302,123"/>
+<area shape="poly" title=" " alt="" coords="130,99,162,99,162,104,130,104"/>
+<area shape="poly" title=" " alt="" coords="206,80,205,70,211,61,222,55,240,53,259,56,270,62,267,67,257,61,240,59,224,61,214,65,210,71,212,79"/>
+<area shape="rect" href="namespacecarefree__internal.html#ac0a9ffdfe180933b02d7f6d0b5c7366e" title=" " alt="" coords="350,80,488,123"/>
+<area shape="poly" title=" " alt="" coords="302,99,334,99,334,104,302,104"/>
+<area shape="rect" href="namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title=" " alt="" coords="536,80,661,123"/>
+<area shape="poly" title=" " alt="" coords="489,99,521,99,521,104,489,104"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title=" " alt="" coords="711,5,850,64"/>
+<area shape="poly" title=" " alt="" coords="658,77,696,63,697,68,659,82"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title=" " alt="" coords="900,47,1065,89"/>
+<area shape="poly" title=" " alt="" coords="661,93,884,74,885,79,661,99"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title=" " alt="" coords="709,139,852,181"/>
+<area shape="poly" title=" " alt="" coords="662,119,698,131,697,136,660,124"/>
+<area shape="poly" title=" " alt="" coords="850,43,885,49,884,54,849,49"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title=" " alt="" coords="1113,39,1252,97"/>
+<area shape="poly" title=" " alt="" coords="1066,65,1098,65,1098,71,1066,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad17dc89238f49bb541f7ca4d683b6275" name="ad17dc89238f49bb541f7ca4d683b6275"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad17dc89238f49bb541f7ca4d683b6275">&#9670;&#160;</a></span>get_edges() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">edge</a> &gt; carefree_internal::graph::get_edges </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1graph_ad17dc89238f49bb541f7ca4d683b6275_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1graph_ad17dc89238f49bb541f7ca4d683b6275_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1graph_ad17dc89238f49bb541f7ca4d683b6275_icgraph" id="aclasscarefree__internal_1_1graph_ad17dc89238f49bb541f7ca4d683b6275_icgraph">
+<area shape="rect" title=" " alt="" coords="634,152,759,195"/>
+<area shape="rect" href="namespacecarefree__internal.html#a61a9c430c576d91175580b3b06298abc" title=" " alt="" coords="258,5,383,48"/>
+<area shape="poly" title=" " alt="" coords="673,141,636,94,612,72,585,54,535,36,481,26,429,22,383,23,383,18,429,17,482,20,536,30,588,50,615,68,640,90,677,137"/>
+<area shape="rect" href="namespacecarefree__internal.html#a1ae8ab172aacc881bf0e08bea71d9859" title=" " alt="" coords="462,64,586,107"/>
+<area shape="poly" title=" " alt="" coords="638,147,566,109,569,105,641,142"/>
+<area shape="rect" href="namespacecarefree__internal.html#a08468ea069a9cca1f2e41fbb4b61c760" title=" " alt="" coords="258,123,383,165"/>
+<area shape="poly" title=" " alt="" coords="618,170,383,151,383,146,619,165"/>
+<area shape="rect" href="namespacecarefree__internal.html#a1b4b3dc6d3d760807ac733f1aeb5e3a0" title=" " alt="" coords="462,181,586,224"/>
+<area shape="poly" title=" " alt="" coords="619,189,587,195,586,189,618,184"/>
+<area shape="rect" href="namespacecarefree__internal.html#a5d94a77704f75ed18e98f79eccd2a5e3" title=" " alt="" coords="462,248,586,291"/>
+<area shape="poly" title=" " alt="" coords="646,205,588,238,567,250,564,245,585,234,643,200"/>
+<area shape="rect" href="classcarefree__internal_1_1graph.html#a8facb74885887c451a7597339cd4df50" title=" " alt="" coords="462,315,586,357"/>
+<area shape="poly" title=" " alt="" coords="674,209,636,257,588,305,571,316,568,312,585,301,632,253,670,206"/>
+<area shape="rect" href="namespacecarefree__internal.html#a724484c7eb7b8b55dd4c794862746903" title=" " alt="" coords="5,5,179,48"/>
+<area shape="poly" title=" " alt="" coords="243,29,179,29,179,24,243,24"/>
+<area shape="rect" href="namespacecarefree__internal.html#a28dda1f852ebd11512dd66590a94b96f" title=" " alt="" coords="19,72,165,99"/>
+<area shape="poly" title=" " alt="" coords="244,49,148,74,146,69,243,44"/>
+<area shape="poly" title=" " alt="" coords="446,66,382,47,384,42,448,61"/>
+<area shape="poly" title=" " alt="" coords="446,88,165,88,165,83,446,83"/>
+<area shape="poly" title=" " alt="" coords="448,110,384,129,382,124,446,105"/>
+<area shape="rect" href="classcarefree__internal_1_1testcase__writer.html#a16b87ccb68ecb897db9c28697337664b" title=" " alt="" coords="231,281,410,324"/>
+<area shape="poly" title=" " alt="" coords="446,326,410,320,411,315,447,321"/>
+<area shape="rect" href="classcarefree__internal_1_1testcase__writer.html#a441c785793f7bc60cd107c24fc15d8f3" title=" " alt="" coords="227,348,414,391"/>
+<area shape="poly" title=" " alt="" coords="447,351,415,357,414,351,446,346"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4b50dd8905209aa30918c3c9190bffef" name="a4b50dd8905209aa30918c3c9190bffef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b50dd8905209aa30918c3c9190bffef">&#9670;&#160;</a></span>get_edges() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">edge</a> &gt; carefree_internal::graph::get_edges </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>from</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1graph_a4b50dd8905209aa30918c3c9190bffef_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1graph_a4b50dd8905209aa30918c3c9190bffef_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1graph_a4b50dd8905209aa30918c3c9190bffef_cgraph" id="aclasscarefree__internal_1_1graph_a4b50dd8905209aa30918c3c9190bffef_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,130,123"/>
+<area shape="rect" href="namespacecarefree__internal.html#ac0a9ffdfe180933b02d7f6d0b5c7366e" title=" " alt="" coords="178,80,316,123"/>
+<area shape="poly" title=" " alt="" coords="130,99,162,99,162,104,130,104"/>
+<area shape="rect" href="namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title=" " alt="" coords="364,80,488,123"/>
+<area shape="poly" title=" " alt="" coords="316,99,348,99,348,104,316,104"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title=" " alt="" coords="539,5,677,64"/>
+<area shape="poly" title=" " alt="" coords="485,77,523,63,525,68,487,82"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title=" " alt="" coords="728,47,893,89"/>
+<area shape="poly" title=" " alt="" coords="489,93,712,74,712,79,489,99"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title=" " alt="" coords="536,139,680,181"/>
+<area shape="poly" title=" " alt="" coords="489,119,526,131,524,136,488,124"/>
+<area shape="poly" title=" " alt="" coords="678,43,713,49,712,54,677,49"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title=" " alt="" coords="941,39,1079,97"/>
+<area shape="poly" title=" " alt="" coords="894,65,925,65,925,71,894,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a14069d7f4ac48b856eb540db58002a8f" name="a14069d7f4ac48b856eb540db58002a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14069d7f4ac48b856eb540db58002a8f">&#9670;&#160;</a></span>has_edge() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool carefree_internal::graph::has_edge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">edge</a></td>          <td class="paramname"><span class="paramname"><em>edg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1graph_a14069d7f4ac48b856eb540db58002a8f_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1graph_a14069d7f4ac48b856eb540db58002a8f_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1graph_a14069d7f4ac48b856eb540db58002a8f_cgraph" id="aclasscarefree__internal_1_1graph_a14069d7f4ac48b856eb540db58002a8f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,130,123"/>
+<area shape="rect" href="namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title=" " alt="" coords="178,80,302,123"/>
+<area shape="poly" title=" " alt="" coords="130,99,162,99,162,104,130,104"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title=" " alt="" coords="353,5,491,64"/>
+<area shape="poly" title=" " alt="" coords="299,77,337,63,339,68,301,82"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title=" " alt="" coords="541,47,707,89"/>
+<area shape="poly" title=" " alt="" coords="302,93,526,74,526,79,303,99"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title=" " alt="" coords="350,139,493,181"/>
+<area shape="poly" title=" " alt="" coords="303,119,340,131,338,136,301,124"/>
+<area shape="poly" title=" " alt="" coords="492,43,526,49,525,54,491,49"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title=" " alt="" coords="755,39,893,97"/>
+<area shape="poly" title=" " alt="" coords="707,65,739,65,739,71,707,71"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1graph_a14069d7f4ac48b856eb540db58002a8f_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1graph_a14069d7f4ac48b856eb540db58002a8f_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1graph_a14069d7f4ac48b856eb540db58002a8f_icgraph" id="aclasscarefree__internal_1_1graph_a14069d7f4ac48b856eb540db58002a8f_icgraph">
+<area shape="rect" title=" " alt="" coords="241,131,365,173"/>
+<area shape="rect" href="namespacecarefree__internal.html#a724484c7eb7b8b55dd4c794862746903" title=" " alt="" coords="12,5,186,48"/>
+<area shape="poly" title=" " alt="" coords="268,122,233,91,191,62,168,51,171,46,194,58,236,87,272,118"/>
+<area shape="rect" href="namespacecarefree__internal.html#a1b727fafdf70d1ca51cbc3e3d459758b" title=" " alt="" coords="5,72,193,115"/>
+<area shape="poly" title=" " alt="" coords="225,132,175,118,176,113,226,127"/>
+<area shape="rect" href="namespacecarefree__internal.html#a28dda1f852ebd11512dd66590a94b96f" title=" " alt="" coords="26,139,172,165"/>
+<area shape="poly" title=" " alt="" coords="225,155,172,155,172,149,225,149"/>
+<area shape="rect" href="classcarefree__internal_1_1graph.html#ad362e60ac66fec811f2c04bba975f1a1" title=" " alt="" coords="37,189,161,232"/>
+<area shape="poly" title=" " alt="" coords="226,177,162,195,161,190,225,172"/>
+<area shape="rect" href="namespacecarefree__internal.html#a19f856624a89fda1542731f5e93ca469" title=" " alt="" coords="37,256,161,299"/>
+<area shape="poly" title=" " alt="" coords="272,186,236,217,194,246,163,261,161,256,191,242,233,213,268,182"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad362e60ac66fec811f2c04bba975f1a1" name="ad362e60ac66fec811f2c04bba975f1a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad362e60ac66fec811f2c04bba975f1a1">&#9670;&#160;</a></span>has_edge() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool carefree_internal::graph::has_edge </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>from</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>to</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1graph_ad362e60ac66fec811f2c04bba975f1a1_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1graph_ad362e60ac66fec811f2c04bba975f1a1_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1graph_ad362e60ac66fec811f2c04bba975f1a1_cgraph" id="aclasscarefree__internal_1_1graph_ad362e60ac66fec811f2c04bba975f1a1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,130,123"/>
+<area shape="rect" href="classcarefree__internal_1_1graph.html#a14069d7f4ac48b856eb540db58002a8f" title=" " alt="" coords="178,80,302,123"/>
+<area shape="poly" title=" " alt="" coords="130,99,162,99,162,104,130,104"/>
+<area shape="rect" href="namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title=" " alt="" coords="350,80,474,123"/>
+<area shape="poly" title=" " alt="" coords="302,99,335,99,335,104,302,104"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title=" " alt="" coords="525,5,663,64"/>
+<area shape="poly" title=" " alt="" coords="471,77,509,63,511,68,473,82"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title=" " alt="" coords="714,47,879,89"/>
+<area shape="poly" title=" " alt="" coords="475,93,698,74,698,79,475,99"/>
+<area shape="rect" href="namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title=" " alt="" coords="522,139,666,181"/>
+<area shape="poly" title=" " alt="" coords="475,119,512,131,510,136,474,124"/>
+<area shape="poly" title=" " alt="" coords="664,43,699,49,698,54,663,49"/>
+<area shape="rect" href="classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title=" " alt="" coords="927,39,1065,97"/>
+<area shape="poly" title=" " alt="" coords="880,65,911,65,911,71,880,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8facb74885887c451a7597339cd4df50" name="a8facb74885887c451a7597339cd4df50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8facb74885887c451a7597339cd4df50">&#9670;&#160;</a></span>to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T  = weighted_output&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string carefree_internal::graph::to_string </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>shuffle</em><span class="paramdefsep"> = </span><span class="paramdefval">false</span></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1graph_a8facb74885887c451a7597339cd4df50_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1graph_a8facb74885887c451a7597339cd4df50_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1graph_a8facb74885887c451a7597339cd4df50_cgraph" id="aclasscarefree__internal_1_1graph_a8facb74885887c451a7597339cd4df50_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,130,48"/>
+<area shape="rect" href="classcarefree__internal_1_1graph.html#ad17dc89238f49bb541f7ca4d683b6275" title=" " alt="" coords="178,5,302,48"/>
+<area shape="poly" title=" " alt="" coords="130,24,162,24,162,29,130,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1graph_a8facb74885887c451a7597339cd4df50_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1graph_a8facb74885887c451a7597339cd4df50_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1graph_a8facb74885887c451a7597339cd4df50_icgraph" id="aclasscarefree__internal_1_1graph_a8facb74885887c451a7597339cd4df50_icgraph">
+<area shape="rect" title=" " alt="" coords="241,39,365,81"/>
+<area shape="rect" href="classcarefree__internal_1_1testcase__writer.html#a16b87ccb68ecb897db9c28697337664b" title=" " alt="" coords="9,5,189,48"/>
+<area shape="poly" title=" " alt="" coords="225,50,189,44,190,39,225,45"/>
+<area shape="rect" href="classcarefree__internal_1_1testcase__writer.html#a441c785793f7bc60cd107c24fc15d8f3" title=" " alt="" coords="5,72,193,115"/>
+<area shape="poly" title=" " alt="" coords="226,75,194,81,193,75,225,70"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aace50b70dd82d69f13da8107056e2ca9" name="aace50b70dd82d69f13da8107056e2ca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aace50b70dd82d69f13da8107056e2ca9">&#9670;&#160;</a></span>chain</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structcarefree__internal_1_1graph_1_1chain__node.html">chain_node</a>&gt; carefree_internal::graph::chain</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2626e9b32d3404bfc816696b2cb5f033" name="a2626e9b32d3404bfc816696b2cb5f033"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2626e9b32d3404bfc816696b2cb5f033">&#9670;&#160;</a></span>directed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool carefree_internal::graph::directed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0b80d2f7399c3b04dc83249c6a1cde9" name="af0b80d2f7399c3b04dc83249c6a1cde9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b80d2f7399c3b04dc83249c6a1cde9">&#9670;&#160;</a></span>edge_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::map&lt;int, bool&gt; &gt; carefree_internal::graph::edge_map</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5c0016badb0a7704f0a895bb552b2c8e" name="a5c0016badb0a7704f0a895bb552b2c8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c0016badb0a7704f0a895bb552b2c8e">&#9670;&#160;</a></span>edge_vct</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">edge</a>&gt; carefree_internal::graph::edge_vct</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aafca15b9d7471db09e74fce9f8a8b413" name="aafca15b9d7471db09e74fce9f8a8b413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafca15b9d7471db09e74fce9f8a8b413">&#9670;&#160;</a></span>enable_edge_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool carefree_internal::graph::enable_edge_map</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c5219e44e5a3e30c3e80ca44628f92f" name="a2c5219e44e5a3e30c3e80ca44628f92f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c5219e44e5a3e30c3e80ca44628f92f">&#9670;&#160;</a></span>head</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;int&gt; carefree_internal::graph::head</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a100a2d6fae2d5e1891932cbeffd45bc4" name="a100a2d6fae2d5e1891932cbeffd45bc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a100a2d6fae2d5e1891932cbeffd45bc4">&#9670;&#160;</a></span>N</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int carefree_internal::graph::N</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="carefree_8hpp_source.html">carefree.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

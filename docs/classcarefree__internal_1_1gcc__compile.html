@@ -1,0 +1,823 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Carefree: carefree_internal::gcc_compile类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Carefree<span id="projectnumber">&#160;0.5</span>
+   </div>
+   <div id="projectbrief">CareFree Library - A Light Data Generator for OI &amp; ACM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacecarefree__internal.html">carefree_internal</a></li><li class="navelem"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="classcarefree__internal_1_1gcc__compile-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">carefree_internal::gcc_compile类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="carefree_8hpp_source.html">carefree.hpp</a>&gt;</code></p>
+<div class="dynheader">
+carefree_internal::gcc_compile 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1gcc__compile__coll__graph.png" border="0" usemap="#acarefree__internal_1_1gcc__compile_coll__map" alt="Collaboration graph"/></div>
+<map name="acarefree__internal_1_1gcc__compile_coll__map" id="acarefree__internal_1_1gcc__compile_coll__map">
+<area shape="rect" title=" " alt="" coords="5,128,130,171"/>
+<area shape="rect" title=" " alt="" coords="41,5,94,32"/>
+<area shape="poly" title=" " alt="" coords="70,47,70,128,65,128,65,47"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1365a4aa96c28dda3ea1949b9338a212" id="r_a1365a4aa96c28dda3ea1949b9338a212"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1365a4aa96c28dda3ea1949b9338a212">gcc_compile</a> (string <a class="el" href="#a31de6e07195191c72df21e6bf6c833ee">filename</a>, string <a class="el" href="#a2b0bc2bc4b8e6efde06c7ec7d0f410ba">output_name</a>)</td></tr>
+<tr class="separator:a1365a4aa96c28dda3ea1949b9338a212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac974ce03918da02ac9a68c7f1dfb2885" id="r_ac974ce03918da02ac9a68c7f1dfb2885"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac974ce03918da02ac9a68c7f1dfb2885">gcc</a> (string <a class="el" href="#ab79ced3afd23fb0b3317a441dd4112b4">gcc_path</a>)</td></tr>
+<tr class="separator:ac974ce03918da02ac9a68c7f1dfb2885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14147871bf99082df12dee8091d6608" id="r_ac14147871bf99082df12dee8091d6608"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac14147871bf99082df12dee8091d6608">optimization</a> (<a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1">optimization_type</a> <a class="el" href="#a8e4300f24d6fe63400e403ed4ab3c04a">opti</a>)</td></tr>
+<tr class="separator:ac14147871bf99082df12dee8091d6608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abafa518a455741368c00e1e0a094ed81" id="r_abafa518a455741368c00e1e0a094ed81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abafa518a455741368c00e1e0a094ed81">cpp_version</a> (<a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304">cpp_version</a> <a class="el" href="#a10681ab70322d90719f105cfe7a15448">cpp</a>)</td></tr>
+<tr class="separator:abafa518a455741368c00e1e0a094ed81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adab807bfb3c653919cb7da77d2bd4e8e" id="r_adab807bfb3c653919cb7da77d2bd4e8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adab807bfb3c653919cb7da77d2bd4e8e">warning_level</a> (int <a class="el" href="#a73e99e080dfe16c411892bc85572975b">warning</a>)</td></tr>
+<tr class="separator:adab807bfb3c653919cb7da77d2bd4e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3974cf1cbe895f96c35e74651a2611a9" id="r_a3974cf1cbe895f96c35e74651a2611a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3974cf1cbe895f96c35e74651a2611a9">add_warning</a> (int <a class="el" href="#a73e99e080dfe16c411892bc85572975b">warning</a>)</td></tr>
+<tr class="separator:a3974cf1cbe895f96c35e74651a2611a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96db6d645e29210ac88ba0595028311a" id="r_a96db6d645e29210ac88ba0595028311a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96db6d645e29210ac88ba0595028311a">linking_static</a> (bool <a class="el" href="#a2cb155eda65cf95474cb95091e364e0e">link_static</a>=true)</td></tr>
+<tr class="separator:a96db6d645e29210ac88ba0595028311a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03be3adb60ff451d5b6de02bac250876" id="r_a03be3adb60ff451d5b6de02bac250876"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03be3adb60ff451d5b6de02bac250876">include_file</a> (string <a class="el" href="#a31de6e07195191c72df21e6bf6c833ee">filename</a>)</td></tr>
+<tr class="separator:a03be3adb60ff451d5b6de02bac250876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab98b2806907859a198ac45d4703a360c" id="r_ab98b2806907859a198ac45d4703a360c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab98b2806907859a198ac45d4703a360c">define</a> (string key, string value=&quot;&quot;)</td></tr>
+<tr class="separator:ab98b2806907859a198ac45d4703a360c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6523f84979ee12e87273ce6b99873d3" id="r_aa6523f84979ee12e87273ce6b99873d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6523f84979ee12e87273ce6b99873d3">include_dir</a> (string dir)</td></tr>
+<tr class="separator:aa6523f84979ee12e87273ce6b99873d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab15a79f255a548ccf6dec133b6d3adc8" id="r_ab15a79f255a548ccf6dec133b6d3adc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab15a79f255a548ccf6dec133b6d3adc8">link</a> (string lib)</td></tr>
+<tr class="separator:ab15a79f255a548ccf6dec133b6d3adc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a667bf60d6cf7aa046cf83d76b1b3e2" id="r_a0a667bf60d6cf7aa046cf83d76b1b3e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a667bf60d6cf7aa046cf83d76b1b3e2">debug_mode</a> (bool <a class="el" href="#a97880cb1ff800740fed8db698e4aa908">debug</a>=true)</td></tr>
+<tr class="separator:a0a667bf60d6cf7aa046cf83d76b1b3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a866e5ec62b68b5d0666fe8380b9dbd32" id="r_a866e5ec62b68b5d0666fe8380b9dbd32"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a866e5ec62b68b5d0666fe8380b9dbd32">command</a> ()</td></tr>
+<tr class="separator:a866e5ec62b68b5d0666fe8380b9dbd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a148041a674176132e8743f841248d37b" id="r_a148041a674176132e8743f841248d37b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650ac">judge_result_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a148041a674176132e8743f841248d37b">start</a> ()</td></tr>
+<tr class="separator:a148041a674176132e8743f841248d37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ab79ced3afd23fb0b3317a441dd4112b4" id="r_ab79ced3afd23fb0b3317a441dd4112b4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab79ced3afd23fb0b3317a441dd4112b4">gcc_path</a> = &quot;g++&quot;</td></tr>
+<tr class="separator:ab79ced3afd23fb0b3317a441dd4112b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31de6e07195191c72df21e6bf6c833ee" id="r_a31de6e07195191c72df21e6bf6c833ee"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31de6e07195191c72df21e6bf6c833ee">filename</a></td></tr>
+<tr class="separator:a31de6e07195191c72df21e6bf6c833ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0bc2bc4b8e6efde06c7ec7d0f410ba" id="r_a2b0bc2bc4b8e6efde06c7ec7d0f410ba"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b0bc2bc4b8e6efde06c7ec7d0f410ba">output_name</a></td></tr>
+<tr class="separator:a2b0bc2bc4b8e6efde06c7ec7d0f410ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4300f24d6fe63400e403ed4ab3c04a" id="r_a8e4300f24d6fe63400e403ed4ab3c04a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1">optimization_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e4300f24d6fe63400e403ed4ab3c04a">opti</a> = <a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1ac826b0faeef29d79d3d58aac628d2fed">O2</a></td></tr>
+<tr class="separator:a8e4300f24d6fe63400e403ed4ab3c04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10681ab70322d90719f105cfe7a15448" id="r_a10681ab70322d90719f105cfe7a15448"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304">cpp_version</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10681ab70322d90719f105cfe7a15448">cpp</a> = <a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304ad2645e97039a2fc779d3b15fc046ecfc">Cpp14</a></td></tr>
+<tr class="separator:a10681ab70322d90719f105cfe7a15448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e99e080dfe16c411892bc85572975b" id="r_a73e99e080dfe16c411892bc85572975b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73e99e080dfe16c411892bc85572975b">warning</a> = 0</td></tr>
+<tr class="separator:a73e99e080dfe16c411892bc85572975b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb155eda65cf95474cb95091e364e0e" id="r_a2cb155eda65cf95474cb95091e364e0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cb155eda65cf95474cb95091e364e0e">link_static</a> = false</td></tr>
+<tr class="separator:a2cb155eda65cf95474cb95091e364e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97880cb1ff800740fed8db698e4aa908" id="r_a97880cb1ff800740fed8db698e4aa908"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97880cb1ff800740fed8db698e4aa908">debug</a> = false</td></tr>
+<tr class="separator:a97880cb1ff800740fed8db698e4aa908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8833f4e6f6ab47d25a4564c457f95f73" id="r_a8833f4e6f6ab47d25a4564c457f95f73"><td class="memItemLeft" align="right" valign="top">std::vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8833f4e6f6ab47d25a4564c457f95f73">include_files</a></td></tr>
+<tr class="separator:a8833f4e6f6ab47d25a4564c457f95f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa210de82158a322df00912e9b2cd4d16" id="r_aa210de82158a322df00912e9b2cd4d16"><td class="memItemLeft" align="right" valign="top">std::vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa210de82158a322df00912e9b2cd4d16">include_dirs</a></td></tr>
+<tr class="separator:aa210de82158a322df00912e9b2cd4d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23aaf4d77a3af9e972154677cda7d8d3" id="r_a23aaf4d77a3af9e972154677cda7d8d3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23aaf4d77a3af9e972154677cda7d8d3">link_libs</a></td></tr>
+<tr class="separator:a23aaf4d77a3af9e972154677cda7d8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69318054164741009282ce47f21db7d6" id="r_a69318054164741009282ce47f21db7d6"><td class="memItemLeft" align="right" valign="top">std::map&lt; string, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69318054164741009282ce47f21db7d6">defintions</a></td></tr>
+<tr class="separator:a69318054164741009282ce47f21db7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a1365a4aa96c28dda3ea1949b9338a212" name="a1365a4aa96c28dda3ea1949b9338a212"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1365a4aa96c28dda3ea1949b9338a212">&#9670;&#160;</a></span>gcc_compile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">carefree_internal::gcc_compile::gcc_compile </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>filename</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>output_name</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a3974cf1cbe895f96c35e74651a2611a9" name="a3974cf1cbe895f96c35e74651a2611a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3974cf1cbe895f96c35e74651a2611a9">&#9670;&#160;</a></span>add_warning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp; carefree_internal::gcc_compile::add_warning </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>warning</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a866e5ec62b68b5d0666fe8380b9dbd32" name="a866e5ec62b68b5d0666fe8380b9dbd32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a866e5ec62b68b5d0666fe8380b9dbd32">&#9670;&#160;</a></span>command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string carefree_internal::gcc_compile::command </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1gcc__compile_a866e5ec62b68b5d0666fe8380b9dbd32_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1gcc__compile_a866e5ec62b68b5d0666fe8380b9dbd32_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1gcc__compile_a866e5ec62b68b5d0666fe8380b9dbd32_cgraph" id="aclasscarefree__internal_1_1gcc__compile_a866e5ec62b68b5d0666fe8380b9dbd32_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,165,48"/>
+<area shape="rect" href="namespacecarefree__internal.html#a7e9d60ad18cc4794375c6038247ec3a5" title=" " alt="" coords="213,5,337,48"/>
+<area shape="poly" title=" " alt="" coords="165,24,197,24,197,29,165,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1gcc__compile_a866e5ec62b68b5d0666fe8380b9dbd32_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1gcc__compile_a866e5ec62b68b5d0666fe8380b9dbd32_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1gcc__compile_a866e5ec62b68b5d0666fe8380b9dbd32_icgraph" id="aclasscarefree__internal_1_1gcc__compile_a866e5ec62b68b5d0666fe8380b9dbd32_icgraph">
+<area shape="rect" title=" " alt="" coords="182,5,341,48"/>
+<area shape="rect" href="classcarefree__internal_1_1gcc__compile.html#a148041a674176132e8743f841248d37b" title=" " alt="" coords="5,5,134,48"/>
+<area shape="poly" title=" " alt="" coords="166,29,134,29,134,24,166,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abafa518a455741368c00e1e0a094ed81" name="abafa518a455741368c00e1e0a094ed81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abafa518a455741368c00e1e0a094ed81">&#9670;&#160;</a></span>cpp_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp; carefree_internal::gcc_compile::cpp_version </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304">cpp_version</a></td>          <td class="paramname"><span class="paramname"><em>cpp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a667bf60d6cf7aa046cf83d76b1b3e2" name="a0a667bf60d6cf7aa046cf83d76b1b3e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a667bf60d6cf7aa046cf83d76b1b3e2">&#9670;&#160;</a></span>debug_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp; carefree_internal::gcc_compile::debug_mode </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>debug</em><span class="paramdefsep"> = </span><span class="paramdefval">true</span></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab98b2806907859a198ac45d4703a360c" name="ab98b2806907859a198ac45d4703a360c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab98b2806907859a198ac45d4703a360c">&#9670;&#160;</a></span>define()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp; carefree_internal::gcc_compile::define </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>key</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>value</em><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac974ce03918da02ac9a68c7f1dfb2885" name="ac974ce03918da02ac9a68c7f1dfb2885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac974ce03918da02ac9a68c7f1dfb2885">&#9670;&#160;</a></span>gcc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp; carefree_internal::gcc_compile::gcc </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>gcc_path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6523f84979ee12e87273ce6b99873d3" name="aa6523f84979ee12e87273ce6b99873d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6523f84979ee12e87273ce6b99873d3">&#9670;&#160;</a></span>include_dir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp; carefree_internal::gcc_compile::include_dir </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>dir</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03be3adb60ff451d5b6de02bac250876" name="a03be3adb60ff451d5b6de02bac250876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03be3adb60ff451d5b6de02bac250876">&#9670;&#160;</a></span>include_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp; carefree_internal::gcc_compile::include_file </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab15a79f255a548ccf6dec133b6d3adc8" name="ab15a79f255a548ccf6dec133b6d3adc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab15a79f255a548ccf6dec133b6d3adc8">&#9670;&#160;</a></span>link()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp; carefree_internal::gcc_compile::link </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>lib</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96db6d645e29210ac88ba0595028311a" name="a96db6d645e29210ac88ba0595028311a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96db6d645e29210ac88ba0595028311a">&#9670;&#160;</a></span>linking_static()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp; carefree_internal::gcc_compile::linking_static </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>link_static</em><span class="paramdefsep"> = </span><span class="paramdefval">true</span></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac14147871bf99082df12dee8091d6608" name="ac14147871bf99082df12dee8091d6608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14147871bf99082df12dee8091d6608">&#9670;&#160;</a></span>optimization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp; carefree_internal::gcc_compile::optimization </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1">optimization_type</a></td>          <td class="paramname"><span class="paramname"><em>opti</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a148041a674176132e8743f841248d37b" name="a148041a674176132e8743f841248d37b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a148041a674176132e8743f841248d37b">&#9670;&#160;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650ac">judge_result_type</a> carefree_internal::gcc_compile::start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1gcc__compile_a148041a674176132e8743f841248d37b_cgraph.png" border="0" usemap="#aclasscarefree__internal_1_1gcc__compile_a148041a674176132e8743f841248d37b_cgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1gcc__compile_a148041a674176132e8743f841248d37b_cgraph" id="aclasscarefree__internal_1_1gcc__compile_a148041a674176132e8743f841248d37b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,134,48"/>
+<area shape="rect" href="classcarefree__internal_1_1gcc__compile.html#a866e5ec62b68b5d0666fe8380b9dbd32" title=" " alt="" coords="182,5,341,48"/>
+<area shape="poly" title=" " alt="" coords="134,24,166,24,166,29,134,29"/>
+<area shape="rect" href="namespacecarefree__internal.html#a7e9d60ad18cc4794375c6038247ec3a5" title=" " alt="" coords="389,5,513,48"/>
+<area shape="poly" title=" " alt="" coords="341,24,374,24,374,29,341,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adab807bfb3c653919cb7da77d2bd4e8e" name="adab807bfb3c653919cb7da77d2bd4e8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adab807bfb3c653919cb7da77d2bd4e8e">&#9670;&#160;</a></span>warning_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a> &amp; carefree_internal::gcc_compile::warning_level </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>warning</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a10681ab70322d90719f105cfe7a15448" name="a10681ab70322d90719f105cfe7a15448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10681ab70322d90719f105cfe7a15448">&#9670;&#160;</a></span>cpp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304">cpp_version</a> carefree_internal::gcc_compile::cpp = <a class="el" href="namespacecarefree__internal.html#af2809d5a4fb998172f847741a58cf304ad2645e97039a2fc779d3b15fc046ecfc">Cpp14</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a97880cb1ff800740fed8db698e4aa908" name="a97880cb1ff800740fed8db698e4aa908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97880cb1ff800740fed8db698e4aa908">&#9670;&#160;</a></span>debug</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool carefree_internal::gcc_compile::debug = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69318054164741009282ce47f21db7d6" name="a69318054164741009282ce47f21db7d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69318054164741009282ce47f21db7d6">&#9670;&#160;</a></span>defintions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;string, string&gt; carefree_internal::gcc_compile::defintions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31de6e07195191c72df21e6bf6c833ee" name="a31de6e07195191c72df21e6bf6c833ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31de6e07195191c72df21e6bf6c833ee">&#9670;&#160;</a></span>filename</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string carefree_internal::gcc_compile::filename</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab79ced3afd23fb0b3317a441dd4112b4" name="ab79ced3afd23fb0b3317a441dd4112b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab79ced3afd23fb0b3317a441dd4112b4">&#9670;&#160;</a></span>gcc_path</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string carefree_internal::gcc_compile::gcc_path = &quot;g++&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa210de82158a322df00912e9b2cd4d16" name="aa210de82158a322df00912e9b2cd4d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa210de82158a322df00912e9b2cd4d16">&#9670;&#160;</a></span>include_dirs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;string&gt; carefree_internal::gcc_compile::include_dirs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8833f4e6f6ab47d25a4564c457f95f73" name="a8833f4e6f6ab47d25a4564c457f95f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8833f4e6f6ab47d25a4564c457f95f73">&#9670;&#160;</a></span>include_files</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;string&gt; carefree_internal::gcc_compile::include_files</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23aaf4d77a3af9e972154677cda7d8d3" name="a23aaf4d77a3af9e972154677cda7d8d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23aaf4d77a3af9e972154677cda7d8d3">&#9670;&#160;</a></span>link_libs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;string&gt; carefree_internal::gcc_compile::link_libs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2cb155eda65cf95474cb95091e364e0e" name="a2cb155eda65cf95474cb95091e364e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb155eda65cf95474cb95091e364e0e">&#9670;&#160;</a></span>link_static</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool carefree_internal::gcc_compile::link_static = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8e4300f24d6fe63400e403ed4ab3c04a" name="a8e4300f24d6fe63400e403ed4ab3c04a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e4300f24d6fe63400e403ed4ab3c04a">&#9670;&#160;</a></span>opti</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1">optimization_type</a> carefree_internal::gcc_compile::opti = <a class="el" href="namespacecarefree__internal.html#a316854e1e6b605936f6defa46a96abc1ac826b0faeef29d79d3d58aac628d2fed">O2</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b0bc2bc4b8e6efde06c7ec7d0f410ba" name="a2b0bc2bc4b8e6efde06c7ec7d0f410ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0bc2bc4b8e6efde06c7ec7d0f410ba">&#9670;&#160;</a></span>output_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string carefree_internal::gcc_compile::output_name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73e99e080dfe16c411892bc85572975b" name="a73e99e080dfe16c411892bc85572975b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e99e080dfe16c411892bc85572975b">&#9670;&#160;</a></span>warning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int carefree_internal::gcc_compile::warning = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="carefree_8hpp_source.html">carefree.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<map id="carefree_internal::graph::add" name="carefree_internal::graph::add">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,130,123"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="33,80,32,70,37,61,49,55,68,53,87,56,99,62,96,67,85,61,67,59,51,61,41,65,37,71,38,79"/>
+<area shape="rect" id="Node000002" href="$namespacecarefree__internal.html#ac0a9ffdfe180933b02d7f6d0b5c7366e" title=" " alt="" coords="178,80,316,123"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="130,99,162,99,162,104,130,104"/>
+<area shape="rect" id="Node000003" href="$namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title=" " alt="" coords="364,80,488,123"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="316,99,348,99,348,104,316,104"/>
+<area shape="rect" id="Node000004" href="$classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title=" " alt="" coords="539,5,677,64"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="485,77,523,63,525,68,487,82"/>
+<area shape="rect" id="Node000005" href="$classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title=" " alt="" coords="728,47,893,89"/>
+<area shape="poly" id="edge8_Node000003_Node000005" title=" " alt="" coords="489,93,712,74,712,79,489,99"/>
+<area shape="rect" id="Node000007" href="$namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title=" " alt="" coords="536,139,680,181"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="489,119,526,131,524,136,488,124"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="678,43,713,49,712,54,677,49"/>
+<area shape="rect" id="Node000006" href="$classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title=" " alt="" coords="941,39,1079,97"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="894,65,925,65,925,71,894,71"/>
+</map>

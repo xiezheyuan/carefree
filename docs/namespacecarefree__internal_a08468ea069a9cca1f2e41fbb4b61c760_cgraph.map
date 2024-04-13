@@ -1,0 +1,24 @@
+<map id="carefree_internal::introvert" name="carefree_internal::introvert">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,147,130,189"/>
+<area shape="rect" id="Node000002" href="$classcarefree__internal_1_1graph.html#abdbd3d847b3956dd1b41abd72e11b039" title=" " alt="" coords="178,80,302,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,144,168,126,170,131,125,149"/>
+<area shape="rect" id="Node000009" href="$namespacecarefree__internal.html#a1ae8ab172aacc881bf0e08bea71d9859" title=" " alt="" coords="178,147,302,189"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="130,165,162,165,162,171,130,171"/>
+<area shape="rect" id="Node000010" href="$classcarefree__internal_1_1graph.html#ad17dc89238f49bb541f7ca4d683b6275" title=" " alt="" coords="357,176,481,219"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="130,187,178,199,262,205,342,202,342,208,262,210,177,204,129,193"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="206,80,205,70,211,61,222,55,240,53,259,56,270,62,267,67,257,61,240,59,224,61,214,65,210,71,212,79"/>
+<area shape="rect" id="Node000003" href="$namespacecarefree__internal.html#ac0a9ffdfe180933b02d7f6d0b5c7366e" title=" " alt="" coords="350,80,488,123"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="302,99,334,99,334,104,302,104"/>
+<area shape="rect" id="Node000004" href="$namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title=" " alt="" coords="536,80,661,123"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="489,99,521,99,521,104,489,104"/>
+<area shape="rect" id="Node000005" href="$classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title=" " alt="" coords="711,5,850,64"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="658,77,696,63,697,68,659,82"/>
+<area shape="rect" id="Node000006" href="$classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title=" " alt="" coords="900,47,1065,89"/>
+<area shape="poly" id="edge9_Node000004_Node000006" title=" " alt="" coords="661,93,884,74,885,79,661,99"/>
+<area shape="rect" id="Node000008" href="$namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title=" " alt="" coords="709,139,852,181"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="662,119,698,131,697,136,660,124"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="850,43,885,49,884,54,849,49"/>
+<area shape="rect" id="Node000007" href="$classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title=" " alt="" coords="1113,39,1252,97"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="1066,65,1098,65,1098,71,1066,71"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="303,176,342,182,341,187,302,181"/>
+</map>
