@@ -26,9 +26,10 @@
 #endif
 
 #define CAREFREE_VERSION_MAJOR 0
-#define CAREFREE_VERSION_MINOR 4
-#define CAREFREE_VERSION "0.4"
+#define CAREFREE_VERSION_MINOR 5
+#define CAREFREE_VERSION "0.5"
 
+#include <io.h>
 #include <sys/stat.h>
 #include <unistd.h>
 
@@ -42,10 +43,13 @@
 #include <ext/pb_ds/tree_policy.hpp>
 #include <fstream>
 #include <initializer_list>
+#include <iomanip>
 #include <iostream>
+#include <map>
 #include <numeric>
 #include <queue>
 #include <random>
+#include <sstream>
 #include <stdexcept>
 #include <string>
 #include <type_traits>
@@ -55,7 +59,7 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wliteral-suffix"
 
-#ifdef __cplusplus >= 201703L
+#if __cplusplus >= 201703L
 #define maybe_unused [[maybe_unused]]
 #else
 #define maybe_unused __attribute__((unused))
@@ -1223,9 +1227,16 @@ namespace carefree_internal {
             return fout->_filename;
         }
 
-        ~testcase_writer() {
+        void close() {
             delete fin;
             delete fout;
+            fin = nullptr;
+            fout = nullptr;
+        }
+
+        ~testcase_writer() {
+            if (fin != nullptr) delete fin;
+            if (fout != nullptr) delete fout;
         }
     };
 
@@ -1467,7 +1478,7 @@ namespace carefree_internal {
         string to_str() const {
             string ret = jrt2s(type) + "\t" + message + "\t";
             ret += std::to_string(time / 1000.0 / 1000.0) + "ms\t";
-            ret += std::to_string(memory / 1024.0 / 1024.0) + "MB\t";
+            ret += std::to_string(memory / 1024.0 / 1024.0) + "MiB\t";
             ret += std::to_string(ratio * 100) + "%";
             return ret;
         }
@@ -1504,7 +1515,9 @@ namespace carefree_internal {
             string read() {
                 std::ifstream file(filename_, std::ios::in);
                 if (!file.is_open()) {
-                    raise(carefree_file_exception("read : failed to open file " + filename_));
+                    Sleep(1000);
+                    file.open(filename_, std::ios::in);
+                    if (!file.is_open()) raise(carefree_file_exception("read : failed to open file " + filename_));
                 }
                 string content;
                 while (file.good()) {
@@ -1601,6 +1614,84 @@ namespace carefree_internal {
         }
     };
 
+    ull nextid() {
+        static ull id;
+        return ++id;
+    }
+
+    string quote(string s) {
+        std::stringstream ss;
+        ss << std::quoted(s);
+        return ss.str();
+    }
+
+    class testlib_comparator : public comparator {
+    protected:
+        string testlib_path;
+
+        string extract_outcome(string xml) {
+            size_t start_pos = xml.find("outcome = \"");
+            if (start_pos == std::string::npos) return "";
+            start_pos += 11;
+            size_t end_pos = xml.find("\"", start_pos);
+            if (end_pos == std::string::npos) return "";
+            return xml.substr(start_pos, end_pos - start_pos);
+        }
+
+        string extract_points(string xml) {
+            size_t start_pos = xml.find("points = \"");
+            if (start_pos == std::string::npos) return "";
+            start_pos += 10;
+            size_t end_pos = xml.find("\"", start_pos);
+            if (end_pos == std::string::npos) return "";
+            return xml.substr(start_pos, end_pos - start_pos);
+        }
+
+        string extract_result(string xml) {
+            size_t start_pos = xml.find("\">") + 2;
+            if (start_pos == std::string::npos) return "";
+            size_t end_pos = xml.rfind("</result>");
+            if (end_pos == std::string::npos) return "";
+            return xml.substr(start_pos, end_pos - start_pos);
+        }
+
+    public:
+        testlib_comparator(const string& testlib_path) {
+            this->testlib_path = testlib_path;
+        }
+
+        judge_result test(string input_path, string output_path, string answer_path) {
+            string cmd = testlib_path + " ";
+            cmd += quote(input_path) + " " + quote(output_path) + " " + quote(answer_path);
+            cmd += " ";
+            string xml_path = "carefree_testlib_report_" + std::to_string(nextid()) + ".xml";
+            cmd += quote(xml_path) + " -appes";
+            int ret = system(cmd.c_str());
+            string content = file(xml_path).read();
+            std::remove(xml_path.c_str());
+            string outcome = extract_outcome(content);
+            string message = extract_result(content);
+            if (outcome.empty()) return {UnknownError, "cannot parse report file.", 0.0, 0ull, 0ull};
+            if (outcome == "accepted")
+                return {Accepted, message, 1.0, 0ull, 0ull};
+            else if (outcome == "wrong-answer")
+                return {WrongAnswer, message, 0.0, 0ull, 0ull};
+            else if (outcome == "presentation-error")
+                return {PresentationError, message, 0.0, 0ull, 0ull};
+            else if (outcome == "points") {
+                string points = extract_points(content);
+                if (points.empty()) return {UnknownError, "cannot parse report file.", 0.0, 0ull, 0ull};
+                return {PartiallyCorrect, message, std::stod(points), 0ull, 0ull};
+            } else
+                return {JudgeFailed, message, 0.0, 0ull, 0ull};
+        }
+
+        judge_result from_text(const string& text1 maybe_unused, const string& text2 maybe_unused) {
+            raise(carefree_unsupported_operation("testlib_comparator::from_text : unsupported from_text method."));
+            return {UnknownError, "unsupported from_text method", 0.0, 0ull, 0ull};
+        }
+    };
+
     struct limprog {
         string program;
         ull time;
@@ -1632,24 +1723,20 @@ namespace carefree_internal {
         return {Accepted, "program finished successfully.", 1.0, tim, memory};
     }
 
-    ull nextid() {
-        static ull id;
-        return ++id;
-    }
+    bool is_file_creatable(string filename) {
+        if (access(filename.c_str(), F_OK) != -1) return false;
+        std::ofstream f(filename, std::ios::out);
+        if (f.is_open()) {
+            f.close();
+            std::remove(filename.c_str());
+            return true;
+        }
+        return false;
+    };
 
     template <class T>
     judge_result judge(limprog prog, const string& input_file, const string& answer_file, T cmp, bool ole_check = true) {
         string output_file;
-        auto is_file_creatable = [&](string filename) {
-            if (access(filename.c_str(), F_OK) != -1) return false;
-            std::ofstream f(filename, std::ios::out);
-            if (f.is_open()) {
-                f.close();
-                std::remove(filename.c_str());
-                return true;
-            }
-            return false;
-        };
         do {
             output_file = "carefree_output_" + std::to_string(nextid()) + ".out";
         } while (!is_file_creatable(output_file));
@@ -1673,10 +1760,305 @@ namespace carefree_internal {
         return {ans2.type, ans2.message, ans2.ratio, ans.time, ans.memory};
     }
 
+    template <class T1, class T2>
+    bool combat(limprog champion, limprog challenger, T1 input_generator, T2 cmp, int times = -1, bool ole_check = true) {
+        for (int i = 0; i != times; i++) {
+            fprintf(stderr, "Round #%d : ", i + 1);
+            string input_file = "";
+            do {
+                input_file = "carefree_input_" + std::to_string(nextid()) + ".in";
+            } while (!is_file_creatable(input_file));
+            testcase_writer writer(input_file, "");
+            input_generator(writer);
+            string answer_file;
+            do {
+                answer_file = "carefree_answer_" + std::to_string(nextid()) + ".ans";
+            } while (!is_file_creatable(answer_file));
+            auto ret = limited_run(champion, input_file, answer_file);
+            if (ret.type != Accepted) {
+                fprintf(stderr, "champion is lost.\n");
+                fprintf(stderr, "%s\n", ret.to_str().c_str());
+                fprintf(stderr, "please watch input file \"%s\" to check.", input_file.c_str());
+                return false;
+            }
+            ret = judge(challenger, input_file, answer_file, cmp, ole_check = ole_check);
+            if (ret.type != Accepted) {
+                fprintf(stderr, "challenger is lost.\n");
+                fprintf(stderr, "%s\n", ret.to_str().c_str());
+                fprintf(stderr, "please watch input file \"%s\" to check.", input_file.c_str());
+                return false;
+            }
+            std::remove(answer_file.c_str());
+            std::remove(input_file.c_str());
+            fprintf(stderr, "champion and challenger are still alive.\n");
+        }
+        return true;
+    }
+
+    void listdir(string path, std::vector<string>& files) {
+        // From https://zhuanlan.zhihu.com/p/85094140
+        // By David Chen
+        intptr_t hFile = 0;
+        _finddata_t fileinfo;
+        if ((hFile = _findfirst(path.append("/*").c_str(), &fileinfo)) != -1) {
+            while (_findnext(hFile, &fileinfo) == 0) {
+                if (strcmp(fileinfo.name, ".."))
+                    files.push_back(fileinfo.name);
+            }
+            _findclose(hFile);
+        }
+    }
+
+    string working_directory() {
+        return getcwd(NULL, 0);
+    }
+
+    int autoclear_tmpfiles() {
+        std::vector<string> files;
+        listdir(working_directory(), files);
+        int cnt = 0;
+        for (auto& i : files) {
+            if (i.find("carefree_input_") == 0 ||
+                i.find("carefree_output_") == 0 ||
+                i.find("carefree_answer_") == 0 ||
+                i.find("carefree_testlib_report_") == 0) {
+                std::remove(i.c_str());
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+
+    enum optimization_type {
+        O0,
+        O1,
+        O2,
+        O3,
+        Ofast
+    };
+
+    enum cpp_version {
+        Cpp98,
+        Cpp03,
+        Cpp11,
+        Cpp14,
+        Cpp17,
+        Cpp20,
+    };
+
+    namespace cpp_warnings {
+        const int Wnone = 0;
+        const int Wall = 1;
+        const int Wextra = 2;
+        const int Wpedantic = 4;
+        const int Werror = 8;
+    };  // namespace cpp_warnings
+
+    class gcc_compile {
+    private:
+        string gcc_path = "g++";
+        string filename;
+        string output_name;
+        optimization_type opti = O2;
+        cpp_version cpp = Cpp14;
+        int warning = 0;
+        bool link_static = false, debug = false;
+        std::vector<string> include_files, include_dirs, link_libs;
+        std::map<string, string> defintions;
+
+    public:
+        gcc_compile(string filename, string output_name) : filename(filename), output_name(output_name){};
+
+        gcc_compile& gcc(string gcc_path) {
+            this->gcc_path = gcc_path;
+            return *this;
+        }
+
+        gcc_compile& optimization(optimization_type opti) {
+            this->opti = opti;
+            return *this;
+        }
+
+        gcc_compile& cpp_version(cpp_version cpp) {
+            this->cpp = cpp;
+            return *this;
+        }
+
+        gcc_compile& warning_level(int warning) {
+            this->warning = warning;
+            return *this;
+        }
+
+        gcc_compile& add_warning(int warning) {
+            this->warning |= warning;
+            return *this;
+        }
+
+        gcc_compile& linking_static(bool link_static = true) {
+            this->link_static = link_static;
+            return *this;
+        }
+
+        gcc_compile& include_file(string filename) {
+            this->include_files.push_back(filename);
+            return *this;
+        }
+
+        gcc_compile& define(string key, string value = "") {
+            this->defintions[key] = value;
+            return *this;
+        }
+
+        gcc_compile& include_dir(string dir) {
+            this->include_dirs.push_back(dir);
+            return *this;
+        }
+
+        gcc_compile& link(string lib) {
+            this->link_libs.push_back(lib);
+            return *this;
+        }
+
+        gcc_compile& debug_mode(bool debug = true) {
+            this->debug = debug;
+            return *this;
+        }
+
+        string command() {
+            string cmd = gcc_path + " " + quote(filename);
+            if (debug) {
+                cmd += " -g";
+            }
+            switch (opti) {
+                case O0:
+                    cmd += " -O0";
+                case O1:
+                    cmd += " -O1";
+                    break;
+                case O2:
+                    cmd += " -O2";
+                    break;
+                case O3:
+                    cmd += " -O3";
+                    break;
+                case Ofast:
+                    cmd += " -Ofast";
+                    break;
+            }
+            switch (cpp) {
+                case Cpp98:
+                    cmd += " -std=c++98";
+                    break;
+                case Cpp03:
+                    cmd += " -std=c++03";
+                    break;
+                case Cpp11:
+                    cmd += " -std=c++11";
+                    break;
+                case Cpp14:
+                    cmd += " -std=c++14";
+                    break;
+                case Cpp17:
+                    cmd += " -std=c++17";
+                    break;
+                case Cpp20:
+                    cmd += " -std=c++20";
+                    break;
+            }
+
+            if (warning == cpp_warnings::Wnone) {
+                cmd += " -w";
+            } else {
+                if (warning & cpp_warnings::Wall) {
+                    cmd += " -Wall";
+                }
+                if (warning & cpp_warnings::Wextra) {
+                    cmd += " -Wextra";
+                }
+                if (warning & cpp_warnings::Wpedantic) {
+                    cmd += " -pedantic";
+                }
+                if (warning & cpp_warnings::Werror) {
+                    cmd += " -Werror";
+                }
+            }
+
+            for (auto& i : include_files) {
+                cmd += " -include " + i;
+            }
+
+            for (auto& i : include_dirs) {
+                cmd += " -I" + i;
+            }
+
+            for (auto& i : defintions) {
+                if (i.second.empty())
+                    cmd += " -D" + i.first;
+                else
+                    cmd += " -D" + i.first + "=" + i.second;
+            }
+
+            for (auto& i : link_libs) {
+                cmd += " -l" + i;
+            }
+
+            if (link_static) {
+                cmd += " -static";
+            }
+
+            cmd += " -o " + quote(output_name);
+
+            return cmd;
+        }
+
+        judge_result_type start() {
+            return std::system(this->command().c_str()) == 0 ? judge_result_type::Accepted : judge_result_type::CompileError;
+        }
+    };
+
+    struct __enum_shortcut {
+        exception_policy Throw = exception_policy::Throw;
+        exception_policy Ignore = exception_policy::Ignore;
+        exception_policy Friendly = exception_policy::Friendly;
+        exception_policy Simulate = exception_policy::Simulate;
+
+        judge_result_type Accepted = judge_result_type::Accepted;
+        judge_result_type WrongAnswer = judge_result_type::WrongAnswer;
+        judge_result_type TimeLimitExceeded = judge_result_type::TimeLimitExceeded;
+        judge_result_type MemoryLimitExceeded = judge_result_type::MemoryLimitExceeded;
+        judge_result_type RuntimeError = judge_result_type::RuntimeError;
+        judge_result_type CompileError = judge_result_type::CompileError;
+        judge_result_type PresentationError = judge_result_type::PresentationError;
+        judge_result_type OutputLimitExceeded = judge_result_type::OutputLimitExceeded;
+        judge_result_type UnknownError = judge_result_type::UnknownError;
+        judge_result_type JudgeFailed = judge_result_type::JudgeFailed;
+        judge_result_type PartiallyCorrect = judge_result_type::PartiallyCorrect;
+        judge_result_type Skipped = judge_result_type::Skipped;
+
+        optimization_type O0 = optimization_type::O0;
+        optimization_type O1 = optimization_type::O1;
+        optimization_type O2 = optimization_type::O2;
+        optimization_type O3 = optimization_type::O3;
+        optimization_type Ofast = optimization_type::Ofast;
+
+        cpp_version Cpp98 = cpp_version::Cpp98;
+        cpp_version Cpp03 = cpp_version::Cpp03;
+        cpp_version Cpp11 = cpp_version::Cpp11;
+        cpp_version Cpp14 = cpp_version::Cpp14;
+        cpp_version Cpp17 = cpp_version::Cpp17;
+        cpp_version Cpp20 = cpp_version::Cpp20;
+
+        const int Wnone = cpp_warnings::Wnone;
+        const int Wall = cpp_warnings::Wall;
+        const int Wextra = cpp_warnings::Wextra;
+        const int Wpedantic = cpp_warnings::Wpedantic;
+        const int Werror = cpp_warnings::Werror;
+    } ES;
+
 }  // namespace carefree_internal
 
 namespace carefree {
-    using carefree_internal::__split;
+    using carefree_internal::autoclear_tmpfiles;
     using carefree_internal::binary_tree;
     using carefree_internal::carefree_exception;
     using carefree_internal::carefree_file_exception;
@@ -1689,20 +2071,24 @@ namespace carefree {
     using carefree_internal::chain;
     using carefree_internal::chain_star;
     using carefree_internal::choice;
+    using carefree_internal::combat;
     using carefree_internal::comparator;
     using carefree_internal::complete;
     using carefree_internal::complete_binary;
     using carefree_internal::connected_directed_graph;
     using carefree_internal::connected_undirected_graph;
+    using carefree_internal::cpp_version;
     using carefree_internal::creadable;
     using carefree_internal::ctext;
     using carefree_internal::dag;
     using carefree_internal::edge;
+    using carefree_internal::ES;
     using carefree_internal::exception_policy;
     using carefree_internal::externalize;
     using carefree_internal::firecrackers;
     using carefree_internal::flower;
     using carefree_internal::fts;
+    using carefree_internal::gcc_compile;
     using carefree_internal::gen_data;
     using carefree_internal::get_depth;
     using carefree_internal::get_exception_policy;
@@ -1717,15 +2103,18 @@ namespace carefree {
     using carefree_internal::judge_result_type;
     using carefree_internal::limited_run;
     using carefree_internal::limprog;
+    using carefree_internal::listdir;
     using carefree_internal::lowhigh;
     using carefree_internal::ltv;
     using carefree_internal::luogu_testcase_config_writer;
     using carefree_internal::max_degree;
     using carefree_internal::naive_tree;
     using carefree_internal::nextid;
+    using carefree_internal::optimization_type;
     using carefree_internal::process;
     using carefree_internal::process_base;
     using carefree_internal::prufer_decode;
+    using carefree_internal::quote;
     using carefree_internal::raise;
     using carefree_internal::randint;
     using carefree_internal::random;
@@ -1744,13 +2133,16 @@ namespace carefree {
     using carefree_internal::tail;
     using carefree_internal::testcase_io;
     using carefree_internal::testcase_writer;
+    using carefree_internal::testlib_comparator;
     using carefree_internal::timer;
     using carefree_internal::token_comparator;
     using carefree_internal::uniform;
     using carefree_internal::unweighted_output;
     using carefree_internal::weighted_output;
+    using carefree_internal::working_directory;
 
     namespace strsets = carefree_internal::strsets;
+    namespace cpp_warnings = carefree_internal::cpp_warnings;
 }  // namespace carefree
 
 #pragma GCC diagnostic pop
