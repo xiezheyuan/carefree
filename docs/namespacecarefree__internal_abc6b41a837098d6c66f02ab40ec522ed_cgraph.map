@@ -1,0 +1,18 @@
+<map id="carefree_internal::fts" name="carefree_internal::fts">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,144,81"/>
+<area shape="rect" id="Node000002" href="$namespacecarefree__internal.html#ab59dd2f420df39f7a35fcf683435f21f" title=" " alt="" coords="192,47,316,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,65,176,65,176,71,144,71"/>
+<area shape="rect" id="Node000003" href="$namespacecarefree__internal.html#aac3afc12d252adaa4d369fc4ec38c683" title=" " alt="" coords="364,13,488,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="316,53,348,47,349,52,317,59"/>
+<area shape="rect" id="Node000004" href="$namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title=" " alt="" coords="364,80,488,123"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="317,77,349,84,348,89,316,83"/>
+<area shape="rect" id="Node000005" href="$classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title=" " alt="" coords="539,5,677,64"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="485,77,523,63,525,68,487,82"/>
+<area shape="rect" id="Node000006" href="$classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title=" " alt="" coords="728,47,893,89"/>
+<area shape="poly" id="edge8_Node000004_Node000006" title=" " alt="" coords="489,93,712,74,712,79,489,99"/>
+<area shape="rect" id="Node000008" href="$namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title=" " alt="" coords="536,139,680,181"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="489,119,526,131,524,136,488,124"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="678,43,713,49,712,54,677,49"/>
+<area shape="rect" id="Node000007" href="$classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title=" " alt="" coords="941,39,1079,97"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="894,65,925,65,925,71,894,71"/>
+</map>

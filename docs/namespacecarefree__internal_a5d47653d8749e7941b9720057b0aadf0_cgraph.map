@@ -1,0 +1,21 @@
+<map id="carefree_internal::choice" name="carefree_internal::choice">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,130,123"/>
+<area shape="rect" id="Node000002" href="$namespacecarefree__internal.html#a3caf56c1bad1f2fc2428e06dad2dfd15" title=" " alt="" coords="350,47,496,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,93,334,74,334,79,131,98"/>
+<area shape="rect" id="Node000008" href="$namespacecarefree__internal.html#a6fd76e6e2b0005838173a512f6065ffe" title=" " alt="" coords="178,109,302,152"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="131,109,163,115,162,120,130,115"/>
+<area shape="rect" id="Node000003" href="$namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title=" " alt="" coords="544,80,669,123"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="497,79,529,85,528,90,496,84"/>
+<area shape="rect" id="Node000004" href="$classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title=" " alt="" coords="719,5,858,64"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="666,77,704,63,705,68,667,82"/>
+<area shape="rect" id="Node000005" href="$classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title=" " alt="" coords="908,47,1073,89"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="669,93,892,74,893,79,669,99"/>
+<area shape="rect" id="Node000007" href="$namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title=" " alt="" coords="717,139,860,181"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="670,119,706,131,705,136,668,124"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="858,43,893,49,892,54,857,49"/>
+<area shape="rect" id="Node000006" href="$classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title=" " alt="" coords="1121,39,1260,97"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1074,65,1106,65,1106,71,1074,71"/>
+<area shape="rect" id="Node000009" href="$namespacecarefree__internal.html#a2462cbf3b9ed45075dac0a1a34d9e855" title=" " alt="" coords="359,113,487,156"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="302,129,344,130,343,136,302,135"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="487,120,529,113,530,118,488,126"/>
+</map>
