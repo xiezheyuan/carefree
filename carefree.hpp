@@ -26,8 +26,8 @@
 #endif
 
 #define CAREFREE_VERSION_MAJOR 0
-#define CAREFREE_VERSION_MINOR 5
-#define CAREFREE_VERSION "0.5"
+#define CAREFREE_VERSION_MINOR 6
+#define CAREFREE_VERSION "0.6"
 
 #include <io.h>
 #include <sys/stat.h>
@@ -80,8 +80,7 @@ namespace carefree_internal {
     using std::string;
 
     struct carefree_exception_name {
-        string cls_name;
-        carefree_exception_name() { cls_name = "carefree_exception"; }
+        virtual string name() { return "carefree_exception"; }
     };
 
     template <class cpp_err_type, class err_name = carefree_exception_name>
@@ -92,45 +91,39 @@ namespace carefree_internal {
 
     public:
         using err_type = cpp_err_type;
-        carefree_exception() { cls_name = err_name().cls_name; }
-        carefree_exception(string msg) : msg(msg) { cls_name = err_name().cls_name; }
+        carefree_exception() { cls_name = err_name().name(); }
+        carefree_exception(string msg) : msg(msg) { cls_name = err_name().name(); }
         carefree_exception(const char* msg) {
             this->msg = msg;
-            cls_name = err_name().cls_name;
+            cls_name = err_name().name();
         }
         string what() { return cls_name + " : " + get_msg(); }
         cpp_err_type get_err() { return err_type(what()); };
         string get_msg() { return msg; }
     };
 
-    struct carefree_invalid_argument_name {
-        string cls_name;
-        carefree_invalid_argument_name() { cls_name = "carefree_invalid_argument"; }
+    struct carefree_invalid_argument_name : public carefree_exception_name {
+        string name() { return "carefree_invalid_argument"; }
     };
 
-    struct carefree_range_exception_name {
-        string cls_name;
-        carefree_range_exception_name() { cls_name = "carefree_range_exception"; }
+    struct carefree_range_exception_name : public carefree_exception_name {
+        string name() { return "carefree_range_exception"; }
     };
 
-    struct carefree_unsupported_operation_name {
-        string cls_name;
-        carefree_unsupported_operation_name() { cls_name = "carefree_unsupported_operation"; }
+    struct carefree_unsupported_operation_name : public carefree_exception_name {
+        string name() { return "carefree_unsupported_operation"; }
     };
 
-    struct carefree_file_exception_name {
-        string cls_name;
-        carefree_file_exception_name() { cls_name = "carefree_file_exception"; }
+    struct carefree_file_exception_name : public carefree_exception_name {
+        string name() { return "carefree_file_exception"; }
     };
 
-    struct carefree_runtime_exception_name {
-        string cls_name;
-        carefree_runtime_exception_name() { cls_name = "carefree_runtime_exception"; }
+    struct carefree_runtime_exception_name : public carefree_exception_name {
+        string name() { return "carefree_runtime_exception"; }
     };
 
-    struct carefree_system_exception_name {
-        string cls_name;
-        carefree_system_exception_name() { cls_name = "carefree_system_exception"; }
+    struct carefree_system_exception_name : public carefree_exception_name {
+        string name() { return "carefree_system_exception"; }
     };
 
     using carefree_invalid_argument = carefree_exception<std::invalid_argument, carefree_invalid_argument_name>;
@@ -253,7 +246,7 @@ namespace carefree_internal {
     // type convert
 
     template <class T1, class T2>
-    std::string join_str(T1 a, T2 b) {
+    string join_str(T1 a, T2 b) {
         return string(a) + string(b);
     }
 
@@ -1292,7 +1285,7 @@ namespace carefree_internal {
         HANDLE process_handle_ = nullptr, hOutputFile = nullptr, hInputFile = nullptr;
 
     public:
-        process_win(const std::string& cmd, const std::string& input = "", const std::string& output = "")
+        process_win(const string& cmd, const string& input = "", const string& output = "")
             : command_(cmd), input_file_(input), output_file_(output) {
             _STARTUPINFOA si;
             PROCESS_INFORMATION pi;
@@ -1376,7 +1369,8 @@ namespace carefree_internal {
             ZeroMemory(&pmc, sizeof(pmc));
             pmc.cb = sizeof(pmc);
             if (!GetProcessMemoryInfo(process_handle_, (PROCESS_MEMORY_COUNTERS*)&pmc, sizeof(pmc))) {
-                throw std::runtime_error("Failed to retrieve process memory information.");
+                raise(carefree_system_exception("memory : failed to retrieve process memory information."));
+                return 0ull;
             }
             return (size_t)pmc.PrivateUsage;
 #else
@@ -1631,27 +1625,27 @@ namespace carefree_internal {
 
         string extract_outcome(string xml) {
             size_t start_pos = xml.find("outcome = \"");
-            if (start_pos == std::string::npos) return "";
+            if (start_pos == string::npos) return "";
             start_pos += 11;
             size_t end_pos = xml.find("\"", start_pos);
-            if (end_pos == std::string::npos) return "";
+            if (end_pos == string::npos) return "";
             return xml.substr(start_pos, end_pos - start_pos);
         }
 
         string extract_points(string xml) {
             size_t start_pos = xml.find("points = \"");
-            if (start_pos == std::string::npos) return "";
+            if (start_pos == string::npos) return "";
             start_pos += 10;
             size_t end_pos = xml.find("\"", start_pos);
-            if (end_pos == std::string::npos) return "";
+            if (end_pos == string::npos) return "";
             return xml.substr(start_pos, end_pos - start_pos);
         }
 
         string extract_result(string xml) {
             size_t start_pos = xml.find("\">") + 2;
-            if (start_pos == std::string::npos) return "";
+            if (start_pos == string::npos) return "";
             size_t end_pos = xml.rfind("</result>");
-            if (end_pos == std::string::npos) return "";
+            if (end_pos == string::npos) return "";
             return xml.substr(start_pos, end_pos - start_pos);
         }
 
@@ -1852,6 +1846,8 @@ namespace carefree_internal {
         const int Wextra = 2;
         const int Wpedantic = 4;
         const int Werror = 8;
+
+        using type = int;
     };  // namespace cpp_warnings
 
     class gcc_compile {
@@ -1861,7 +1857,7 @@ namespace carefree_internal {
         string output_name;
         optimization_type opti = O2;
         cpp_version cpp = Cpp14;
-        int warning = 0;
+        cpp_warnings::type warning = 0;
         bool link_static = false, debug = false;
         std::vector<string> include_files, include_dirs, link_libs;
         std::map<string, string> defintions;
@@ -1884,12 +1880,12 @@ namespace carefree_internal {
             return *this;
         }
 
-        gcc_compile& warning_level(int warning) {
+        gcc_compile& warning_level(cpp_warnings::type warning) {
             this->warning = warning;
             return *this;
         }
 
-        gcc_compile& add_warning(int warning) {
+        gcc_compile& add_warning(cpp_warnings::type warning) {
             this->warning |= warning;
             return *this;
         }
@@ -2048,11 +2044,11 @@ namespace carefree_internal {
         cpp_version Cpp17 = cpp_version::Cpp17;
         cpp_version Cpp20 = cpp_version::Cpp20;
 
-        const int Wnone = cpp_warnings::Wnone;
-        const int Wall = cpp_warnings::Wall;
-        const int Wextra = cpp_warnings::Wextra;
-        const int Wpedantic = cpp_warnings::Wpedantic;
-        const int Werror = cpp_warnings::Werror;
+        cpp_warnings::type Wnone = cpp_warnings::Wnone;
+        cpp_warnings::type Wall = cpp_warnings::Wall;
+        cpp_warnings::type Wextra = cpp_warnings::Wextra;
+        cpp_warnings::type Wpedantic = cpp_warnings::Wpedantic;
+        cpp_warnings::type Werror = cpp_warnings::Werror;
     } ES;
 
 }  // namespace carefree_internal
@@ -2147,5 +2143,5 @@ namespace carefree {
 
 #pragma GCC diagnostic pop
 
-// notes: if you want to update this code, don't forget to format in the configure under this sentence:
+// note: If you wish to modify this code and subsequently integrate it into the main project, please remember to use the following configuration to format the code using Clang-format, thereby enhancing its readability.
 // {BasedOnStyle: Google,IndentWidth: 4,TabWidth: 4,UseTab: Never,BreakBeforeBraces: Attach,ColumnLimit: 0,NamespaceIndentation: All,AccessModifierOffset : -4}

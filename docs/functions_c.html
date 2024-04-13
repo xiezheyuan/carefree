@@ -10,6 +10,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -23,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Carefree<span id="projectnumber">&#160;0.5</span>
+   <div id="projectname">Carefree<span id="projectnumber">&#160;0.6</span>
    </div>
    <div id="projectbrief">CareFree Library - A Light Data Generator for OI &amp; ACM</div>
   </td>
@@ -50,6 +54,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('functions_c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -76,17 +96,10 @@ $(function() {
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>carefree_exception()&#160;:&#160;<a class="el" href="classcarefree__internal_1_1carefree__exception.html#aa263815b30a4cc0277aa477c7455dd51">carefree_internal::carefree_exception&lt; cpp_err_type, err_name &gt;</a></li>
-<li>carefree_exception_name()&#160;:&#160;<a class="el" href="structcarefree__internal_1_1carefree__exception__name.html#a0ae3d43c26cf745522aed579574ee49f">carefree_internal::carefree_exception_name</a></li>
-<li>carefree_file_exception_name()&#160;:&#160;<a class="el" href="structcarefree__internal_1_1carefree__file__exception__name.html#aa5920cdf1413096c11a7f65fb5049076">carefree_internal::carefree_file_exception_name</a></li>
-<li>carefree_invalid_argument_name()&#160;:&#160;<a class="el" href="structcarefree__internal_1_1carefree__invalid__argument__name.html#a5843a647999c26437e61d7bb850100aa">carefree_internal::carefree_invalid_argument_name</a></li>
-<li>carefree_range_exception_name()&#160;:&#160;<a class="el" href="structcarefree__internal_1_1carefree__range__exception__name.html#a239b80bb7b63a1679afadd5d238858e2">carefree_internal::carefree_range_exception_name</a></li>
-<li>carefree_runtime_exception_name()&#160;:&#160;<a class="el" href="structcarefree__internal_1_1carefree__runtime__exception__name.html#addaad06bd344732c14c75e4b7fd1c9fc">carefree_internal::carefree_runtime_exception_name</a></li>
-<li>carefree_system_exception_name()&#160;:&#160;<a class="el" href="structcarefree__internal_1_1carefree__system__exception__name.html#a7182fe01815bb4133c94c65b3268a142">carefree_internal::carefree_system_exception_name</a></li>
-<li>carefree_unsupported_operation_name()&#160;:&#160;<a class="el" href="structcarefree__internal_1_1carefree__unsupported__operation__name.html#a8b653f028133cf9ffb21ef8735cb4dca">carefree_internal::carefree_unsupported_operation_name</a></li>
 <li>chain&#160;:&#160;<a class="el" href="classcarefree__internal_1_1graph.html#aace50b70dd82d69f13da8107056e2ca9">carefree_internal::graph</a></li>
 <li>chain_node()&#160;:&#160;<a class="el" href="structcarefree__internal_1_1graph_1_1chain__node.html#ad506bdf989a6d0ab4ae9181e7a05b642">carefree_internal::graph::chain_node</a></li>
 <li>close()&#160;:&#160;<a class="el" href="classcarefree__internal_1_1process__base.html#a828fb7858e0a60c536ded85b6cb16822">carefree_internal::process_base</a>, <a class="el" href="classcarefree__internal_1_1testcase__writer.html#af1ad57966cd10e3053c77cf71cdf294e">carefree_internal::testcase_writer</a>, <a class="el" href="classcarefree__internal_1_1testcase__writer_1_1file__writer.html#a006cdeb514dfd51e2b0f326345199b01">carefree_internal::testcase_writer::file_writer</a></li>
-<li>cls_name&#160;:&#160;<a class="el" href="classcarefree__internal_1_1carefree__exception.html#a107f23ec292214e4955d8d035916b9a4">carefree_internal::carefree_exception&lt; cpp_err_type, err_name &gt;</a>, <a class="el" href="structcarefree__internal_1_1carefree__exception__name.html#a787e4452351cecd2d6a42d662cbf65c9">carefree_internal::carefree_exception_name</a>, <a class="el" href="structcarefree__internal_1_1carefree__file__exception__name.html#aa0e09a9bb8263f3d500e36b7479ca57d">carefree_internal::carefree_file_exception_name</a>, <a class="el" href="structcarefree__internal_1_1carefree__invalid__argument__name.html#aa5221238fa0def1036d17e70310d5561">carefree_internal::carefree_invalid_argument_name</a>, <a class="el" href="structcarefree__internal_1_1carefree__range__exception__name.html#a15f145e9a61826fe2978afec0aab6a54">carefree_internal::carefree_range_exception_name</a>, <a class="el" href="structcarefree__internal_1_1carefree__runtime__exception__name.html#a069a9535f8dfc3fa4eb694ab98f09f76">carefree_internal::carefree_runtime_exception_name</a>, <a class="el" href="structcarefree__internal_1_1carefree__system__exception__name.html#a20ff71ec3f907d1fa7f5f8a7771f58dd">carefree_internal::carefree_system_exception_name</a>, <a class="el" href="structcarefree__internal_1_1carefree__unsupported__operation__name.html#ab11a3e794f13dd7cb273d2bb44d76953">carefree_internal::carefree_unsupported_operation_name</a></li>
+<li>cls_name&#160;:&#160;<a class="el" href="classcarefree__internal_1_1carefree__exception.html#a107f23ec292214e4955d8d035916b9a4">carefree_internal::carefree_exception&lt; cpp_err_type, err_name &gt;</a></li>
 <li>command()&#160;:&#160;<a class="el" href="classcarefree__internal_1_1gcc__compile.html#a866e5ec62b68b5d0666fe8380b9dbd32">carefree_internal::gcc_compile</a></li>
 <li>CompileError&#160;:&#160;<a class="el" href="structcarefree__internal_1_1____enum__shortcut.html#a48af5416737eb5798a514b232c6dd3fc">carefree_internal::__enum_shortcut</a></li>
 <li>content&#160;:&#160;<a class="el" href="classcarefree__internal_1_1luogu__testcase__config__writer.html#a30160c2bd72d1c6239b0fcd90e616aaf">carefree_internal::luogu_testcase_config_writer</a></li>
@@ -101,9 +114,12 @@ $(function() {
 <li>cpp_version()&#160;:&#160;<a class="el" href="classcarefree__internal_1_1gcc__compile.html#abafa518a455741368c00e1e0a094ed81">carefree_internal::gcc_compile</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
 </body>
 </html>

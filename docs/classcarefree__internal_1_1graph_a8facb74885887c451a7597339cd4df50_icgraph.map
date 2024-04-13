@@ -1,7 +1,0 @@
-<map id="carefree_internal::graph::to_string" name="carefree_internal::graph::to_string">
-<area shape="rect" id="Node000001" title=" " alt="" coords="241,39,365,81"/>
-<area shape="rect" id="Node000002" href="$classcarefree__internal_1_1testcase__writer.html#a16b87ccb68ecb897db9c28697337664b" title=" " alt="" coords="9,5,189,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,50,189,44,190,39,225,45"/>
-<area shape="rect" id="Node000003" href="$classcarefree__internal_1_1testcase__writer.html#a441c785793f7bc60cd107c24fc15d8f3" title=" " alt="" coords="5,72,193,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,75,194,81,193,75,225,70"/>
-</map>

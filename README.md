@@ -22,7 +22,7 @@ using namespace carefree;
 
 signed main(){
     gen_data(5, 5, [&](int i, int j){
-        testcase_io io("data/", i, j);
+        testcase_writer io("data/", i, j);
         int n = 1e7;
         if(i == 1) n = 10;
         if(i == 2) n = 100;
@@ -34,6 +34,3 @@ signed main(){
     });
 }
 ```
-
-
-

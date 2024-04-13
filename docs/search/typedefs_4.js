@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['weighted_5foutput_0',['weighted_output',['../namespacecarefree__internal.html#a160226d478e6907cb18e1cfcba9d25ae',1,'carefree_internal']]]
+  ['ull_0',['ull',['../namespacecarefree__internal.html#abe929ed78dbe39f784a5cf22e7c3d3bc',1,'carefree_internal']]],
+  ['unweighted_5foutput_1',['unweighted_output',['../namespacecarefree__internal.html#a5887c76eeb6eba89478de6310bc6cca4',1,'carefree_internal']]]
 ];

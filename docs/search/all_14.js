@@ -15,5 +15,5 @@ var searchData=
   ['to_5fstring_12',['to_string',['../classcarefree__internal_1_1graph.html#a8facb74885887c451a7597339cd4df50',1,'carefree_internal::graph::to_string()'],['../classcarefree__internal_1_1luogu__testcase__config__writer.html#a9c548ff297b710ad2fb67b45cf92cd88',1,'carefree_internal::luogu_testcase_config_writer::to_string()']]],
   ['token_5fcomparator_13',['token_comparator',['../classcarefree__internal_1_1token__comparator.html',1,'carefree_internal']]],
   ['tree_14',['tree',['../classcarefree__internal_1_1_balanced_tree.html#a8bd43bd5e8553686a5395273fea9cdcf',1,'carefree_internal::BalancedTree']]],
-  ['type_15',['type',['../structcarefree__internal_1_1judge__result.html#af4b52c057ab4d109e95f4b6ab72c703a',1,'carefree_internal::judge_result']]]
+  ['type_15',['type',['../structcarefree__internal_1_1judge__result.html#af4b52c057ab4d109e95f4b6ab72c703a',1,'carefree_internal::judge_result::type'],['../namespacecarefree__internal_1_1cpp__warnings.html#aac5beb75da526a2367f3602dce238053',1,'carefree_internal::cpp_warnings::type']]]
 ];

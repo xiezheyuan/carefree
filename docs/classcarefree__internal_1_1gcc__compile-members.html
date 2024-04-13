@@ -10,6 +10,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -23,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Carefree<span id="projectnumber">&#160;0.5</span>
+   <div id="projectname">Carefree<span id="projectnumber">&#160;0.6</span>
    </div>
    <div id="projectbrief">CareFree Library - A Light Data Generator for OI &amp; ACM</div>
   </td>
@@ -49,6 +53,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classcarefree__internal_1_1gcc__compile.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -70,11 +91,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespacecarefree__internal.html">carefree_internal</a></li><li class="navelem"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">gcc_compile</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">carefree_internal::gcc_compile 成员列表</div></div>
 </div><!--header-->
@@ -82,7 +98,7 @@ $(function() {
 
 <p>成员的完整列表，这些成员属于 <a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a>,包括所有继承而来的类成员</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#a3974cf1cbe895f96c35e74651a2611a9">add_warning</a>(int warning)</td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#a8024a2524498b15b5e5552066b45d053">add_warning</a>(cpp_warnings::type warning)</td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#a866e5ec62b68b5d0666fe8380b9dbd32">command</a>()</td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#a10681ab70322d90719f105cfe7a15448">cpp</a></td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#abafa518a455741368c00e1e0a094ed81">cpp_version</a>(cpp_version cpp)</td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
@@ -106,12 +122,15 @@ $(function() {
   <tr class="odd"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#ac14147871bf99082df12dee8091d6608">optimization</a>(optimization_type opti)</td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#a2b0bc2bc4b8e6efde06c7ec7d0f410ba">output_name</a></td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#a148041a674176132e8743f841248d37b">start</a>()</td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#a73e99e080dfe16c411892bc85572975b">warning</a></td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#adab807bfb3c653919cb7da77d2bd4e8e">warning_level</a>(int warning)</td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#ab9c253b15aec2cb95ad03e263df30279">warning</a></td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html#a210754d256a3b05ccf874663ac98229c">warning_level</a>(cpp_warnings::type warning)</td><td class="entry"><a class="el" href="classcarefree__internal_1_1gcc__compile.html">carefree_internal::gcc_compile</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
 </body>
 </html>
