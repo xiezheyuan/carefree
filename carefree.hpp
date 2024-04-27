@@ -1,7 +1,7 @@
 /*
  * CareFree Library
  * CopyRight (c) xiezheyuan 2024 - now
- * Visit https:
+ * Visit https://github.com/xiezheyuan/carefree for more details.
  */
 
 #pragma once
