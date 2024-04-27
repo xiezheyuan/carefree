@@ -2,22 +2,22 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,143,130,185"/>
 <area shape="rect" id="Node000002" href="$namespacecarefree__internal.html#a48b2d6d5959aa283a1010c993015a815" title=" " alt="" coords="350,51,489,93"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,140,133,115,177,95,257,76,335,69,335,74,258,82,179,100,135,120,98,144"/>
-<area shape="rect" id="Node000008" href="$namespacecarefree__internal.html#a6fd76e6e2b0005838173a512f6065ffe" title=" " alt="" coords="178,109,302,152"/>
+<area shape="rect" id="Node000008" href="$namespacecarefree__internal.html#a6fd76e6e2b0005838173a512f6065ffe" title="随机整数" alt="" coords="178,109,302,152"/>
 <area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="130,149,162,143,163,148,131,155"/>
 <area shape="rect" id="Node000010" href="$namespacecarefree__internal.html#a3cb543eb52061c05520bc89fb4201243" title=" " alt="" coords="178,176,302,219"/>
 <area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="131,173,163,180,162,185,130,179"/>
 <area shape="rect" id="Node000011" href="$namespacecarefree__internal.html#a1b5c92e6032276c5d9ea32c2e5d7f800" title=" " alt="" coords="358,235,482,277"/>
 <area shape="poly" id="edge16_Node000001_Node000011" title=" " alt="" coords="98,184,135,208,179,228,219,239,262,247,342,254,342,259,261,252,218,245,177,233,133,213,95,188"/>
-<area shape="rect" id="Node000003" href="$namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title=" " alt="" coords="714,80,838,123"/>
+<area shape="rect" id="Node000003" href="$namespacecarefree__internal.html#ad7cf10e69ae95657808b0308441f1c53" title="抛出 carefree 异常" alt="" coords="714,80,838,123"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="490,75,698,92,698,98,490,80"/>
-<area shape="rect" id="Node000004" href="$classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title=" " alt="" coords="889,5,1027,64"/>
+<area shape="rect" id="Node000004" href="$classcarefree__internal_1_1carefree__exception.html#a3401229f6b3d9ffacdbc9fcb11a4bf6f" title="获取 C++ 异常对象" alt="" coords="889,5,1027,64"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="835,77,873,63,875,68,837,82"/>
-<area shape="rect" id="Node000005" href="$classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title=" " alt="" coords="1077,47,1243,89"/>
+<area shape="rect" id="Node000005" href="$classcarefree__internal_1_1carefree__exception.html#a2c86c4843b14b30939122f4990aa58ed" title="获取完整异常信息" alt="" coords="1077,47,1243,89"/>
 <area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="838,93,1062,74,1062,79,839,99"/>
-<area shape="rect" id="Node000007" href="$namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title=" " alt="" coords="886,139,1029,181"/>
+<area shape="rect" id="Node000007" href="$namespacecarefree__internal.html#aa840398f5d5a721a2064e7673224a891" title="获取当前的异常处理策略" alt="" coords="886,139,1029,181"/>
 <area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="839,119,876,131,874,136,837,124"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1028,43,1062,49,1061,54,1027,49"/>
-<area shape="rect" id="Node000006" href="$classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title=" " alt="" coords="1291,39,1429,97"/>
+<area shape="rect" id="Node000006" href="$classcarefree__internal_1_1carefree__exception.html#afcd62b42ec14c010d285e918a7bd2dd1" title="获取异常信息" alt="" coords="1291,39,1429,97"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1243,65,1275,65,1275,71,1243,71"/>
 <area shape="rect" id="Node000009" href="$namespacecarefree__internal.html#a2462cbf3b9ed45075dac0a1a34d9e855" title=" " alt="" coords="537,109,666,152"/>
 <area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="302,128,521,128,521,133,302,133"/>

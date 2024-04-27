@@ -1,12 +1,12 @@
 /*
  * CareFree Library
  * CopyRight (c) xiezheyuan 2024 - now
- * Visit https://github.com/xiezheyuan/carefree/ for more information.
+ * Visit https:
  */
 
 #pragma once
 
-#if __cplusplus < 201402L
+#if __cplusplus < 201300L
 #error "carefree library need C++ 14 or higher version"
 #endif
 #ifndef __GNUC__
@@ -26,8 +26,8 @@
 #endif
 
 #define CAREFREE_VERSION_MAJOR 0
-#define CAREFREE_VERSION_MINOR 6
-#define CAREFREE_VERSION "0.6"
+#define CAREFREE_VERSION_MINOR 7
+#define CAREFREE_VERSION "0.7"
 
 #include <io.h>
 #include <sys/stat.h>
@@ -66,13 +66,21 @@
 #endif
 
 constexpr unsigned long long operator"" B(unsigned long long x) { return x; }
+
 constexpr unsigned long long operator"" KiB(unsigned long long x) { return x * 1024; }
+
 constexpr unsigned long long operator"" MiB(unsigned long long x) { return x * 1024 * 1024; }
+
 constexpr unsigned long long operator"" GiB(unsigned long long x) { return x * 1024 * 1024 * 1024; }
+
 constexpr unsigned long long operator"" TiB(unsigned long long x) { return x * 1024 * 1024 * 1024 * 1024; }
+
 constexpr unsigned long long operator"" NS(unsigned long long x) { return x; }
+
 constexpr unsigned long long operator"" MS(unsigned long long x) { return x * 1000 * 1000; }
+
 constexpr unsigned long long operator"" S(unsigned long long x) { return x * 1000 * 1000 * 1000; }
+
 constexpr unsigned long long operator"" MIN(unsigned long long x) { return x * 1000 * 1000 * 1000 * 60; }
 
 namespace carefree_internal {
@@ -85,20 +93,26 @@ namespace carefree_internal {
 
     template <class cpp_err_type, class err_name = carefree_exception_name>
     class carefree_exception {
-    protected:
+    private:
         string msg;
         string cls_name;
 
     public:
         using err_type = cpp_err_type;
+
         carefree_exception() { cls_name = err_name().name(); }
+
         carefree_exception(string msg) : msg(msg) { cls_name = err_name().name(); }
+
         carefree_exception(const char* msg) {
             this->msg = msg;
             cls_name = err_name().name();
         }
+
         string what() { return cls_name + " : " + get_msg(); }
+
         cpp_err_type get_err() { return err_type(what()); };
+
         string get_msg() { return msg; }
     };
 
@@ -126,17 +140,77 @@ namespace carefree_internal {
         string name() { return "carefree_system_exception"; }
     };
 
-    using carefree_invalid_argument = carefree_exception<std::invalid_argument, carefree_invalid_argument_name>;
-    using carefree_range_exception = carefree_exception<std::out_of_range, carefree_range_exception_name>;
-    using carefree_unsupported_operation = carefree_exception<std::logic_error, carefree_unsupported_operation_name>;
-    using carefree_file_exception = carefree_exception<std::runtime_error, carefree_file_exception_name>;
-    using carefree_runtime_exception = carefree_exception<std::runtime_error, carefree_runtime_exception_name>;
-    using carefree_system_exception = carefree_exception<std::runtime_error, carefree_system_exception_name>;
+    struct carefree_validate_failed_name : public carefree_exception_name {
+        string name() { return "carefree_validate_failed"; }
+    };
+
+    class _base_exception : public std::exception {
+    protected:
+        string msg;
+
+    public:
+        explicit _base_exception(const string& __arg) : msg(__arg) {};
+        explicit _base_exception(const char* __arg) : msg(__arg) {};
+        virtual ~_base_exception() noexcept = default;
+        virtual const char* what() const noexcept { return msg.c_str(); };
+    };
+
+    class _unsupported_operation : public _base_exception {
+    public:
+        explicit _unsupported_operation(const string& __arg) : _base_exception(__arg) {};
+        explicit _unsupported_operation(const char* __arg) : _base_exception(__arg) {};
+        virtual ~_unsupported_operation() noexcept = default;
+    };
+
+    class _file_exception : public _base_exception {
+    public:
+        explicit _file_exception(const string& __arg) : _base_exception(__arg) {};
+        explicit _file_exception(const char* __arg) : _base_exception(__arg) {};
+        virtual ~_file_exception() noexcept = default;
+    };
+
+    class _system_exception : public _base_exception {
+    public:
+        explicit _system_exception(const string& __arg) : _base_exception(__arg) {};
+        explicit _system_exception(const char* __arg) : _base_exception(__arg) {};
+        virtual ~_system_exception() noexcept = default;
+    };
+
+    class _validate_failed : public _base_exception {
+    public:
+        explicit _validate_failed(const string& __arg) : _base_exception(__arg) {};
+        explicit _validate_failed(const char* __arg) : _base_exception(__arg) {};
+        virtual ~_validate_failed() noexcept = default;
+    };
+
+    using _invalid_argument = std::invalid_argument;
+
+    using _range_exception = std::out_of_range;
+
+    using _runtime_exception = std::runtime_error;
+
+    using carefree_invalid_argument = carefree_exception<_invalid_argument, carefree_invalid_argument_name>;
+
+    using carefree_range_exception = carefree_exception<_range_exception, carefree_range_exception_name>;
+
+    using carefree_unsupported_operation = carefree_exception<_unsupported_operation, carefree_unsupported_operation_name>;
+
+    using carefree_file_exception = carefree_exception<_file_exception, carefree_file_exception_name>;
+
+    using carefree_runtime_exception = carefree_exception<_runtime_exception, carefree_runtime_exception_name>;
+
+    using carefree_system_exception = carefree_exception<_system_exception, carefree_system_exception_name>;
+
+    using carefree_validate_failed = carefree_exception<_validate_failed, carefree_validate_failed_name>;
 
     enum exception_policy {
+
         Throw,
+
         Ignore,
+
         Friendly,
+
         Simulate,
     };
 
@@ -243,8 +317,6 @@ namespace carefree_internal {
         exception_policy_val = policy;
     }
 
-    // type convert
-
     template <class T1, class T2>
     string join_str(T1 a, T2 b) {
         return string(a) + string(b);
@@ -294,8 +366,6 @@ namespace carefree_internal {
         return std::vector<T>(val);
     }
 
-    // random tricks
-
     std::mt19937_64 public_random_engine;
 
     template <class T>
@@ -324,8 +394,6 @@ namespace carefree_internal {
     void shuffle(T val) {
         std::shuffle(val.begin(), val.end(), public_random_engine);
     }
-
-    // sequence & string generator
 
     template <class T, class Value>
     std::vector<Value> sequence(int n, T function) {
@@ -359,32 +427,6 @@ namespace carefree_internal {
         });
     }
 
-    template <class T>
-    std::vector<T> real_cutting(int length, T total) {
-        err_positive_checker(length, __func__, "length");
-        std::vector<T> data;
-        for (int i = length; i >= 2; i--) {
-            int tmp = uniform(0.0, total / i * 2);
-            data.push_back(tmp);
-            total = total - tmp;
-        }
-        data.push_back(total);
-        shuffle(data);
-        return data;
-    }
-
-    template <class T>
-    std::vector<T> int_cutting(int length, T total) {
-        err_positive_checker(length, __func__, "length");
-        std::vector<double> data = real_cutting(length, (double)total);
-        std::vector<T> data2;
-        for (int i = 0; i < data.size(); i++) data2.push_back((T)data[i]);
-        T delta = total - std::accumulate(data2.begin(), data2.end(), T(0.0));
-        for (T i = 1; i <= delta; i = i + 1) data2[randint(0, length - 1)] += 1;
-        shuffle(data2);
-        return data2;
-    }
-
     namespace strsets {
         const string lower = "abcdefghijklmnopqrstuvwxyz";
         const string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -414,8 +456,6 @@ namespace carefree_internal {
     string randstr(int lengthL, int lengthR, const string sset = strsets::lower) {
         return randstr(randint(lengthL, lengthR), sset);
     }
-
-    // batching and timer
 
     template <class T>
     double timer(T function) {
@@ -510,23 +550,24 @@ namespace carefree_internal {
         public_random_engine.seed(std::time(NULL));
     }
 
-    // useful data structures
-
-    template <class T, class Compare = std::less<T> >
+    template <class T, class Compare = std::less<T>>
     class BalancedTree {
     private:
         __gnu_pbds::tree<T, __gnu_pbds::null_type, Compare, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update> tree;
 
     public:
         void insert(T x) { tree.insert(x); }
+
         bool erase(T x) { return tree.erase(x); }
+
         int rnk(T x) { return tree.order_of_key(x) + 1; }
+
         T kth(int x) { return *tree.find_by_order(x - 1); }
+
         int size() { return tree.size(); }
+
         bool empty() { return tree.empty(); }
     };
-
-    // graph structure
 
     using _Weight = long long;
 
@@ -550,7 +591,7 @@ namespace carefree_internal {
             }
         };
 
-    protected:
+    private:
         struct chain_node {
             int nxt, to;
             _Weight w;
@@ -559,12 +600,14 @@ namespace carefree_internal {
         };
         std::vector<chain_node> chain;
         std::vector<int> head;
-        std::vector<std::map<int, bool> > edge_map;
+        std::vector<std::map<int, bool>> edge_map;
         std::vector<edge> edge_vct;
 
     public:
         int N;
+
         bool directed;
+
         bool enable_edge_map;
 
         graph(int N, bool directed = false, bool enable_edge_map = true) {
@@ -573,7 +616,7 @@ namespace carefree_internal {
             this->directed = directed;
             this->enable_edge_map = enable_edge_map;
             head = std::vector<int>(N + 1, -1);
-            edge_map = std::vector<std::map<int, bool> >(N + 1);
+            edge_map = std::vector<std::map<int, bool>>(N + 1);
         }
 
         void add(edge edg, bool __add_vector = true) {
@@ -624,10 +667,10 @@ namespace carefree_internal {
     };
 
     using edge = graph::edge;
-    using weighted_output = graph::weighted_output;
-    using unweighted_output = graph::unweighted_output;
 
-    // graph tools
+    using weighted_output = graph::weighted_output;
+
+    using unweighted_output = graph::unweighted_output;
 
     bool is_tree(graph g) {
         std::vector<int> fa(g.N + 1);
@@ -725,8 +768,6 @@ namespace carefree_internal {
         return g;
     }
 
-    // tree generator and constructor
-
     graph lowhigh(int n, double low, double high, _Weight weightL = 0, _Weight weightR = 0) {
         graph g(n, false);
         for (int i = 2; i <= n; i++) {
@@ -767,7 +808,7 @@ namespace carefree_internal {
 
     graph max_degree(int n, int k, _Weight weightL = 0, _Weight weightR = 0) {
         graph g(n, false);
-        BalancedTree<std::pair<int, int> > tree;
+        BalancedTree<std::pair<int, int>> tree;
         tree.insert({1, 0});
         for (int i = 2; i <= n; i++) {
             auto fa = tree.kth(randint(1, tree.size()));
@@ -835,8 +876,6 @@ namespace carefree_internal {
         for (int i = 1; i <= n - 2; i++) prufer.push_back(randint(1, n));
         return prufer_decode(n, prufer, weightL, weightR);
     }
-
-    // graph generator & constructor
 
     graph dag(int n, int m, bool repeat_edges = false, _Weight weightL = 0, _Weight weightR = 0) {
         graph tree = random_tree(n, weightL, weightR);
@@ -906,12 +945,10 @@ namespace carefree_internal {
         return ret;
     }
 
-    // Input & Output
-
     class testcase_writer {
-    protected:
+    private:
         class file_writer {
-        protected:
+        private:
             std::FILE* fp;
             void _ein() {
                 if (fp == nullptr) raise(carefree_file_exception("testcase_writer::file_writer::_ein : file is not opened."));
@@ -1236,7 +1273,7 @@ namespace carefree_internal {
     using testcase_io [[deprecated("use testcase_writer instead.")]] = testcase_writer;
 
     class luogu_testcase_config_writer {
-    protected:
+    private:
         string content;
 
     public:
@@ -1620,7 +1657,7 @@ namespace carefree_internal {
     }
 
     class testlib_comparator : public comparator {
-    protected:
+    private:
         string testlib_path;
 
         string extract_outcome(string xml) {
@@ -1790,8 +1827,6 @@ namespace carefree_internal {
     }
 
     void listdir(string path, std::vector<string>& files) {
-        // From https://zhuanlan.zhihu.com/p/85094140
-        // By David Chen
         intptr_t hFile = 0;
         _finddata_t fileinfo;
         if ((hFile = _findfirst(path.append("/*").c_str(), &fileinfo)) != -1) {
@@ -1863,7 +1898,7 @@ namespace carefree_internal {
         std::map<string, string> defintions;
 
     public:
-        gcc_compile(string filename, string output_name) : filename(filename), output_name(output_name){};
+        gcc_compile(string filename, string output_name) : filename(filename), output_name(output_name) {};
 
         gcc_compile& gcc(string gcc_path) {
             this->gcc_path = gcc_path;
@@ -2051,9 +2086,187 @@ namespace carefree_internal {
         cpp_warnings::type Werror = cpp_warnings::Werror;
     } ES;
 
+    void helloworld() {
+        const string version_str = CAREFREE_VERSION;
+        const string product_name_art = " .o88b.  .d8b.  d8888b. d88888b d88888b d8888b. d88888b d88888b \nd8P  Y8 d8' `8b 88  `8D 88'     88'     88  `8D 88'     88'     \n8P      88ooo88 88oobY' 88ooooo 88ooo   88oobY' 88ooooo 88ooooo \n8b      88~~~88 88`8b   88~~~~~ 88~~~   88`8b   88~~~~~ 88~~~~~ \nY8b  d8 88   88 88 `88. 88.     88      88 `88. 88.     88.     \n `Y88P' YP   YP 88   YD Y88888P YP      88   YD Y88888P Y88888P \n                                                                \n     \n";
+        std::cout << ("Hello World! -- The greeting from Carefree " + version_str + "\n\n");
+        std::cout << product_name_art << '\n';
+        std::cout << "For more information, please visit : https://github.com/xiezheyuan/carefree/\n";
+        std::cout << "Do you want me to help you open this URL? (y | others): ";
+        string prompt;
+        std::cin >> prompt;
+        if (prompt == "y" || prompt == "Y") {
+            std::system("start http://github.com/xiezheyuan/carefree/");
+        }
+    }
+
+    template <class T>
+    class condition {
+    private:
+        std::function<bool(T)> val;
+
+    public:
+        condition(std::function<bool(T)> x) : val(x) {}
+        bool operator()(T x) const { return val(x); }
+    };
+
+    template <class T>
+    condition<T> operator||(condition<T> a, condition<T> b) {
+        return condition<T>([a, b](T v) { return a(v) || b(v); });
+    }
+
+    template <class T>
+    condition<T> operator&&(condition<T> a, condition<T> b) {
+        return condition<T>([a, b](T v) { return a(v) && b(v); });
+    }
+
+    template <class T>
+    condition<T> operator!(condition<T> a) {
+        return condition<T>([a](T v) { return !a(v); });
+    }
+
+    template <class T>
+    condition<T> operator|(condition<T> a, condition<T> b) { return a || b; }
+
+    template <class T>
+    condition<T> operator&(condition<T> a, condition<T> b) { return a && b; }
+
+    namespace pred {
+        namespace num {
+            template <class T>
+            condition<T> lt(T x) {
+                return condition<T>([x](T v) { return v < x; });
+            }
+
+            template <class T>
+            condition<T> gt(T x) {
+                return condition<T>([x](T v) { return v > x; });
+            }
+
+            template <class T>
+            condition<T> eq(T x) {
+                return condition<T>([x](T v) { return v == x; });
+            }
+
+            template <class T>
+            condition<T> leq(T x) { return lt(x) || eq(x); }
+
+            template <class T>
+            condition<T> geq(T x) { return gt(x) || eq(x); }
+
+            template <class T>
+            condition<T> neq(T x) { return !eq(x); }
+
+            template <class T>
+            condition<T> inrange(T l, T r) { return geq(l) && leq(r); }
+        }  // namespace num
+
+        namespace str {
+            condition<string> len_lt(size_t x) {
+                return condition<string>([x](string v) { return v.length() < x; });
+            }
+
+            condition<string> len_gt(size_t x) {
+                return condition<string>([x](string v) { return v.length() > x; });
+            }
+
+            condition<string> len_eq(size_t x) {
+                return condition<string>([x](string v) { return v.length() == x; });
+            }
+
+            condition<string> len_leq(size_t x) { return len_lt(x) || len_eq(x); }
+
+            condition<string> len_geq(size_t x) { return len_gt(x) || len_eq(x); }
+
+            condition<string> len_neq(size_t x) { return !len_eq(x); }
+
+            condition<string> len_inrange(size_t l, size_t r) { return len_geq(l) && len_leq(r); }
+
+            condition<string> empty() { return len_eq(0); }
+
+            condition<string> unempty() { return len_gt(0); }
+
+            condition<string> sset(string s) {
+                return condition<string>([s](string x) {
+                    std::map<char, bool> m;
+                    for (size_t i = 0; i < s.length(); i++) {
+                        m[s[i]] = true;
+                    }
+                    for (size_t i = 0; i < x.length(); i++) {
+                        if (!m[x[i]]) {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+            }
+        }  // namespace str
+
+        namespace seq {
+            template <class T = int>
+            condition<std::vector<T>> len_lt(size_t x) {
+                return condition<std::vector<T>>([x](string v) { return v.length() < x; });
+            }
+
+            template <class T = int>
+            condition<std::vector<T>> len_gt(size_t x) {
+                return condition<std::vector<T>>([x](string v) { return v.length() > x; });
+            }
+
+            template <class T = int>
+            condition<std::vector<T>> len_eq(size_t x) {
+                return condition<std::vector<T>>([x](string v) { return v.length() == x; });
+            }
+
+            template <class T = int>
+            condition<std::vector<T>> len_leq(size_t x) { return len_lt(x) || len_eq(x); }
+
+            template <class T = int>
+            condition<std::vector<T>> len_geq(size_t x) { return len_gt(x) || len_eq(x); }
+
+            template <class T = int>
+            condition<std::vector<T>> len_neq(size_t x) { return !len_eq(x); }
+
+            template <class T = int>
+            condition<std::vector<T>> len_inrange(size_t l, size_t r) { return len_geq(l) && len_leq(r); }
+
+            template <class T = int>
+            condition<std::vector<T>> empty() { return len_eq(0); }
+
+            template <class T = int>
+            condition<std::vector<T>> unempty() { return len_gt(0); }
+
+            template <class T = int>
+            condition<std::vector<T>> increase() {
+                return condition<std::vector<T>>([](std::vector<T> v) {
+                    for (size_t i = 0; i < v.size() - 1; i++) {
+                        if (v[i] < v[i + 1]) {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+            }
+
+            template <class T = int>
+            condition<std::vector<T>> decrease() {
+                return condition<std::vector<T>>([](std::vector<T> v) {
+                    for (size_t i = 0; i < v.size() - 1; i++) {
+                        if (v[i] > v[i + 1]) {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+            }
+
+        }  // namespace seq
+    }  // namespace pred
+
 }  // namespace carefree_internal
 
 namespace carefree {
+    using carefree_internal::_base_exception;
     using carefree_internal::autoclear_tmpfiles;
     using carefree_internal::binary_tree;
     using carefree_internal::carefree_exception;
@@ -2071,6 +2284,7 @@ namespace carefree {
     using carefree_internal::comparator;
     using carefree_internal::complete;
     using carefree_internal::complete_binary;
+    using carefree_internal::condition;
     using carefree_internal::connected_directed_graph;
     using carefree_internal::connected_undirected_graph;
     using carefree_internal::cpp_version;
@@ -2089,7 +2303,7 @@ namespace carefree {
     using carefree_internal::get_depth;
     using carefree_internal::get_exception_policy;
     using carefree_internal::graph;
-    using carefree_internal::int_cutting;
+    using carefree_internal::helloworld;
     using carefree_internal::introvert;
     using carefree_internal::is_tree;
     using carefree_internal::jrt2s;
@@ -2117,7 +2331,6 @@ namespace carefree {
     using carefree_internal::random_graph;
     using carefree_internal::random_tree;
     using carefree_internal::randstr;
-    using carefree_internal::real_cutting;
     using carefree_internal::relabel;
     using carefree_internal::sequence;
     using carefree_internal::set_exception_policy;
@@ -2139,9 +2352,10 @@ namespace carefree {
 
     namespace strsets = carefree_internal::strsets;
     namespace cpp_warnings = carefree_internal::cpp_warnings;
+    namespace pred = carefree_internal::pred;
+    namespace pnum = carefree_internal::pred::num;
+    namespace pstr = carefree_internal::pred::str;
+    namespace pseq = carefree_internal::pred::seq;
 }  // namespace carefree
 
 #pragma GCC diagnostic pop
-
-// note: If you wish to modify this code and subsequently integrate it into the main project, please remember to use the following configuration to format the code using Clang-format, thereby enhancing its readability.
-// {BasedOnStyle: Google,IndentWidth: 4,TabWidth: 4,UseTab: Never,BreakBeforeBraces: Attach,ColumnLimit: 0,NamespaceIndentation: All,AccessModifierOffset : -4}

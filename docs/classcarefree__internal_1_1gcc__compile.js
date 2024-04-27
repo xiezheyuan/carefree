@@ -13,17 +13,5 @@ var classcarefree__internal_1_1gcc__compile =
     [ "linking_static", "classcarefree__internal_1_1gcc__compile.html#a96db6d645e29210ac88ba0595028311a", null ],
     [ "optimization", "classcarefree__internal_1_1gcc__compile.html#ac14147871bf99082df12dee8091d6608", null ],
     [ "start", "classcarefree__internal_1_1gcc__compile.html#a148041a674176132e8743f841248d37b", null ],
-    [ "warning_level", "classcarefree__internal_1_1gcc__compile.html#a210754d256a3b05ccf874663ac98229c", null ],
-    [ "cpp", "classcarefree__internal_1_1gcc__compile.html#a10681ab70322d90719f105cfe7a15448", null ],
-    [ "debug", "classcarefree__internal_1_1gcc__compile.html#a97880cb1ff800740fed8db698e4aa908", null ],
-    [ "defintions", "classcarefree__internal_1_1gcc__compile.html#a69318054164741009282ce47f21db7d6", null ],
-    [ "filename", "classcarefree__internal_1_1gcc__compile.html#a31de6e07195191c72df21e6bf6c833ee", null ],
-    [ "gcc_path", "classcarefree__internal_1_1gcc__compile.html#ab79ced3afd23fb0b3317a441dd4112b4", null ],
-    [ "include_dirs", "classcarefree__internal_1_1gcc__compile.html#aa210de82158a322df00912e9b2cd4d16", null ],
-    [ "include_files", "classcarefree__internal_1_1gcc__compile.html#a8833f4e6f6ab47d25a4564c457f95f73", null ],
-    [ "link_libs", "classcarefree__internal_1_1gcc__compile.html#a23aaf4d77a3af9e972154677cda7d8d3", null ],
-    [ "link_static", "classcarefree__internal_1_1gcc__compile.html#a2cb155eda65cf95474cb95091e364e0e", null ],
-    [ "opti", "classcarefree__internal_1_1gcc__compile.html#a8e4300f24d6fe63400e403ed4ab3c04a", null ],
-    [ "output_name", "classcarefree__internal_1_1gcc__compile.html#a2b0bc2bc4b8e6efde06c7ec7d0f410ba", null ],
-    [ "warning", "classcarefree__internal_1_1gcc__compile.html#ab9c253b15aec2cb95ad03e263df30279", null ]
+    [ "warning_level", "classcarefree__internal_1_1gcc__compile.html#a210754d256a3b05ccf874663ac98229c", null ]
 ];

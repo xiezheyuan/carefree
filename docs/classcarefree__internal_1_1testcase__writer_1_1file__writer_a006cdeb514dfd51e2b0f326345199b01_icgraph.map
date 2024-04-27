@@ -1,7 +1,5 @@
 <map id="carefree_internal::testcase_writer::file_writer::close" name="carefree_internal::testcase_writer::file_writer::close">
-<area shape="rect" id="Node000001" title=" " alt="" coords="235,35,368,93"/>
-<area shape="rect" id="Node000002" href="$classcarefree__internal_1_1testcase__writer.html#ae71d66a65b6dbacad727a6c5fa4450dc" title=" " alt="" coords="5,5,187,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,52,187,46,188,41,220,47"/>
-<area shape="rect" id="Node000003" href="$classcarefree__internal_1_1testcase__writer_1_1file__writer.html#a6b9c6a5c23ede6b746e13aceb8cf2af7" title=" " alt="" coords="29,72,163,131"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,81,164,92,163,87,219,76"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="235,5,368,64"/>
+<area shape="rect" id="Node000002" href="$classcarefree__internal_1_1testcase__writer.html#ae71d66a65b6dbacad727a6c5fa4450dc" title=" " alt="" coords="5,13,187,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,37,187,37,187,32,219,32"/>
 </map>

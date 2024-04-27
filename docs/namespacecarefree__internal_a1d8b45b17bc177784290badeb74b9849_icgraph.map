@@ -1,10 +1,8 @@
 <map id="carefree_internal::nextid" name="carefree_internal::nextid">
-<area shape="rect" id="Node000001" title=" " alt="" coords="384,35,508,77"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="350,5,474,48"/>
 <area shape="rect" id="Node000002" href="$namespacecarefree__internal.html#a3c6134b6a7d0bedb5af81f8b2a9b778d" title=" " alt="" coords="5,5,130,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="369,33,336,25,282,20,227,18,130,23,130,17,227,13,282,15,336,20,371,27"/>
-<area shape="rect" id="Node000003" href="$namespacecarefree__internal.html#a0feed49559d89500270e80d81f21585e" title=" " alt="" coords="195,35,319,77"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="368,59,319,59,319,53,368,53"/>
-<area shape="rect" id="Node000004" href="$classcarefree__internal_1_1testlib__comparator.html#a1d8f6245b831fe94d663e5c27c7c7e8a" title=" " alt="" coords="178,101,336,144"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="370,85,320,103,319,98,368,80"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="179,47,130,39,131,34,180,41"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="335,26,302,25,178,25,130,27,130,21,178,20,302,20,335,21"/>
+<area shape="rect" id="Node000003" href="$namespacecarefree__internal.html#a0feed49559d89500270e80d81f21585e" title=" " alt="" coords="178,35,302,77"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="335,42,303,48,302,43,334,37"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="162,45,130,40,130,35,163,40"/>
 </map>

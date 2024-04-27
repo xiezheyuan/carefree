@@ -9,8 +9,9 @@ var searchData=
   ['size_6',['size',['../classcarefree__internal_1_1_balanced_tree.html#afcfe61df7e0b21a62de147698b7d56e2',1,'carefree_internal::BalancedTree']]],
   ['skipped_7',['Skipped',['../structcarefree__internal_1_1____enum__shortcut.html#ae5c5d039bb2302699783d01cf218f0df',1,'carefree_internal::__enum_shortcut::Skipped'],['../namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650acaca61359e93eecd32ff166877466a7ad6',1,'carefree_internal::Skipped']]],
   ['slug_8',['slug',['../namespacecarefree__internal_1_1strsets.html#a85e2f86947b630e65019a4b46e0154d3',1,'carefree_internal::strsets']]],
-  ['star_9',['star',['../namespacecarefree__internal.html#ad4db2cc924563f6be3d91bf8c08fa32b',1,'carefree_internal']]],
-  ['start_10',['start',['../classcarefree__internal_1_1gcc__compile.html#a148041a674176132e8743f841248d37b',1,'carefree_internal::gcc_compile']]],
-  ['strict_5fcomparator_11',['strict_comparator',['../classcarefree__internal_1_1strict__comparator.html',1,'carefree_internal']]],
-  ['strict_5fcomparator_5fnaive_12',['strict_comparator_naive',['../classcarefree__internal_1_1strict__comparator__naive.html',1,'carefree_internal']]]
+  ['sset_9',['sset',['../namespacecarefree__internal_1_1pred_1_1str.html#ac31e8dcf824792759d1e156906aadec4',1,'carefree_internal::pred::str']]],
+  ['star_10',['star',['../namespacecarefree__internal.html#ad4db2cc924563f6be3d91bf8c08fa32b',1,'carefree_internal']]],
+  ['start_11',['start',['../classcarefree__internal_1_1gcc__compile.html#a148041a674176132e8743f841248d37b',1,'carefree_internal::gcc_compile']]],
+  ['strict_5fcomparator_12',['strict_comparator',['../classcarefree__internal_1_1strict__comparator.html',1,'carefree_internal']]],
+  ['strict_5fcomparator_5fnaive_13',['strict_comparator_naive',['../classcarefree__internal_1_1strict__comparator__naive.html',1,'carefree_internal']]]
 ];

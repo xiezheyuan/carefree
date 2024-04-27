@@ -1,15 +1,17 @@
 <map id="carefree_internal::carefree_exception_name" name="carefree_internal::carefree_exception_name">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,172,175,215"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,205,175,248"/>
 <area shape="rect" id="Node000002" href="$structcarefree__internal_1_1carefree__file__exception__name.html" title=" " alt="" coords="236,5,429,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,158,161,106,190,80,221,58,244,46,246,51,224,62,193,84,164,110,118,161"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,190,154,123,185,88,221,58,242,46,244,51,224,62,189,92,158,126,112,193"/>
 <area shape="rect" id="Node000003" href="$structcarefree__internal_1_1carefree__invalid__argument__name.html" title=" " alt="" coords="228,72,437,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,162,222,124,253,113,255,118,224,129,145,167"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,193,169,157,221,124,248,113,250,118,224,129,172,162,128,197"/>
 <area shape="rect" id="Node000004" href="$structcarefree__internal_1_1carefree__range__exception__name.html" title=" " alt="" coords="228,139,437,181"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="190,177,227,172,228,177,191,182"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="184,198,251,179,253,185,185,203"/>
 <area shape="rect" id="Node000005" href="$structcarefree__internal_1_1carefree__runtime__exception__name.html" title=" " alt="" coords="223,205,442,248"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="190,204,223,209,222,214,190,210"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="190,224,222,224,222,229,190,229"/>
 <area shape="rect" id="Node000006" href="$structcarefree__internal_1_1carefree__system__exception__name.html" title=" " alt="" coords="223,272,442,315"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="145,220,224,258,255,269,253,274,222,262,142,225"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="185,250,253,269,251,274,184,255"/>
 <area shape="rect" id="Node000007" href="$structcarefree__internal_1_1carefree__unsupported__operation__name.html" title=" " alt="" coords="260,339,405,397"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="119,225,165,276,194,302,224,324,261,343,258,348,221,329,190,306,162,280,115,229"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="129,256,173,291,224,324,260,342,258,346,221,329,170,295,125,260"/>
+<area shape="rect" id="Node000008" href="$structcarefree__internal_1_1carefree__validate__failed__name.html" title=" " alt="" coords="236,421,429,464"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="110,260,129,295,155,335,187,374,224,407,244,419,241,423,221,411,183,378,151,338,125,298,105,263"/>
 </map>

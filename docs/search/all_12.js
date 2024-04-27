@@ -11,9 +11,8 @@ var searchData=
   ['readable_8',['readable',['../classcarefree__internal_1_1comparator_1_1readable.html',1,'carefree_internal::comparator']]],
   ['readme_9',['README',['../md__r_e_a_d_m_e.html',1,'']]],
   ['readme_2emd_10',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['real_5fcutting_11',['real_cutting',['../namespacecarefree__internal.html#a3cb543eb52061c05520bc89fb4201243',1,'carefree_internal']]],
-  ['relabel_12',['relabel',['../namespacecarefree__internal.html#a5d94a77704f75ed18e98f79eccd2a5e3',1,'carefree_internal']]],
-  ['return_5fcode_13',['return_code',['../classcarefree__internal_1_1process__base.html#a3196861ac8dcba5936f436cf393b82f8',1,'carefree_internal::process_base']]],
-  ['rnk_14',['rnk',['../classcarefree__internal_1_1_balanced_tree.html#a618a6a6837f95c79d4e8127186454c22',1,'carefree_internal::BalancedTree']]],
-  ['runtimeerror_15',['RuntimeError',['../structcarefree__internal_1_1____enum__shortcut.html#ab42255053ca30dbd829dcd8af647720c',1,'carefree_internal::__enum_shortcut::RuntimeError'],['../namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650acaae6566a92286a549d562116e17fa3f0d',1,'carefree_internal::RuntimeError']]]
+  ['relabel_11',['relabel',['../namespacecarefree__internal.html#a5d94a77704f75ed18e98f79eccd2a5e3',1,'carefree_internal']]],
+  ['return_5fcode_12',['return_code',['../classcarefree__internal_1_1process__base.html#a3196861ac8dcba5936f436cf393b82f8',1,'carefree_internal::process_base::return_code()'],['../classcarefree__internal_1_1process__win.html#ae4ed695dcdb06125b8a65b8c4428b967',1,'carefree_internal::process_win::return_code()']]],
+  ['rnk_13',['rnk',['../classcarefree__internal_1_1_balanced_tree.html#a618a6a6837f95c79d4e8127186454c22',1,'carefree_internal::BalancedTree']]],
+  ['runtimeerror_14',['RuntimeError',['../structcarefree__internal_1_1____enum__shortcut.html#ab42255053ca30dbd829dcd8af647720c',1,'carefree_internal::__enum_shortcut::RuntimeError'],['../namespacecarefree__internal.html#a37e3f31011bf29cb5216c612ce7650acaae6566a92286a549d562116e17fa3f0d',1,'carefree_internal::RuntimeError']]]
 ];

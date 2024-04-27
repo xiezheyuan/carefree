@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ratio_0',['ratio',['../structcarefree__internal_1_1judge__result.html#a703e249e97ce42197e49ae7c47f057ae',1,'carefree_internal::judge_result']]],
-  ['runtimeerror_1',['RuntimeError',['../structcarefree__internal_1_1____enum__shortcut.html#ab42255053ca30dbd829dcd8af647720c',1,'carefree_internal::__enum_shortcut']]]
+  ['unknownerror_0',['UnknownError',['../structcarefree__internal_1_1____enum__shortcut.html#a72c5b5662b750a0fafc7842b2117f244',1,'carefree_internal::__enum_shortcut']]],
+  ['upper_1',['upper',['../namespacecarefree__internal_1_1strsets.html#abc290b6501f4059bbb79e53d7ac7b9d7',1,'carefree_internal::strsets']]]
 ];

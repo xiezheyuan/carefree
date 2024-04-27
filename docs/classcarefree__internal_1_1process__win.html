@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Carefree (For Windows): carefree_internal::process_win类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Carefree (For Windows)<span id="projectnumber">&#160;0.7</span>
+   </div>
+   <div id="projectbrief">CareFree Library - A Light Data Generator for OI &amp; ACM</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classcarefree__internal_1_1process__win.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classcarefree__internal_1_1process__win-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">carefree_internal::process_win类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="carefree_8hpp_source.html">carefree.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 carefree_internal::process_win 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1process__win__inherit__graph.png" border="0" usemap="#acarefree__internal_1_1process__win_inherit__map" alt="Inheritance graph"/></div>
+<map name="acarefree__internal_1_1process__win_inherit__map" id="acarefree__internal_1_1process__win_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,96,130,139"/>
+<area shape="rect" href="classcarefree__internal_1_1process__base.html" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="70,64,70,96,65,96,65,64"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+carefree_internal::process_win 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1process__win__coll__graph.png" border="0" usemap="#acarefree__internal_1_1process__win_coll__map" alt="Collaboration graph"/></div>
+<map name="acarefree__internal_1_1process__win_coll__map" id="acarefree__internal_1_1process__win_coll__map">
+<area shape="rect" title=" " alt="" coords="5,96,130,139"/>
+<area shape="rect" href="classcarefree__internal_1_1process__base.html" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="70,64,70,96,65,96,65,64"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a004cded16036045ab0d98d16aa52f629" id="r_a004cded16036045ab0d98d16aa52f629"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a004cded16036045ab0d98d16aa52f629">process_win</a> (const string &amp;cmd, const string &amp;input=&quot;&quot;, const string &amp;output=&quot;&quot;)</td></tr>
+<tr class="separator:a004cded16036045ab0d98d16aa52f629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71ac0e5a09eb20b2f729f591f805d18e" id="r_a71ac0e5a09eb20b2f729f591f805d18e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71ac0e5a09eb20b2f729f591f805d18e">close</a> ()</td></tr>
+<tr class="separator:a71ac0e5a09eb20b2f729f591f805d18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95209716a7acc533bc304b87cfab19eb" id="r_a95209716a7acc533bc304b87cfab19eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95209716a7acc533bc304b87cfab19eb">~process_win</a> ()</td></tr>
+<tr class="separator:a95209716a7acc533bc304b87cfab19eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c9a9cea95204743c705ec9a427e7a5" id="r_a32c9a9cea95204743c705ec9a427e7a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32c9a9cea95204743c705ec9a427e7a5">kill</a> ()</td></tr>
+<tr class="separator:a32c9a9cea95204743c705ec9a427e7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13126b62638d80b2ab4d8469bd5f88aa" id="r_a13126b62638d80b2ab4d8469bd5f88aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13126b62638d80b2ab4d8469bd5f88aa">is_running</a> () const</td></tr>
+<tr class="separator:a13126b62638d80b2ab4d8469bd5f88aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ed695dcdb06125b8a65b8c4428b967" id="r_ae4ed695dcdb06125b8a65b8c4428b967"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4ed695dcdb06125b8a65b8c4428b967">return_code</a> () const</td></tr>
+<tr class="separator:ae4ed695dcdb06125b8a65b8c4428b967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee69a6ac2735d090a0f443799dc8088a" id="r_aee69a6ac2735d090a0f443799dc8088a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee69a6ac2735d090a0f443799dc8088a">pid</a> () const</td></tr>
+<tr class="separator:aee69a6ac2735d090a0f443799dc8088a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a952642d7637ba2ee9123d447a4c3fff0" id="r_a952642d7637ba2ee9123d447a4c3fff0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a952642d7637ba2ee9123d447a4c3fff0">memory</a> () const</td></tr>
+<tr class="separator:a952642d7637ba2ee9123d447a4c3fff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a004cded16036045ab0d98d16aa52f629" name="a004cded16036045ab0d98d16aa52f629"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a004cded16036045ab0d98d16aa52f629">&#9670;&#160;</a></span>process_win()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">carefree_internal::process_win::process_win </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>cmd</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95209716a7acc533bc304b87cfab19eb" name="a95209716a7acc533bc304b87cfab19eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95209716a7acc533bc304b87cfab19eb">&#9670;&#160;</a></span>~process_win()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">carefree_internal::process_win::~process_win </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a71ac0e5a09eb20b2f729f591f805d18e" name="a71ac0e5a09eb20b2f729f591f805d18e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71ac0e5a09eb20b2f729f591f805d18e">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void carefree_internal::process_win::close </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classcarefree__internal_1_1process__base.html#a828fb7858e0a60c536ded85b6cb16822">carefree_internal::process_base</a>.</p>
+
+</div>
+</div>
+<a id="a13126b62638d80b2ab4d8469bd5f88aa" name="a13126b62638d80b2ab4d8469bd5f88aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13126b62638d80b2ab4d8469bd5f88aa">&#9670;&#160;</a></span>is_running()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool carefree_internal::process_win::is_running </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classcarefree__internal_1_1process__base.html#a05d10c844bac277ccc69a9b1fc4ab9c8">carefree_internal::process_base</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1process__win_a13126b62638d80b2ab4d8469bd5f88aa_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1process__win_a13126b62638d80b2ab4d8469bd5f88aa_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1process__win_a13126b62638d80b2ab4d8469bd5f88aa_icgraph" id="aclasscarefree__internal_1_1process__win_a13126b62638d80b2ab4d8469bd5f88aa_icgraph">
+<area shape="rect" title=" " alt="" coords="522,5,683,48"/>
+<area shape="rect" href="namespacecarefree__internal.html#afcbd0ede3652a0ff10242315e0f913bc" title=" " alt="" coords="350,5,474,48"/>
+<area shape="poly" title=" " alt="" coords="507,29,475,29,475,24,507,24"/>
+<area shape="rect" href="namespacecarefree__internal.html#a3c6134b6a7d0bedb5af81f8b2a9b778d" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="335,26,302,25,178,25,130,27,130,21,178,20,302,20,335,21"/>
+<area shape="rect" href="namespacecarefree__internal.html#a0feed49559d89500270e80d81f21585e" title=" " alt="" coords="178,35,302,77"/>
+<area shape="poly" title=" " alt="" coords="335,42,303,48,302,43,334,37"/>
+<area shape="poly" title=" " alt="" coords="162,45,130,40,130,35,163,40"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a32c9a9cea95204743c705ec9a427e7a5" name="a32c9a9cea95204743c705ec9a427e7a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32c9a9cea95204743c705ec9a427e7a5">&#9670;&#160;</a></span>kill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void carefree_internal::process_win::kill </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classcarefree__internal_1_1process__base.html#ab10a5f77891b31139be95ecabe04b1d7">carefree_internal::process_base</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1process__win_a32c9a9cea95204743c705ec9a427e7a5_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1process__win_a32c9a9cea95204743c705ec9a427e7a5_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1process__win_a32c9a9cea95204743c705ec9a427e7a5_icgraph" id="aclasscarefree__internal_1_1process__win_a32c9a9cea95204743c705ec9a427e7a5_icgraph">
+<area shape="rect" title=" " alt="" coords="522,5,647,48"/>
+<area shape="rect" href="namespacecarefree__internal.html#afcbd0ede3652a0ff10242315e0f913bc" title=" " alt="" coords="350,5,474,48"/>
+<area shape="poly" title=" " alt="" coords="507,29,475,29,475,24,507,24"/>
+<area shape="rect" href="namespacecarefree__internal.html#a3c6134b6a7d0bedb5af81f8b2a9b778d" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="335,26,302,25,178,25,130,27,130,21,178,20,302,20,335,21"/>
+<area shape="rect" href="namespacecarefree__internal.html#a0feed49559d89500270e80d81f21585e" title=" " alt="" coords="178,35,302,77"/>
+<area shape="poly" title=" " alt="" coords="335,42,303,48,302,43,334,37"/>
+<area shape="poly" title=" " alt="" coords="162,45,130,40,130,35,163,40"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a952642d7637ba2ee9123d447a4c3fff0" name="a952642d7637ba2ee9123d447a4c3fff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a952642d7637ba2ee9123d447a4c3fff0">&#9670;&#160;</a></span>memory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t carefree_internal::process_win::memory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classcarefree__internal_1_1process__base.html#a2c53f43fe20ad21bd89bdfff246777d0">carefree_internal::process_base</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1process__win_a952642d7637ba2ee9123d447a4c3fff0_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1process__win_a952642d7637ba2ee9123d447a4c3fff0_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1process__win_a952642d7637ba2ee9123d447a4c3fff0_icgraph" id="aclasscarefree__internal_1_1process__win_a952642d7637ba2ee9123d447a4c3fff0_icgraph">
+<area shape="rect" title=" " alt="" coords="522,5,671,48"/>
+<area shape="rect" href="namespacecarefree__internal.html#afcbd0ede3652a0ff10242315e0f913bc" title=" " alt="" coords="350,5,474,48"/>
+<area shape="poly" title=" " alt="" coords="507,29,475,29,475,24,507,24"/>
+<area shape="rect" href="namespacecarefree__internal.html#a3c6134b6a7d0bedb5af81f8b2a9b778d" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="335,26,302,25,178,25,130,27,130,21,178,20,302,20,335,21"/>
+<area shape="rect" href="namespacecarefree__internal.html#a0feed49559d89500270e80d81f21585e" title=" " alt="" coords="178,35,302,77"/>
+<area shape="poly" title=" " alt="" coords="335,42,303,48,302,43,334,37"/>
+<area shape="poly" title=" " alt="" coords="162,45,130,40,130,35,163,40"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aee69a6ac2735d090a0f443799dc8088a" name="aee69a6ac2735d090a0f443799dc8088a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee69a6ac2735d090a0f443799dc8088a">&#9670;&#160;</a></span>pid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int carefree_internal::process_win::pid </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classcarefree__internal_1_1process__base.html#a12e152ab4f368dc3fe0d4e8839dc8e40">carefree_internal::process_base</a>.</p>
+
+</div>
+</div>
+<a id="ae4ed695dcdb06125b8a65b8c4428b967" name="ae4ed695dcdb06125b8a65b8c4428b967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4ed695dcdb06125b8a65b8c4428b967">&#9670;&#160;</a></span>return_code()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int carefree_internal::process_win::return_code </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="classcarefree__internal_1_1process__base.html#a3196861ac8dcba5936f436cf393b82f8">carefree_internal::process_base</a>.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarefree__internal_1_1process__win_ae4ed695dcdb06125b8a65b8c4428b967_icgraph.png" border="0" usemap="#aclasscarefree__internal_1_1process__win_ae4ed695dcdb06125b8a65b8c4428b967_icgraph" alt=""/></div>
+<map name="aclasscarefree__internal_1_1process__win_ae4ed695dcdb06125b8a65b8c4428b967_icgraph" id="aclasscarefree__internal_1_1process__win_ae4ed695dcdb06125b8a65b8c4428b967_icgraph">
+<area shape="rect" title=" " alt="" coords="522,5,692,48"/>
+<area shape="rect" href="namespacecarefree__internal.html#afcbd0ede3652a0ff10242315e0f913bc" title=" " alt="" coords="350,5,474,48"/>
+<area shape="poly" title=" " alt="" coords="507,29,475,29,475,24,507,24"/>
+<area shape="rect" href="namespacecarefree__internal.html#a3c6134b6a7d0bedb5af81f8b2a9b778d" title=" " alt="" coords="5,5,130,48"/>
+<area shape="poly" title=" " alt="" coords="335,26,302,25,178,25,130,27,130,21,178,20,302,20,335,21"/>
+<area shape="rect" href="namespacecarefree__internal.html#a0feed49559d89500270e80d81f21585e" title=" " alt="" coords="178,35,302,77"/>
+<area shape="poly" title=" " alt="" coords="335,42,303,48,302,43,334,37"/>
+<area shape="poly" title=" " alt="" coords="162,45,130,40,130,35,163,40"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="carefree_8hpp_source.html">carefree.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacecarefree__internal.html">carefree_internal</a></li><li class="navelem"><a class="el" href="classcarefree__internal_1_1process__win.html">process_win</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

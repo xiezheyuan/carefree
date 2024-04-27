@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Carefree: carefree.hpp 文件参考</title>
+<title>Carefree (For Windows): carefree.hpp 文件参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Carefree<span id="projectnumber">&#160;0.6</span>
+   <div id="projectname">Carefree (For Windows)<span id="projectnumber">&#160;0.7</span>
    </div>
    <div id="projectbrief">CareFree Library - A Light Data Generator for OI &amp; ACM</div>
   </td>
@@ -103,7 +103,9 @@ $(function(){initNavTree('carefree_8hpp.html',''); initResizable(); });
   <div class="headertitle"><div class="title">carefree.hpp 文件参考</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;io.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;windows.h&gt;</code><br />
+<code>#include &lt;psapi.h&gt;</code><br />
+<code>#include &lt;io.h&gt;</code><br />
 <code>#include &lt;sys/stat.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
@@ -133,57 +135,71 @@ carefree.hpp 的引用(Include)关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="carefree_8hpp__incl.png" border="0" usemap="#acarefree_8hpp" alt=""/></div>
 <map name="acarefree_8hpp" id="acarefree_8hpp">
-<area shape="rect" title=" " alt="" coords="1287,5,1379,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,48,107"/>
-<area shape="poly" title=" " alt="" coords="1287,23,1050,26,702,35,340,53,185,66,64,83,63,78,184,61,340,48,702,30,1050,21,1287,18"/>
-<area shape="rect" title=" " alt="" coords="72,80,152,107"/>
-<area shape="poly" title=" " alt="" coords="1287,22,1108,23,834,29,507,47,336,63,167,83,167,77,335,57,506,42,834,24,1108,17,1287,17"/>
-<area shape="rect" title=" " alt="" coords="176,80,243,107"/>
-<area shape="poly" title=" " alt="" coords="1287,22,1120,22,868,28,568,46,412,62,258,83,258,77,412,57,568,41,868,23,1120,17,1287,17"/>
-<area shape="rect" title=" " alt="" coords="267,80,341,107"/>
-<area shape="poly" title=" " alt="" coords="1286,23,1134,25,906,33,636,51,496,65,357,83,356,77,495,59,636,45,906,27,1133,19,1286,17"/>
-<area shape="rect" title=" " alt="" coords="366,80,426,107"/>
-<area shape="poly" title=" " alt="" coords="1287,22,1146,24,939,32,694,50,567,64,441,83,441,77,566,59,694,45,938,26,1146,19,1287,17"/>
-<area shape="rect" title=" " alt="" coords="450,80,507,107"/>
-<area shape="poly" title=" " alt="" coords="1287,23,1157,25,970,33,750,51,636,65,523,82,522,77,635,59,749,45,969,27,1157,19,1287,17"/>
-<area shape="rect" title=" " alt="" coords="530,80,590,107"/>
-<area shape="poly" title=" " alt="" coords="1287,23,1169,27,1002,36,807,54,605,82,604,77,806,48,1001,31,1169,21,1286,18"/>
-<area shape="rect" title=" " alt="" coords="614,80,674,107"/>
-<area shape="poly" title=" " alt="" coords="1287,24,1035,39,866,56,690,83,689,77,865,51,1035,34,1286,19"/>
-<area shape="rect" title=" " alt="" coords="699,80,752,107"/>
-<area shape="poly" title=" " alt="" coords="1287,24,1066,40,920,57,768,82,767,77,919,52,1066,35,1286,19"/>
-<area shape="rect" title=" " alt="" coords="776,80,978,107"/>
-<area shape="poly" title=" " alt="" coords="1287,30,973,80,972,74,1286,25"/>
-<area shape="rect" title=" " alt="" coords="1003,80,1173,107"/>
-<area shape="poly" title=" " alt="" coords="1291,35,1146,78,1145,73,1290,30"/>
-<area shape="rect" title=" " alt="" coords="1197,80,1261,107"/>
-<area shape="poly" title=" " alt="" coords="1317,35,1261,73,1258,69,1314,30"/>
-<area shape="rect" title=" " alt="" coords="1285,80,1381,107"/>
-<area shape="poly" title=" " alt="" coords="1336,33,1336,64,1331,64,1331,33"/>
-<area shape="rect" title=" " alt="" coords="1405,80,1472,107"/>
-<area shape="poly" title=" " alt="" coords="1353,30,1409,69,1406,73,1350,35"/>
-<area shape="rect" title=" " alt="" coords="1496,80,1568,107"/>
-<area shape="poly" title=" " alt="" coords="1369,30,1484,72,1482,77,1367,35"/>
-<area shape="rect" title=" " alt="" coords="1591,80,1638,107"/>
-<area shape="poly" title=" " alt="" coords="1380,27,1468,48,1577,77,1576,82,1467,53,1379,33"/>
-<area shape="rect" title=" " alt="" coords="1662,80,1730,107"/>
-<area shape="poly" title=" " alt="" coords="1380,25,1498,46,1648,77,1647,82,1497,52,1379,31"/>
-<area shape="rect" title=" " alt="" coords="1753,80,1809,107"/>
-<area shape="poly" title=" " alt="" coords="1380,22,1535,41,1635,57,1738,77,1737,82,1634,62,1534,46,1379,27"/>
-<area shape="rect" title=" " alt="" coords="1833,80,1897,107"/>
-<area shape="poly" title=" " alt="" coords="1380,21,1568,39,1691,56,1818,77,1818,82,1690,61,1567,45,1380,26"/>
-<area shape="rect" title=" " alt="" coords="1922,80,1990,107"/>
-<area shape="poly" title=" " alt="" coords="1380,20,1603,37,1752,54,1907,77,1906,83,1752,59,1603,43,1380,25"/>
-<area shape="rect" title=" " alt="" coords="2014,80,2092,107"/>
-<area shape="poly" title=" " alt="" coords="1380,19,1640,36,1816,53,1999,77,1998,82,1815,58,1639,41,1380,25"/>
-<area shape="rect" title=" " alt="" coords="2116,80,2169,107"/>
-<area shape="poly" title=" " alt="" coords="1380,17,1503,20,1680,28,1887,46,1994,60,2101,77,2100,83,1994,65,1886,51,1680,33,1503,25,1380,23"/>
-<area shape="rect" title=" " alt="" coords="2193,80,2276,107"/>
-<area shape="poly" title=" " alt="" coords="1380,18,1514,22,1710,32,1940,49,2178,77,2178,82,1939,55,1709,37,1514,28,1380,24"/>
-<area shape="rect" title=" " alt="" coords="2300,80,2366,107"/>
-<area shape="poly" title=" " alt="" coords="1380,17,1529,18,1751,26,2014,44,2150,59,2285,77,2285,83,2150,64,2013,50,1751,31,1529,24,1380,22"/>
-<area shape="rect" title=" " alt="" coords="2391,80,2446,107"/>
-<area shape="poly" title=" " alt="" coords="1380,19,1859,36,2151,54,2277,65,2376,78,2375,83,2276,70,2151,59,1859,42,1379,24"/>
+<area shape="rect" title=" " alt="" coords="1376,5,1468,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,87,107"/>
+<area shape="poly" title=" " alt="" coords="1375,24,769,41,391,59,229,70,102,82,102,77,229,65,391,54,768,36,1375,18"/>
+<area shape="rect" title=" " alt="" coords="110,80,174,107"/>
+<area shape="poly" title=" " alt="" coords="1376,24,809,40,458,58,308,69,189,83,189,77,307,64,458,53,809,35,1375,18"/>
+<area shape="rect" title=" " alt="" coords="198,80,241,107"/>
+<area shape="poly" title=" " alt="" coords="1375,23,1157,27,839,37,509,55,367,68,256,83,255,78,367,62,508,50,838,32,1157,22,1375,18"/>
+<area shape="rect" title=" " alt="" coords="265,80,344,107"/>
+<area shape="poly" title=" " alt="" coords="1376,22,1211,24,962,32,667,50,512,64,360,83,359,77,512,59,666,44,962,26,1211,19,1375,17"/>
+<area shape="rect" title=" " alt="" coords="368,80,436,107"/>
+<area shape="poly" title=" " alt="" coords="1375,22,1223,23,997,31,729,49,589,63,451,82,451,77,589,58,728,44,997,26,1223,18,1375,17"/>
+<area shape="rect" title=" " alt="" coords="460,80,534,107"/>
+<area shape="poly" title=" " alt="" coords="1376,23,1238,26,1035,35,797,53,549,83,549,77,796,48,1035,30,1237,21,1376,18"/>
+<area shape="rect" title=" " alt="" coords="559,80,619,107"/>
+<area shape="poly" title=" " alt="" coords="1375,23,1249,26,1068,35,855,53,635,83,634,77,854,47,1067,29,1249,21,1375,18"/>
+<area shape="rect" title=" " alt="" coords="643,80,700,107"/>
+<area shape="poly" title=" " alt="" coords="1375,23,1261,27,1099,36,910,54,715,82,714,77,910,48,1099,31,1261,21,1375,18"/>
+<area shape="rect" title=" " alt="" coords="723,80,782,107"/>
+<area shape="poly" title=" " alt="" coords="1376,24,1132,39,968,56,798,82,797,77,967,51,1131,34,1375,19"/>
+<area shape="rect" title=" " alt="" coords="807,80,867,107"/>
+<area shape="poly" title=" " alt="" coords="1376,25,1166,42,1027,59,883,83,882,77,1026,54,1165,37,1375,20"/>
+<area shape="rect" title=" " alt="" coords="891,80,945,107"/>
+<area shape="poly" title=" " alt="" coords="1376,26,1197,44,1081,60,961,82,960,77,1080,55,1196,39,1375,21"/>
+<area shape="rect" title=" " alt="" coords="969,80,1171,107"/>
+<area shape="poly" title=" " alt="" coords="1376,32,1147,79,1146,74,1375,27"/>
+<area shape="rect" title=" " alt="" coords="1196,80,1366,107"/>
+<area shape="poly" title=" " alt="" coords="1399,35,1320,75,1318,70,1396,30"/>
+<area shape="rect" title=" " alt="" coords="1390,80,1454,107"/>
+<area shape="poly" title=" " alt="" coords="1425,33,1425,64,1419,64,1419,33"/>
+<area shape="rect" title=" " alt="" coords="1478,80,1574,107"/>
+<area shape="poly" title=" " alt="" coords="1442,30,1497,69,1494,73,1439,35"/>
+<area shape="rect" title=" " alt="" coords="1598,80,1665,107"/>
+<area shape="poly" title=" " alt="" coords="1459,30,1584,73,1583,78,1458,35"/>
+<area shape="rect" title=" " alt="" coords="1689,80,1760,107"/>
+<area shape="poly" title=" " alt="" coords="1469,28,1674,77,1673,82,1468,33"/>
+<area shape="rect" title=" " alt="" coords="1784,80,1831,107"/>
+<area shape="poly" title=" " alt="" coords="1469,23,1601,42,1770,77,1768,82,1600,47,1468,28"/>
+<area shape="rect" title=" " alt="" coords="1855,80,1922,107"/>
+<area shape="poly" title=" " alt="" coords="1469,22,1629,42,1840,77,1839,82,1628,48,1468,28"/>
+<area shape="rect" title=" " alt="" coords="1946,80,2002,107"/>
+<area shape="poly" title=" " alt="" coords="1469,20,1667,37,1796,54,1931,77,1930,82,1796,59,1666,43,1468,25"/>
+<area shape="rect" title=" " alt="" coords="2026,80,2090,107"/>
+<area shape="poly" title=" " alt="" coords="1469,19,1698,36,1852,53,2011,77,2010,82,1851,58,1698,41,1469,25"/>
+<area shape="rect" title=" " alt="" coords="2115,80,2183,107"/>
+<area shape="poly" title=" " alt="" coords="1469,19,1733,34,1913,51,2100,77,2099,83,1912,57,1733,40,1468,24"/>
+<area shape="rect" title=" " alt="" coords="2207,80,2285,107"/>
+<area shape="poly" title=" " alt="" coords="1469,18,1769,33,1977,50,2192,77,2191,82,1976,56,1769,38,1468,24"/>
+<area shape="rect" title=" " alt="" coords="2309,80,2362,107"/>
+<area shape="poly" title=" " alt="" coords="1468,17,1607,18,1809,25,2048,43,2172,58,2294,77,2293,83,2171,63,2047,48,1809,30,1607,23,1468,22"/>
+<area shape="rect" title=" " alt="" coords="2386,80,2469,107"/>
+<area shape="poly" title=" " alt="" coords="1469,18,1618,21,1839,29,2100,47,2371,77,2370,82,2099,53,1838,35,1618,26,1469,23"/>
+<area shape="rect" title=" " alt="" coords="2493,80,2559,107"/>
+<area shape="poly" title=" " alt="" coords="1469,17,1633,17,1880,23,2174,42,2327,57,2478,77,2477,83,2327,62,2174,47,1880,29,1633,22,1469,22"/>
+<area shape="rect" title=" " alt="" coords="2584,80,2639,107"/>
+<area shape="poly" title=" " alt="" coords="1468,18,1996,35,2319,52,2459,64,2568,77,2568,83,2458,69,2319,58,1995,40,1468,24"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="carefree_8hpp__dep__incl.png" border="0" usemap="#acarefree_8hppdep" alt=""/></div>
+<map name="acarefree_8hppdep" id="acarefree_8hppdep">
+<area shape="rect" title=" " alt="" coords="5,5,98,32"/>
+<area shape="rect" href="test_8cpp.html" title=" " alt="" coords="17,80,86,107"/>
+<area shape="poly" title=" " alt="" coords="54,48,54,80,49,80,49,48"/>
 </map>
 </div>
 </div>
@@ -207,6 +223,18 @@ carefree.hpp 的引用(Include)关系图:</div>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1carefree__system__exception__name.html">carefree_internal::carefree_system_exception_name</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1carefree__validate__failed__name.html">carefree_internal::carefree_validate_failed_name</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1__base__exception.html">carefree_internal::_base_exception</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1__unsupported__operation.html">carefree_internal::_unsupported_operation</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1__file__exception.html">carefree_internal::_file_exception</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1__system__exception.html">carefree_internal::_system_exception</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1__validate__failed.html">carefree_internal::_validate_failed</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1_balanced_tree.html">carefree_internal::BalancedTree&lt; T, Compare &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1graph.html">carefree_internal::graph</a></td></tr>
@@ -217,15 +245,13 @@ carefree.hpp 的引用(Include)关系图:</div>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1graph_1_1unweighted__output.html">carefree_internal::graph::unweighted_output</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1graph_1_1chain__node.html">carefree_internal::graph::chain_node</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1testcase__writer.html">carefree_internal::testcase_writer</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1testcase__writer_1_1file__writer.html">carefree_internal::testcase_writer::file_writer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1luogu__testcase__config__writer.html">carefree_internal::luogu_testcase_config_writer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1process__base.html">carefree_internal::process_base</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1process__win.html">carefree_internal::process_win</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1judge__result.html">carefree_internal::judge_result</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -251,6 +277,8 @@ carefree.hpp 的引用(Include)关系图:</div>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarefree__internal_1_1____enum__shortcut.html">carefree_internal::__enum_shortcut</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarefree__internal_1_1condition.html">carefree_internal::condition&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 命名空间</h2></td></tr>
@@ -260,6 +288,14 @@ carefree.hpp 的引用(Include)关系图:</div>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacecarefree__internal_1_1cpp__warnings" id="r_namespacecarefree__internal_1_1cpp__warnings"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1cpp__warnings.html">carefree_internal::cpp_warnings</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecarefree__internal_1_1pred" id="r_namespacecarefree__internal_1_1pred"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred.html">carefree_internal::pred</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecarefree__internal_1_1pred_1_1num" id="r_namespacecarefree__internal_1_1pred_1_1num"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1num.html">carefree_internal::pred::num</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecarefree__internal_1_1pred_1_1str" id="r_namespacecarefree__internal_1_1pred_1_1str"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1str.html">carefree_internal::pred::str</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecarefree__internal_1_1pred_1_1seq" id="r_namespacecarefree__internal_1_1pred_1_1seq"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html">carefree_internal::pred::seq</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacecarefree" id="r_namespacecarefree"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree.html">carefree</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -267,27 +303,35 @@ carefree.hpp 的引用(Include)关系图:</div>
 宏定义</h2></td></tr>
 <tr class="memitem:a098933aaf71bca8d9237bd60b41d0d74" id="r_a098933aaf71bca8d9237bd60b41d0d74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a098933aaf71bca8d9237bd60b41d0d74">CAREFREE_VERSION_MAJOR</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a098933aaf71bca8d9237bd60b41d0d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6b8ab4978bff68142785fe5ec877db2" id="r_af6b8ab4978bff68142785fe5ec877db2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6b8ab4978bff68142785fe5ec877db2">CAREFREE_VERSION_MINOR</a>&#160;&#160;&#160;6</td></tr>
+<tr class="memitem:af6b8ab4978bff68142785fe5ec877db2" id="r_af6b8ab4978bff68142785fe5ec877db2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6b8ab4978bff68142785fe5ec877db2">CAREFREE_VERSION_MINOR</a>&#160;&#160;&#160;7</td></tr>
 <tr class="separator:af6b8ab4978bff68142785fe5ec877db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a503ef93024815ab9a34c100776a063d3" id="r_a503ef93024815ab9a34c100776a063d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a503ef93024815ab9a34c100776a063d3">CAREFREE_VERSION</a>&#160;&#160;&#160;&quot;0.6&quot;</td></tr>
+<tr class="memitem:a503ef93024815ab9a34c100776a063d3" id="r_a503ef93024815ab9a34c100776a063d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a503ef93024815ab9a34c100776a063d3">CAREFREE_VERSION</a>&#160;&#160;&#160;&quot;0.7&quot;</td></tr>
 <tr class="separator:a503ef93024815ab9a34c100776a063d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a209f2e04922e102ff5e0cb60206201dc" id="r_a209f2e04922e102ff5e0cb60206201dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a209f2e04922e102ff5e0cb60206201dc">maybe_unused</a>&#160;&#160;&#160;__attribute__((unused))</td></tr>
 <tr class="separator:a209f2e04922e102ff5e0cb60206201dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 类型定义</h2></td></tr>
-<tr class="memitem:ae15a5dd03f1af6cd415bd0aeed56f53b" id="r_ae15a5dd03f1af6cd415bd0aeed56f53b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ae15a5dd03f1af6cd415bd0aeed56f53b">carefree_internal::carefree_invalid_argument</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::invalid_argument, <a class="el" href="structcarefree__internal_1_1carefree__invalid__argument__name.html">carefree_invalid_argument_name</a>&gt;</td></tr>
-<tr class="separator:ae15a5dd03f1af6cd415bd0aeed56f53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb0431ddb90f4616d9da37ff1e7d1f7c" id="r_acb0431ddb90f4616d9da37ff1e7d1f7c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#acb0431ddb90f4616d9da37ff1e7d1f7c">carefree_internal::carefree_range_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::out_of_range, <a class="el" href="structcarefree__internal_1_1carefree__range__exception__name.html">carefree_range_exception_name</a>&gt;</td></tr>
-<tr class="separator:acb0431ddb90f4616d9da37ff1e7d1f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8de6c1be2a5894c71b080934eeca2d3c" id="r_a8de6c1be2a5894c71b080934eeca2d3c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a8de6c1be2a5894c71b080934eeca2d3c">carefree_internal::carefree_unsupported_operation</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::logic_error, <a class="el" href="structcarefree__internal_1_1carefree__unsupported__operation__name.html">carefree_unsupported_operation_name</a>&gt;</td></tr>
-<tr class="separator:a8de6c1be2a5894c71b080934eeca2d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb26e4bf613c6532621e76ca8a5b0da0" id="r_abb26e4bf613c6532621e76ca8a5b0da0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#abb26e4bf613c6532621e76ca8a5b0da0">carefree_internal::carefree_file_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::runtime_error, <a class="el" href="structcarefree__internal_1_1carefree__file__exception__name.html">carefree_file_exception_name</a>&gt;</td></tr>
-<tr class="separator:abb26e4bf613c6532621e76ca8a5b0da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9772461652e22fd7cc7d2dde6567fe71" id="r_a9772461652e22fd7cc7d2dde6567fe71"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a9772461652e22fd7cc7d2dde6567fe71">carefree_internal::carefree_runtime_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::runtime_error, <a class="el" href="structcarefree__internal_1_1carefree__runtime__exception__name.html">carefree_runtime_exception_name</a>&gt;</td></tr>
-<tr class="separator:a9772461652e22fd7cc7d2dde6567fe71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0133331915cd22eea8dc12fd6aeffff3" id="r_a0133331915cd22eea8dc12fd6aeffff3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a0133331915cd22eea8dc12fd6aeffff3">carefree_internal::carefree_system_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;std::runtime_error, <a class="el" href="structcarefree__internal_1_1carefree__system__exception__name.html">carefree_system_exception_name</a>&gt;</td></tr>
-<tr class="separator:a0133331915cd22eea8dc12fd6aeffff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a003cd54fd4b7b3710a4b6f7e982b7bb8" id="r_a003cd54fd4b7b3710a4b6f7e982b7bb8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a003cd54fd4b7b3710a4b6f7e982b7bb8">carefree_internal::_invalid_argument</a> = std::invalid_argument</td></tr>
+<tr class="separator:a003cd54fd4b7b3710a4b6f7e982b7bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac28105775b9d182520ef680c421e2972" id="r_ac28105775b9d182520ef680c421e2972"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ac28105775b9d182520ef680c421e2972">carefree_internal::_range_exception</a> = std::out_of_range</td></tr>
+<tr class="separator:ac28105775b9d182520ef680c421e2972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a6a98a129742197365fd53b30afb43" id="r_a52a6a98a129742197365fd53b30afb43"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a52a6a98a129742197365fd53b30afb43">carefree_internal::_runtime_exception</a> = std::runtime_error</td></tr>
+<tr class="separator:a52a6a98a129742197365fd53b30afb43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf1a898ea22aa2a902d25c1c8ca40b89" id="r_aaf1a898ea22aa2a902d25c1c8ca40b89"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#aaf1a898ea22aa2a902d25c1c8ca40b89">carefree_internal::carefree_invalid_argument</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;<a class="el" href="namespacecarefree__internal.html#a003cd54fd4b7b3710a4b6f7e982b7bb8">_invalid_argument</a>, <a class="el" href="structcarefree__internal_1_1carefree__invalid__argument__name.html">carefree_invalid_argument_name</a>&gt;</td></tr>
+<tr class="separator:aaf1a898ea22aa2a902d25c1c8ca40b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60aeacb4892610410ff86c81a41b51c4" id="r_a60aeacb4892610410ff86c81a41b51c4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a60aeacb4892610410ff86c81a41b51c4">carefree_internal::carefree_range_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;<a class="el" href="namespacecarefree__internal.html#ac28105775b9d182520ef680c421e2972">_range_exception</a>, <a class="el" href="structcarefree__internal_1_1carefree__range__exception__name.html">carefree_range_exception_name</a>&gt;</td></tr>
+<tr class="separator:a60aeacb4892610410ff86c81a41b51c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2663225a0e7ca693261c6abcb4bf3b97" id="r_a2663225a0e7ca693261c6abcb4bf3b97"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a2663225a0e7ca693261c6abcb4bf3b97">carefree_internal::carefree_unsupported_operation</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;<a class="el" href="classcarefree__internal_1_1__unsupported__operation.html">_unsupported_operation</a>, <a class="el" href="structcarefree__internal_1_1carefree__unsupported__operation__name.html">carefree_unsupported_operation_name</a>&gt;</td></tr>
+<tr class="separator:a2663225a0e7ca693261c6abcb4bf3b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae15737543ee760931a6a91b4f59921" id="r_acae15737543ee760931a6a91b4f59921"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#acae15737543ee760931a6a91b4f59921">carefree_internal::carefree_file_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;<a class="el" href="classcarefree__internal_1_1__file__exception.html">_file_exception</a>, <a class="el" href="structcarefree__internal_1_1carefree__file__exception__name.html">carefree_file_exception_name</a>&gt;</td></tr>
+<tr class="separator:acae15737543ee760931a6a91b4f59921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c4b7a4d4b214e5953c8dee2937a525b" id="r_a6c4b7a4d4b214e5953c8dee2937a525b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a6c4b7a4d4b214e5953c8dee2937a525b">carefree_internal::carefree_runtime_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;<a class="el" href="namespacecarefree__internal.html#a52a6a98a129742197365fd53b30afb43">_runtime_exception</a>, <a class="el" href="structcarefree__internal_1_1carefree__runtime__exception__name.html">carefree_runtime_exception_name</a>&gt;</td></tr>
+<tr class="separator:a6c4b7a4d4b214e5953c8dee2937a525b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59f107f276d11cf7c66a400731b2aecb" id="r_a59f107f276d11cf7c66a400731b2aecb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a59f107f276d11cf7c66a400731b2aecb">carefree_internal::carefree_system_exception</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;<a class="el" href="classcarefree__internal_1_1__system__exception.html">_system_exception</a>, <a class="el" href="structcarefree__internal_1_1carefree__system__exception__name.html">carefree_system_exception_name</a>&gt;</td></tr>
+<tr class="separator:a59f107f276d11cf7c66a400731b2aecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c6d8db624dc95a2ea54531448c4348e" id="r_a9c6d8db624dc95a2ea54531448c4348e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a9c6d8db624dc95a2ea54531448c4348e">carefree_internal::carefree_validate_failed</a> = <a class="el" href="classcarefree__internal_1_1carefree__exception.html">carefree_exception</a>&lt;<a class="el" href="classcarefree__internal_1_1__validate__failed.html">_validate_failed</a>, <a class="el" href="structcarefree__internal_1_1carefree__validate__failed__name.html">carefree_validate_failed_name</a>&gt;</td></tr>
+<tr class="separator:a9c6d8db624dc95a2ea54531448c4348e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a434979683f9751403c990badc11d3641" id="r_a434979683f9751403c990badc11d3641"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a434979683f9751403c990badc11d3641">carefree_internal::_Weight</a> = long long</td></tr>
 <tr class="separator:a434979683f9751403c990badc11d3641"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a871ac0f15c60f96bbfc8b1815ff92d22" id="r_a871ac0f15c60f96bbfc8b1815ff92d22"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a871ac0f15c60f96bbfc8b1815ff92d22">carefree_internal::edge</a> = <a class="el" href="structcarefree__internal_1_1graph_1_1edge.html">graph::edge</a></td></tr>
@@ -296,6 +340,8 @@ carefree.hpp 的引用(Include)关系图:</div>
 <tr class="separator:a160226d478e6907cb18e1cfcba9d25ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5887c76eeb6eba89478de6310bc6cca4" id="r_a5887c76eeb6eba89478de6310bc6cca4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a5887c76eeb6eba89478de6310bc6cca4">carefree_internal::unweighted_output</a> = <a class="el" href="structcarefree__internal_1_1graph_1_1unweighted__output.html">graph::unweighted_output</a></td></tr>
 <tr class="separator:a5887c76eeb6eba89478de6310bc6cca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7708cf7b843c1edcc15b82cc13203e14" id="r_a7708cf7b843c1edcc15b82cc13203e14"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a7708cf7b843c1edcc15b82cc13203e14">carefree_internal::process</a> = <a class="el" href="classcarefree__internal_1_1process__win.html">process_win</a></td></tr>
+<tr class="separator:a7708cf7b843c1edcc15b82cc13203e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe929ed78dbe39f784a5cf22e7c3d3bc" id="r_abe929ed78dbe39f784a5cf22e7c3d3bc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#abe929ed78dbe39f784a5cf22e7c3d3bc">carefree_internal::ull</a> = unsigned long long</td></tr>
 <tr class="separator:abe929ed78dbe39f784a5cf22e7c3d3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa449eb54b98a749f3c7f6a97f44bfe02" id="r_aa449eb54b98a749f3c7f6a97f44bfe02"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#aa449eb54b98a749f3c7f6a97f44bfe02">carefree_internal::creadable</a> = <a class="el" href="classcarefree__internal_1_1comparator_1_1readable.html">comparator::readable</a></td></tr>
@@ -456,12 +502,6 @@ carefree.hpp 的引用(Include)关系图:</div>
 <tr class="memitem:a0c5378211b08ad8b5dc07802647aea1d" id="r_a0c5378211b08ad8b5dc07802647aea1d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a0c5378211b08ad8b5dc07802647aea1d"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a0c5378211b08ad8b5dc07802647aea1d">carefree_internal::sequence</a> (int lengthL, int lengthR, T l, T r)</td></tr>
 <tr class="separator:a0c5378211b08ad8b5dc07802647aea1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cb543eb52061c05520bc89fb4201243" id="r_a3cb543eb52061c05520bc89fb4201243"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a3cb543eb52061c05520bc89fb4201243"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a3cb543eb52061c05520bc89fb4201243">carefree_internal::real_cutting</a> (int length, T total)</td></tr>
-<tr class="separator:a3cb543eb52061c05520bc89fb4201243"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a712398045d7754abf007d27efbe0bcae" id="r_a712398045d7754abf007d27efbe0bcae"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a712398045d7754abf007d27efbe0bcae"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a712398045d7754abf007d27efbe0bcae">carefree_internal::int_cutting</a> (int length, T total)</td></tr>
-<tr class="separator:a712398045d7754abf007d27efbe0bcae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7ef7cdd0bebd841afceaf4cc4dfb1fe" id="r_ae7ef7cdd0bebd841afceaf4cc4dfb1fe"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ae7ef7cdd0bebd841afceaf4cc4dfb1fe">carefree_internal::randstr</a> (int length, const string sset=<a class="el" href="namespacecarefree__internal_1_1strsets.html#a626db64132a86fdc31fec20f5dcac31f">strsets::lower</a>)</td></tr>
 <tr class="separator:ae7ef7cdd0bebd841afceaf4cc4dfb1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc3bd71802747976e3ac8d6e22b0194d" id="r_adc3bd71802747976e3ac8d6e22b0194d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#adc3bd71802747976e3ac8d6e22b0194d">carefree_internal::randstr</a> (int lengthL, int lengthR, const string sset=<a class="el" href="namespacecarefree__internal_1_1strsets.html#a626db64132a86fdc31fec20f5dcac31f">strsets::lower</a>)</td></tr>
@@ -551,6 +591,97 @@ carefree.hpp 的引用(Include)关系图:</div>
 <tr class="separator:a3d2639200483141ca4bdcf281f4212b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bcfc33eab0287f8238f77ca8f967bed" id="r_a2bcfc33eab0287f8238f77ca8f967bed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a2bcfc33eab0287f8238f77ca8f967bed">carefree_internal::autoclear_tmpfiles</a> ()</td></tr>
 <tr class="separator:a2bcfc33eab0287f8238f77ca8f967bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a29bb8588b0a6170a99c0890b852aa4" id="r_a5a29bb8588b0a6170a99c0890b852aa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a5a29bb8588b0a6170a99c0890b852aa4">carefree_internal::helloworld</a> ()</td></tr>
+<tr class="separator:a5a29bb8588b0a6170a99c0890b852aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a559c411b065d79cff28a8ea97550fcfa" id="r_a559c411b065d79cff28a8ea97550fcfa"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a559c411b065d79cff28a8ea97550fcfa"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a559c411b065d79cff28a8ea97550fcfa">carefree_internal::operator||</a> (<a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt; a, <a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt; b)</td></tr>
+<tr class="separator:a559c411b065d79cff28a8ea97550fcfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2efeb155ee7be3a362e6265fab47bfea" id="r_a2efeb155ee7be3a362e6265fab47bfea"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a2efeb155ee7be3a362e6265fab47bfea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a2efeb155ee7be3a362e6265fab47bfea">carefree_internal::operator&amp;&amp;</a> (<a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt; a, <a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt; b)</td></tr>
+<tr class="separator:a2efeb155ee7be3a362e6265fab47bfea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98b52392c6f9bc38464f3965622a3be2" id="r_a98b52392c6f9bc38464f3965622a3be2"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a98b52392c6f9bc38464f3965622a3be2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#a98b52392c6f9bc38464f3965622a3be2">carefree_internal::operator!</a> (<a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt; a)</td></tr>
+<tr class="separator:a98b52392c6f9bc38464f3965622a3be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad021f9b706668a625860f86afa0aed46" id="r_ad021f9b706668a625860f86afa0aed46"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad021f9b706668a625860f86afa0aed46"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#ad021f9b706668a625860f86afa0aed46">carefree_internal::operator|</a> (<a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt; a, <a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt; b)</td></tr>
+<tr class="separator:ad021f9b706668a625860f86afa0aed46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f3a8d0df7f74a94b4449c2a20813a6" id="r_aa1f3a8d0df7f74a94b4449c2a20813a6"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aa1f3a8d0df7f74a94b4449c2a20813a6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal.html#aa1f3a8d0df7f74a94b4449c2a20813a6">carefree_internal::operator&amp;</a> (<a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt; a, <a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt; b)</td></tr>
+<tr class="separator:aa1f3a8d0df7f74a94b4449c2a20813a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7830abc2b3c3231ffb64f72233af859" id="r_ae7830abc2b3c3231ffb64f72233af859"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ae7830abc2b3c3231ffb64f72233af859"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1num.html#ae7830abc2b3c3231ffb64f72233af859">carefree_internal::pred::num::lt</a> (T x)</td></tr>
+<tr class="separator:ae7830abc2b3c3231ffb64f72233af859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3d1b63bb4bc74dcdae0ae1bf191ba8d" id="r_ae3d1b63bb4bc74dcdae0ae1bf191ba8d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ae3d1b63bb4bc74dcdae0ae1bf191ba8d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1num.html#ae3d1b63bb4bc74dcdae0ae1bf191ba8d">carefree_internal::pred::num::gt</a> (T x)</td></tr>
+<tr class="separator:ae3d1b63bb4bc74dcdae0ae1bf191ba8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0aa4ad39e26a4092495b5ebae3dd68" id="r_ada0aa4ad39e26a4092495b5ebae3dd68"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ada0aa4ad39e26a4092495b5ebae3dd68"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1num.html#ada0aa4ad39e26a4092495b5ebae3dd68">carefree_internal::pred::num::eq</a> (T x)</td></tr>
+<tr class="separator:ada0aa4ad39e26a4092495b5ebae3dd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa17dc0e5fb51cce616f6e362113bb197" id="r_aa17dc0e5fb51cce616f6e362113bb197"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aa17dc0e5fb51cce616f6e362113bb197"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1num.html#aa17dc0e5fb51cce616f6e362113bb197">carefree_internal::pred::num::leq</a> (T x)</td></tr>
+<tr class="separator:aa17dc0e5fb51cce616f6e362113bb197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81f7489fff22eddce588be539154b67e" id="r_a81f7489fff22eddce588be539154b67e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a81f7489fff22eddce588be539154b67e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1num.html#a81f7489fff22eddce588be539154b67e">carefree_internal::pred::num::geq</a> (T x)</td></tr>
+<tr class="separator:a81f7489fff22eddce588be539154b67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d5c896a9563c06605ae88a8758ca7dd" id="r_a5d5c896a9563c06605ae88a8758ca7dd"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a5d5c896a9563c06605ae88a8758ca7dd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1num.html#a5d5c896a9563c06605ae88a8758ca7dd">carefree_internal::pred::num::neq</a> (T x)</td></tr>
+<tr class="separator:a5d5c896a9563c06605ae88a8758ca7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb9910f6120d4c2e2f1d9403d7fcc38" id="r_a3bb9910f6120d4c2e2f1d9403d7fcc38"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a3bb9910f6120d4c2e2f1d9403d7fcc38"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1num.html#a3bb9910f6120d4c2e2f1d9403d7fcc38">carefree_internal::pred::num::inrange</a> (T l, T r)</td></tr>
+<tr class="separator:a3bb9910f6120d4c2e2f1d9403d7fcc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae13b4af3cbcd2b712b4a971801d4481d" id="r_ae13b4af3cbcd2b712b4a971801d4481d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1str.html#ae13b4af3cbcd2b712b4a971801d4481d">carefree_internal::pred::str::len_lt</a> (size_t x)</td></tr>
+<tr class="separator:ae13b4af3cbcd2b712b4a971801d4481d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44a168c7341ca8d2326c30aae7799eac" id="r_a44a168c7341ca8d2326c30aae7799eac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1str.html#a44a168c7341ca8d2326c30aae7799eac">carefree_internal::pred::str::len_gt</a> (size_t x)</td></tr>
+<tr class="separator:a44a168c7341ca8d2326c30aae7799eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9723c8c51ed484fa41230b6c73dc7252" id="r_a9723c8c51ed484fa41230b6c73dc7252"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1str.html#a9723c8c51ed484fa41230b6c73dc7252">carefree_internal::pred::str::len_eq</a> (size_t x)</td></tr>
+<tr class="separator:a9723c8c51ed484fa41230b6c73dc7252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20d7f664b76697de5a34245eddaa7532" id="r_a20d7f664b76697de5a34245eddaa7532"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1str.html#a20d7f664b76697de5a34245eddaa7532">carefree_internal::pred::str::len_leq</a> (size_t x)</td></tr>
+<tr class="separator:a20d7f664b76697de5a34245eddaa7532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35195a9f18f5a4e86d9114a1d419acce" id="r_a35195a9f18f5a4e86d9114a1d419acce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1str.html#a35195a9f18f5a4e86d9114a1d419acce">carefree_internal::pred::str::len_geq</a> (size_t x)</td></tr>
+<tr class="separator:a35195a9f18f5a4e86d9114a1d419acce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7adcfc89720da77fba0a9716964a1ac2" id="r_a7adcfc89720da77fba0a9716964a1ac2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1str.html#a7adcfc89720da77fba0a9716964a1ac2">carefree_internal::pred::str::len_neq</a> (size_t x)</td></tr>
+<tr class="separator:a7adcfc89720da77fba0a9716964a1ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54ed11882a78b354fbfff416d5fad062" id="r_a54ed11882a78b354fbfff416d5fad062"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1str.html#a54ed11882a78b354fbfff416d5fad062">carefree_internal::pred::str::len_inrange</a> (size_t l, size_t r)</td></tr>
+<tr class="separator:a54ed11882a78b354fbfff416d5fad062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a063bbf529ad96962247d8eaa87b0d190" id="r_a063bbf529ad96962247d8eaa87b0d190"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1str.html#a063bbf529ad96962247d8eaa87b0d190">carefree_internal::pred::str::empty</a> ()</td></tr>
+<tr class="separator:a063bbf529ad96962247d8eaa87b0d190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06cb946baf4734a78b05ff1b539870dc" id="r_a06cb946baf4734a78b05ff1b539870dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1str.html#a06cb946baf4734a78b05ff1b539870dc">carefree_internal::pred::str::unempty</a> ()</td></tr>
+<tr class="separator:a06cb946baf4734a78b05ff1b539870dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac31e8dcf824792759d1e156906aadec4" id="r_ac31e8dcf824792759d1e156906aadec4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1str.html#ac31e8dcf824792759d1e156906aadec4">carefree_internal::pred::str::sset</a> (string s)</td></tr>
+<tr class="separator:ac31e8dcf824792759d1e156906aadec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a9be516c39ab4c8ffbb31207d6493ce" id="r_a3a9be516c39ab4c8ffbb31207d6493ce"><td class="memTemplParams" colspan="2">template&lt;class T  = int&gt; </td></tr>
+<tr class="memitem:a3a9be516c39ab4c8ffbb31207d6493ce"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html#a3a9be516c39ab4c8ffbb31207d6493ce">carefree_internal::pred::seq::len_lt</a> (size_t x)</td></tr>
+<tr class="separator:a3a9be516c39ab4c8ffbb31207d6493ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d64ec88cb484a9e0140a9cf350e239a" id="r_a7d64ec88cb484a9e0140a9cf350e239a"><td class="memTemplParams" colspan="2">template&lt;class T  = int&gt; </td></tr>
+<tr class="memitem:a7d64ec88cb484a9e0140a9cf350e239a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html#a7d64ec88cb484a9e0140a9cf350e239a">carefree_internal::pred::seq::len_gt</a> (size_t x)</td></tr>
+<tr class="separator:a7d64ec88cb484a9e0140a9cf350e239a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e1c0a59da29487b52fc70efb8bd74c" id="r_ab8e1c0a59da29487b52fc70efb8bd74c"><td class="memTemplParams" colspan="2">template&lt;class T  = int&gt; </td></tr>
+<tr class="memitem:ab8e1c0a59da29487b52fc70efb8bd74c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html#ab8e1c0a59da29487b52fc70efb8bd74c">carefree_internal::pred::seq::len_eq</a> (size_t x)</td></tr>
+<tr class="separator:ab8e1c0a59da29487b52fc70efb8bd74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35aa0e6051e42fe42bb52756cabc0846" id="r_a35aa0e6051e42fe42bb52756cabc0846"><td class="memTemplParams" colspan="2">template&lt;class T  = int&gt; </td></tr>
+<tr class="memitem:a35aa0e6051e42fe42bb52756cabc0846"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html#a35aa0e6051e42fe42bb52756cabc0846">carefree_internal::pred::seq::len_leq</a> (size_t x)</td></tr>
+<tr class="separator:a35aa0e6051e42fe42bb52756cabc0846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad53cc68bd38b94b0b892b70f048cd338" id="r_ad53cc68bd38b94b0b892b70f048cd338"><td class="memTemplParams" colspan="2">template&lt;class T  = int&gt; </td></tr>
+<tr class="memitem:ad53cc68bd38b94b0b892b70f048cd338"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html#ad53cc68bd38b94b0b892b70f048cd338">carefree_internal::pred::seq::len_geq</a> (size_t x)</td></tr>
+<tr class="separator:ad53cc68bd38b94b0b892b70f048cd338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2948cac80c7025ce3cb4cc0f0754ebac" id="r_a2948cac80c7025ce3cb4cc0f0754ebac"><td class="memTemplParams" colspan="2">template&lt;class T  = int&gt; </td></tr>
+<tr class="memitem:a2948cac80c7025ce3cb4cc0f0754ebac"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html#a2948cac80c7025ce3cb4cc0f0754ebac">carefree_internal::pred::seq::len_neq</a> (size_t x)</td></tr>
+<tr class="separator:a2948cac80c7025ce3cb4cc0f0754ebac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e12faada48a6acdf6b0a00662ddca7" id="r_a45e12faada48a6acdf6b0a00662ddca7"><td class="memTemplParams" colspan="2">template&lt;class T  = int&gt; </td></tr>
+<tr class="memitem:a45e12faada48a6acdf6b0a00662ddca7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html#a45e12faada48a6acdf6b0a00662ddca7">carefree_internal::pred::seq::len_inrange</a> (size_t l, size_t r)</td></tr>
+<tr class="separator:a45e12faada48a6acdf6b0a00662ddca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5bd84ed3ff1ef41991f87b65778e365" id="r_ab5bd84ed3ff1ef41991f87b65778e365"><td class="memTemplParams" colspan="2">template&lt;class T  = int&gt; </td></tr>
+<tr class="memitem:ab5bd84ed3ff1ef41991f87b65778e365"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html#ab5bd84ed3ff1ef41991f87b65778e365">carefree_internal::pred::seq::empty</a> ()</td></tr>
+<tr class="separator:ab5bd84ed3ff1ef41991f87b65778e365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712c3dd90fba6a1f8752730d84a6e020" id="r_a712c3dd90fba6a1f8752730d84a6e020"><td class="memTemplParams" colspan="2">template&lt;class T  = int&gt; </td></tr>
+<tr class="memitem:a712c3dd90fba6a1f8752730d84a6e020"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html#a712c3dd90fba6a1f8752730d84a6e020">carefree_internal::pred::seq::unempty</a> ()</td></tr>
+<tr class="separator:a712c3dd90fba6a1f8752730d84a6e020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0baabf7395c7128291ce64f6efed577" id="r_aa0baabf7395c7128291ce64f6efed577"><td class="memTemplParams" colspan="2">template&lt;class T  = int&gt; </td></tr>
+<tr class="memitem:aa0baabf7395c7128291ce64f6efed577"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html#aa0baabf7395c7128291ce64f6efed577">carefree_internal::pred::seq::increase</a> ()</td></tr>
+<tr class="separator:aa0baabf7395c7128291ce64f6efed577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a858b887706fc8ea107c887a1e17d16" id="r_a9a858b887706fc8ea107c887a1e17d16"><td class="memTemplParams" colspan="2">template&lt;class T  = int&gt; </td></tr>
+<tr class="memitem:a9a858b887706fc8ea107c887a1e17d16"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcarefree__internal_1_1condition.html">condition</a>&lt; std::vector&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecarefree__internal_1_1pred_1_1seq.html#a9a858b887706fc8ea107c887a1e17d16">carefree_internal::pred::seq::decrease</a> ()</td></tr>
+<tr class="separator:a9a858b887706fc8ea107c887a1e17d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 变量</h2></td></tr>
@@ -609,7 +740,7 @@ carefree.hpp 的引用(Include)关系图:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CAREFREE_VERSION&#160;&#160;&#160;&quot;0.6&quot;</td>
+          <td class="memname">#define CAREFREE_VERSION&#160;&#160;&#160;&quot;0.7&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -637,7 +768,7 @@ carefree.hpp 的引用(Include)关系图:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CAREFREE_VERSION_MINOR&#160;&#160;&#160;6</td>
+          <td class="memname">#define CAREFREE_VERSION_MINOR&#160;&#160;&#160;7</td>
         </tr>
       </table>
 </div><div class="memdoc">

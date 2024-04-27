@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Carefree", "index.html", [
+  [ "Carefree (For Windows)", "index.html", [
     [ "README", "md__r_e_a_d_m_e.html", null ],
     [ "命名空间", "namespaces.html", [
       [ "命名空间列表", "namespaces.html", "namespaces_dup" ],
@@ -42,7 +42,7 @@ var NAVTREE =
       [ "类索引", "classes.html", null ],
       [ "类继承关系", "hierarchy.html", "hierarchy" ],
       [ "类成员", "functions.html", [
-        [ "全部", "functions.html", "functions_dup" ],
+        [ "全部", "functions.html", null ],
         [ "函数", "functions_func.html", null ],
         [ "变量", "functions_vars.html", null ],
         [ "类型定义", "functions_type.html", null ]
@@ -62,9 +62,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classcarefree__internal_1_1gcc__compile.html#a866e5ec62b68b5d0666fe8380b9dbd32",
-"functions_f.html",
-"structcarefree__internal_1_1carefree__file__exception__name.html"
+"classcarefree__internal_1_1_balanced_tree.html#aceb4c34e6f2bef6dd0c2945e6379b0db",
+"classcarefree__internal_1_1testcase__writer.html#af1ad57966cd10e3053c77cf71cdf294e",
+"structcarefree__internal_1_1____enum__shortcut.html#a72c5b5662b750a0fafc7842b2117f244"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

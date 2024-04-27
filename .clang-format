@@ -1,0 +1,14 @@
+{
+  "BasedOnStyle": "Google",
+  "IndentWidth": 4,
+  "TabWidth": 4,
+  "UseTab": "Never",
+  "BreakBeforeBraces": "Attach",
+  "ColumnLimit": 0,
+  "NamespaceIndentation": "All",
+  "AccessModifierOffset": -4,
+  "SpaceBeforeFunctionDeclaration": true,
+  "SpaceBeforeFunctionDefinition": true,
+  "SpaceBeforeCpp11BracedList": true,
+  "MaxEmptyLinesToKeep" : 1,
+}

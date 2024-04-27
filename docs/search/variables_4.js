@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['debug_0',['debug',['../classcarefree__internal_1_1gcc__compile.html#a97880cb1ff800740fed8db698e4aa908',1,'carefree_internal::gcc_compile']]],
-  ['defintions_1',['defintions',['../classcarefree__internal_1_1gcc__compile.html#a69318054164741009282ce47f21db7d6',1,'carefree_internal::gcc_compile']]],
-  ['digit_2',['digit',['../namespacecarefree__internal_1_1strsets.html#a5156cf22a016f7ac3bcfb810cb9949a0',1,'carefree_internal::strsets']]],
-  ['directed_3',['directed',['../classcarefree__internal_1_1graph.html#a2626e9b32d3404bfc816696b2cb5f033',1,'carefree_internal::graph']]]
+  ['enable_5fedge_5fmap_0',['enable_edge_map',['../classcarefree__internal_1_1graph.html#aafca15b9d7471db09e74fce9f8a8b413',1,'carefree_internal::graph']]],
+  ['es_1',['ES',['../namespacecarefree__internal.html#a6ab37bd4351f9e405a93f52248800e2f',1,'carefree_internal']]],
+  ['exception_5fpolicy_5fval_2',['exception_policy_val',['../namespacecarefree__internal.html#ad22dd44174629af579e6413a13101438',1,'carefree_internal']]]
 ];

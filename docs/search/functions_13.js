@@ -6,6 +6,7 @@ var searchData=
   ['shuffle_3',['shuffle',['../namespacecarefree__internal.html#a1b5c92e6032276c5d9ea32c2e5d7f800',1,'carefree_internal']]],
   ['silkworm_4',['silkworm',['../namespacecarefree__internal.html#aa1e0ef6a072c88600d285a0f09516ad1',1,'carefree_internal']]],
   ['size_5',['size',['../classcarefree__internal_1_1_balanced_tree.html#afcfe61df7e0b21a62de147698b7d56e2',1,'carefree_internal::BalancedTree']]],
-  ['star_6',['star',['../namespacecarefree__internal.html#ad4db2cc924563f6be3d91bf8c08fa32b',1,'carefree_internal']]],
-  ['start_7',['start',['../classcarefree__internal_1_1gcc__compile.html#a148041a674176132e8743f841248d37b',1,'carefree_internal::gcc_compile']]]
+  ['sset_6',['sset',['../namespacecarefree__internal_1_1pred_1_1str.html#ac31e8dcf824792759d1e156906aadec4',1,'carefree_internal::pred::str']]],
+  ['star_7',['star',['../namespacecarefree__internal.html#ad4db2cc924563f6be3d91bf8c08fa32b',1,'carefree_internal']]],
+  ['start_8',['start',['../classcarefree__internal_1_1gcc__compile.html#a148041a674176132e8743f841248d37b',1,'carefree_internal::gcc_compile']]]
 ];
